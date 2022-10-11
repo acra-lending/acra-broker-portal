@@ -25,8 +25,9 @@ function SideBar () {
 
     const [isActive, setIsActive] = useState(menuItems[0].menuTitle);
     return (
-        <div className="md:flex mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 sm:flex-none">
-        <ul className="flex flex-col pt-4 h-screen bg-white">
+        <div className="flex mx-auto px-2 sm:px-6 lg:px-8">
+        <ul className="flex flex-col pt-4 bg-white">
+            <div></div>
             {menuItems.map((item, key) => (
                 <li 
                 className={isActive === item.menuTitle ? "flex items-center gap-3 bg-[#0033A1] text-white p-3 rounded" : "flex items-center gap-3 p-3 rounded"} 

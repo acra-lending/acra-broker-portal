@@ -15,7 +15,7 @@ function classNames(...classes) {
 
 export default function NavBar() {
   return (
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div className="mx-auto px-2 sm:px-6 lg:px-8 pb-1 mb-1">
        <nav className="font-sans flex flex-col text-center sm:flex-row sm:text-left sm:justify-between py-4 px-6 bg-white shadow sm:items-baseline w-full">
   <div className="mb-2 sm:mb-0">
     <a href="/home" className="text-2xl no-underline text-grey-darkest hover:text-blue-dark">Acra Lending</a>
