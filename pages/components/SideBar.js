@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartBar, faArrowAltCircleUp, faAddressBook, faBookmark  } from "@fortawesome/free-regular-svg-icons";
 import { useState } from "react";
+import DashBoard from "../Dashboard";
 function SideBar () {
     const menuItems = [
         {
@@ -24,19 +25,20 @@ function SideBar () {
 
     const [isActive, setIsActive] = useState(menuItems[0].menuTitle);
     return (
-        <div className="flex mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div className="md:flex mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 sm:flex-none">
         <ul className="flex flex-col pt-4 h-screen bg-white">
             {menuItems.map((item, key) => (
-            <li 
+                <li 
                 className={isActive === item.menuTitle ? "flex items-center gap-3 bg-[#0033A1] text-white p-3 rounded" : "flex items-center gap-3 p-3 rounded"} 
                 key={key} 
                 onClick={() => setIsActive(item.menuTitle)}
-            >
+                >
             <FontAwesomeIcon icon={item.icon}/>
             <Link href="/#"><a className="text-lg font-medium ">{item.menuTitle}</a></Link>
             </li>
             ))}
         </ul>
+        <DashBoard />
         </div>
     )
 }
