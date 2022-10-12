@@ -4,6 +4,7 @@ import { faChartBar, faArrowAltCircleUp, faAddressBook, faBookmark  } from "@for
 import { useState } from "react";
 import DashBoard from "../Dashboard";
 import FormsTable from "../Forms";
+import ConditionsUpload from "../ConditionsUpload";
 function SideBar () {
     const menuItems = [
         {
@@ -53,7 +54,7 @@ function SideBar () {
                 onClick={() => setIsActive(item.menuTitle)}
                 >
             <FontAwesomeIcon icon={item.icon}/>
-            <Link href="/#"><a className="text-lg font-medium ">{item.menuTitle}</a></Link>
+            <Link href="/#"><a className="text-lg font-medium " onClick={handleToggle}>{item.menuTitle}</a></Link>
             </li>
             ))}
                 </nav>
@@ -61,6 +62,7 @@ function SideBar () {
             <div className="flex-1 p-10 text-2xl font-bold">
                {isActive === 'DashBoard' && <DashBoard /> }
                {isActive === 'Forms & Requests' && <FormsTable /> }
+               {isActive === 'Condition Upload' && <ConditionsUpload /> }
             </div>
         </div>
     )
