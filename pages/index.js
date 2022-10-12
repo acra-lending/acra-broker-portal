@@ -1,4 +1,3 @@
-import autoprefixer from "autoprefixer"
 import SideBar from "./components/SideBar"
 import NavBar from "./components/NavBar"
 
