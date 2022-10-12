@@ -5,6 +5,7 @@ import { useState } from "react";
 import DashBoard from "../Dashboard";
 import FormsTable from "../Forms";
 import ConditionsUpload from "../ConditionsUpload";
+import ProcessorTips from "../ProcessorTips";
 function SideBar () {
     const menuItems = [
         {
@@ -58,7 +59,7 @@ function SideBar () {
                 onClick={() => setIsActive(item.menuTitle)}
                 >
             <FontAwesomeIcon icon={item.icon}/>
-            <Link href={item.href}><a className="text-lg font-medium " onClick={handleToggle}>{item.menuTitle}</a></Link>
+            <Link href={item.href} onClick={handleToggle}><a className="text-lg font-medium " onClick={handleToggle}>{item.menuTitle}</a></Link>
             </li>
             ))}
                 </nav>
@@ -67,6 +68,7 @@ function SideBar () {
                {isActive === 'DashBoard' && <DashBoard /> }
                {isActive === 'Forms & Requests' && <FormsTable /> }
                {isActive === 'Condition Upload' && <ConditionsUpload /> }
+               {isActive === 'Loan Processor Tips' && <ProcessorTips /> }
             </div>
         </div>
     )
