@@ -2,16 +2,16 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartBar, faArrowAltCircleUp, faAddressBook, faBookmark  } from "@fortawesome/free-regular-svg-icons";
 import { useState } from "react";
-import DashBoard from "../Dashboard";
+import dashboard from "../Dashboard";
 import FormsTable from "../Forms";
 import ConditionsUpload from "../ConditionsUpload";
 import ProcessorTips from "../ProcessorTips";
 function SideBar () {
     const menuItems = [
         {
-            menuTitle: 'DashBoard',
+            menuTitle: 'dashboard',
             icon: faChartBar,
-            href: '/'
+            href: '/dashboard'
         },
         {
             menuTitle: 'Condition Upload',
@@ -59,13 +59,13 @@ function SideBar () {
                 onClick={() => setIsActive(item.menuTitle)}
                 >
             <FontAwesomeIcon icon={item.icon}/>
-            <Link href={item.href} onClick={handleToggle}><a className="text-lg font-medium " onClick={handleToggle}>{item.menuTitle}</a></Link>
+            <Link href={item.href}><a className="text-lg font-medium " onClick={handleToggle}>{item.menuTitle}</a></Link>
             </li>
             ))}
                 </nav>
             </div>
             <div className="flex-1 p-10 text-2xl font-bold">
-               {isActive === 'DashBoard' && <DashBoard /> }
+               {/* {isActive === 'Dashboard' && <DashBoard /> } */}
                {isActive === 'Forms & Requests' && <FormsTable /> }
                {isActive === 'Condition Upload' && <ConditionsUpload /> }
                {isActive === 'Loan Processor Tips' && <ProcessorTips /> }

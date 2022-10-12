@@ -1,4 +1,4 @@
-function DashBoard () {
+function dashboard () {
     const dashBoardItems = [
         'Cutoff Dates',
         'Turn Times',
@@ -19,4 +19,4 @@ function DashBoard () {
     )
 }
 
-export default DashBoard;
+export default dashboard;
