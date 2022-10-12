@@ -1,5 +1,3 @@
-import logo from '../../public/logo.ico'
-console.log(logo);
 export default function NavBar() {
   return (
     <div className="mx-auto mb-1">
