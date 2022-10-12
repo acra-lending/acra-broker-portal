@@ -9,19 +9,23 @@ function SideBar () {
     const menuItems = [
         {
             menuTitle: 'DashBoard',
-            icon: faChartBar
+            icon: faChartBar,
+            href: '/'
         },
         {
             menuTitle: 'Condition Upload',
-            icon: faArrowAltCircleUp 
+            icon: faArrowAltCircleUp,
+            href: '/' 
         },
         {
             menuTitle: 'Forms & Requests',
-            icon: faAddressBook
+            icon: faAddressBook,
+            href: '/'
         },
         {
             menuTitle: 'Loan Processor Tips',
-            icon: faBookmark
+            icon: faBookmark,
+            href: '/'
         }
     ];
 
@@ -54,7 +58,7 @@ function SideBar () {
                 onClick={() => setIsActive(item.menuTitle)}
                 >
             <FontAwesomeIcon icon={item.icon}/>
-            <Link href="/#"><a className="text-lg font-medium " onClick={handleToggle}>{item.menuTitle}</a></Link>
+            <Link href={item.href}><a className="text-lg font-medium " onClick={handleToggle}>{item.menuTitle}</a></Link>
             </li>
             ))}
                 </nav>
