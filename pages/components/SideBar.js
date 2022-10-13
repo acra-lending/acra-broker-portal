@@ -49,11 +49,10 @@ function SideBar ({children}) {
             <div className={isMobile ? sideBarMobileClassNames : sideBarDeskTopClassNames}>
                 <nav>
                 {menuItems.map((item, key) => (
-                <Link href={item.href}>
+                <Link href={item.href} key={key} >
                     <a className="text-lg font-medium ">
                     <li 
                     className={isActive === item.menuTitle ? "flex items-center gap-3 bg-[#0033A1] text-white p-3 rounded" : "flex items-center gap-3 p-3 rounded"} 
-                    key={key} 
                     onClick={() => {setIsActive(item.menuTitle); handleToggle();}}
                     >
                         <FontAwesomeIcon icon={item.icon}/>
