@@ -5,7 +5,7 @@ function DashLinks () {
         'Loan Processor Tips',
         'Pre-Screen Request',
         'Conditions',
-        ' Upload',
+        'Upload',
         'Forms & Requests',
         'Wholesale File',
         'Seller’s Guide'

@@ -49,14 +49,18 @@ function SideBar ({children}) {
             <div className={isMobile ? sideBarMobileClassNames : sideBarDeskTopClassNames}>
                 <nav>
                 {menuItems.map((item, key) => (
-                <li 
-                className={isActive === item.menuTitle ? "flex items-center gap-3 bg-[#0033A1] text-white p-3 rounded" : "flex items-center gap-3 p-3 rounded"} 
-                key={key} 
-                onClick={() => setIsActive(item.menuTitle)}
-                >
-            <FontAwesomeIcon icon={item.icon}/>
-            <Link href={item.href}><a onClick={handleToggle} className="text-lg font-medium ">{item.menuTitle}</a></Link>
-            </li>
+                <Link href={item.href}>
+                    <a className="text-lg font-medium ">
+                    <li 
+                    className={isActive === item.menuTitle ? "flex items-center gap-3 bg-[#0033A1] text-white p-3 rounded" : "flex items-center gap-3 p-3 rounded"} 
+                    key={key} 
+                    onClick={() => {setIsActive(item.menuTitle); handleToggle();}}
+                    >
+                        <FontAwesomeIcon icon={item.icon}/>
+                        {item.menuTitle}
+                    </li>
+                    </a>
+                </Link>
             ))}
                 </nav>
             </div>
