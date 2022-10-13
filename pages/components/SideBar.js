@@ -2,11 +2,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartBar, faArrowAltCircleUp, faAddressBook, faBookmark  } from "@fortawesome/free-regular-svg-icons";
 import { useState } from "react";
-import dashboard from "../Dashboard";
-import FormsTable from "../Forms";
-import ConditionsUpload from "../ConditionsUpload";
-import ProcessorTips from "../ProcessorTips";
-function SideBar () {
+function SideBar ({children}) {
     const menuItems = [
         {
             menuTitle: 'dashboard',
@@ -16,17 +12,17 @@ function SideBar () {
         {
             menuTitle: 'Condition Upload',
             icon: faArrowAltCircleUp,
-            href: '/' 
+            href: '/conditionsUpload' 
         },
         {
             menuTitle: 'Forms & Requests',
             icon: faAddressBook,
-            href: '/'
+            href: '/forms'
         },
         {
             menuTitle: 'Loan Processor Tips',
             icon: faBookmark,
-            href: '/'
+            href: '/processorTips'
         }
     ];
 
@@ -59,16 +55,13 @@ function SideBar () {
                 onClick={() => setIsActive(item.menuTitle)}
                 >
             <FontAwesomeIcon icon={item.icon}/>
-            <Link href={item.href}><a className="text-lg font-medium " onClick={handleToggle}>{item.menuTitle}</a></Link>
+            <Link href={item.href}><a onClick={handleToggle} className="text-lg font-medium ">{item.menuTitle}</a></Link>
             </li>
             ))}
                 </nav>
             </div>
             <div className="flex-1 p-10 text-2xl font-bold">
-               {/* {isActive === 'Dashboard' && <DashBoard /> } */}
-               {isActive === 'Forms & Requests' && <FormsTable /> }
-               {isActive === 'Condition Upload' && <ConditionsUpload /> }
-               {isActive === 'Loan Processor Tips' && <ProcessorTips /> }
+              {children}
             </div>
         </div>
     )

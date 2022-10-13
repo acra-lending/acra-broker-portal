@@ -5,7 +5,7 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { useState } from 'react';
-function ProcessorTips() {
+function processorTips() {
     const [value, setValue] = useState('1');
 
     const handleChange = (event, newValue) => {
@@ -238,4 +238,4 @@ function ProcessorTips() {
   );
 }
 
-export default ProcessorTips;
+export default processorTips;

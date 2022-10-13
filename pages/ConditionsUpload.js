@@ -1,4 +1,4 @@
-function ConditionsUpload() {
+function conditionsUpload() {
     const reminderBulletPoints = [
         'Save each condition, individually, as a PDF document',
         'Label each PDF with the number noted on the Conditional Loan Approval',
@@ -8,7 +8,7 @@ function ConditionsUpload() {
 
     return (
         <div className="md:flex">
-            <iframe class="md:w-8/12 w-full aspect-video min-h-[510px]" src="https://acralending.com/box-api/box-wholesale-upload.html"></iframe>
+            <iframe className="md:w-8/12 w-full aspect-video min-h-[510px]" src="https://acralending.com/box-api/box-wholesale-upload.html"></iframe>
             <div className="md:w-4/12 w-full pt-8 md:pt-0 md:pl-8">
                 <h2 className="font-medium">Reminder:</h2>
                 <ul className="font-normal text-base mt-2 list-disc">
@@ -22,4 +22,4 @@ function ConditionsUpload() {
     )
 }
 
-export default ConditionsUpload;
+export default conditionsUpload;
