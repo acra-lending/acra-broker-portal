@@ -1,4 +1,4 @@
-function FormsTable() {
+function formsTable() {
     return (
         <div className="relative rounded-xl overflow-auto">
 
@@ -41,4 +41,4 @@ function FormsTable() {
         </div>
     )
 }
-export default FormsTable;
+export default formsTable;

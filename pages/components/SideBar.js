@@ -2,30 +2,27 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartBar, faArrowAltCircleUp, faAddressBook, faBookmark  } from "@fortawesome/free-regular-svg-icons";
 import { useState } from "react";
-import DashBoard from "../Dashboard";
-import FormsTable from "../Forms";
-import ConditionsUpload from "../ConditionsUpload";
-function SideBar () {
+function SideBar ({children}) {
     const menuItems = [
         {
-            menuTitle: 'DashBoard',
+            menuTitle: 'dashboard',
             icon: faChartBar,
-            href: '/'
+            href: '/dashboard'
         },
         {
             menuTitle: 'Condition Upload',
             icon: faArrowAltCircleUp,
-            href: '/' 
+            href: '/conditionsUpload' 
         },
         {
             menuTitle: 'Forms & Requests',
             icon: faAddressBook,
-            href: '/'
+            href: '/forms'
         },
         {
             menuTitle: 'Loan Processor Tips',
             icon: faBookmark,
-            href: '/'
+            href: '/processorTips'
         }
     ];
 
@@ -52,21 +49,23 @@ function SideBar () {
             <div className={isMobile ? sideBarMobileClassNames : sideBarDeskTopClassNames}>
                 <nav>
                 {menuItems.map((item, key) => (
-                <li 
-                className={isActive === item.menuTitle ? "flex items-center gap-3 bg-[#0033A1] text-white p-3 rounded" : "flex items-center gap-3 p-3 rounded"} 
-                key={key} 
-                onClick={() => setIsActive(item.menuTitle)}
-                >
-            <FontAwesomeIcon icon={item.icon}/>
-            <Link href={item.href}><a className="text-lg font-medium " onClick={handleToggle}>{item.menuTitle}</a></Link>
-            </li>
+                <Link href={item.href}>
+                    <a className="text-lg font-medium ">
+                    <li 
+                    className={isActive === item.menuTitle ? "flex items-center gap-3 bg-[#0033A1] text-white p-3 rounded" : "flex items-center gap-3 p-3 rounded"} 
+                    key={key} 
+                    onClick={() => {setIsActive(item.menuTitle); handleToggle();}}
+                    >
+                        <FontAwesomeIcon icon={item.icon}/>
+                        {item.menuTitle}
+                    </li>
+                    </a>
+                </Link>
             ))}
                 </nav>
             </div>
             <div className="flex-1 p-10 text-2xl font-bold">
-               {isActive === 'DashBoard' && <DashBoard /> }
-               {isActive === 'Forms & Requests' && <FormsTable /> }
-               {isActive === 'Condition Upload' && <ConditionsUpload /> }
+              {children}
             </div>
         </div>
     )
