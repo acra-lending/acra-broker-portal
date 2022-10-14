@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartBar, faArrowAltCircleUp, faAddressBook, faBookmark } from "@fortawesome/free-regular-svg-icons";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AcraLogo from '../../public/AcraLogo.png';
 import Image from "next/image";
+
 function SideBar ({children}) {
     const menuItems = [
         {
@@ -14,7 +15,7 @@ function SideBar ({children}) {
         {
             menuTitle: 'Condition Upload',
             icon: faArrowAltCircleUp,
-            href: '/conditionsUpload' 
+            href: '/conditions' 
         },
         {
             menuTitle: 'Forms & Requests',
@@ -24,7 +25,7 @@ function SideBar ({children}) {
         {
             menuTitle: 'Loan Processor Tips',
             icon: faBookmark,
-            href: '/processorTips'
+            href: '/processor-tips'
         }
     ];
 
@@ -34,6 +35,8 @@ function SideBar ({children}) {
     const handleToggle = () => {
         setMobile(!isMobile);
     }
+
+
 
     const sideBarDeskTopClassNames = 'bg-white w-64 z-10 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out border-r shadow-md';
     const sideBarMobileClassNames = 'bg-white w-64 z-10 absolute inset-y-0 left-0 transform md:relative md:translate-x-0 transition duration-200 ease-in-out border-r shadow-md';
@@ -46,7 +49,6 @@ function SideBar ({children}) {
                 height={50}
                 width={256}
                 className="p-52"
-                // objectFit="Contain"
             />
                 <button className="p-4" onClick={handleToggle}>
                     <svg className="h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -69,9 +71,8 @@ function SideBar ({children}) {
                     </a>
                 </Link>
             ))}
-            {isMobile && (
                 <Link href="/sign-out">
-                    <a className="text-lg font-medium ">
+                    <a className="text-lg font-medium sm:hidden">
                         <li 
                             className={"flex items-center gap-3 p-3 rounded"} 
                         >
@@ -79,7 +80,6 @@ function SideBar ({children}) {
                         </li>
                     </a>
                 </Link>
-            )}
                 </nav>
             </div>
             <div className="flex-1 p-10 text-2xl font-bold bg-slate-50">
