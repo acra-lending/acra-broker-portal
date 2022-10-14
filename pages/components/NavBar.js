@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function NavBar() {
   return (
     <div className="mx-auto mb-1">
-      <nav className="font-sans sm:flex hidden items-center justify-between text-center sm:flex-row sm:text-left sm:justify-between py-4 px-6 bg-white shadow w-full">
+      <nav className="font-sans md:flex hidden items-center justify-between text-center sm:flex-row sm:text-left sm:justify-between py-4 px-6 bg-white shadow w-full">
         <div className="mb-2 sm:mb-0">
         <Image
                 src={AcraLogo}
