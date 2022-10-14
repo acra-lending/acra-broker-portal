@@ -9,9 +9,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <NavBar />
-        <SideBar>
-          <Component {...pageProps} />    
-        </SideBar>
+      <Component {...pageProps} />    
     </>
     )
     
