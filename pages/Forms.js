@@ -1,8 +1,9 @@
-import SideBar from "./components/SideBar";
-function formsTable() {
+import SideBar from "./SideBar";
+function formsTable({menuItems}) {
+    console.log(menuItems)
     return (
-        <div className="md:flex p-4">
-            <SideBar />
+        <div className="md:flex">
+            <SideBar props={menuItems}/>
             <div className="relative rounded-xl overflow-auto">
                 <table className="border-collapse table-auto w-full text-sm">
                 <thead>
@@ -45,3 +46,10 @@ function formsTable() {
     )
 }
 export default formsTable;
+export async function getServerSideProps(context) {
+    const response = await fetch('http://localhost:1337/api/acra-broker-portal-menu-items')
+    const data = await response.json()
+    return {
+        props: { menuItems: data },
+    };
+  }

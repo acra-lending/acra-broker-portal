@@ -1,43 +1,17 @@
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChartBar, faArrowAltCircleUp, faAddressBook, faBookmark } from "@fortawesome/free-regular-svg-icons";
-import { useState, useEffect } from "react";
-import AcraLogo from '../../public/AcraLogo.png';
+import { useState } from "react";
+import AcraLogo from '../public/AcraLogo.png';
 import Image from "next/image";
-import StrapiClient from "../../client";
-export default function SideBar ({ children }) {
-
-    const menuItems = [
-        {
-            menuTitle: 'Dashboard',
-            icon: faChartBar,
-            href: '/dashboard'
-        },
-        {
-            menuTitle: 'Condition Upload',
-            icon: faArrowAltCircleUp,
-            href: '/conditions' 
-        },
-        {
-            menuTitle: 'Forms & Requests',
-            icon: faAddressBook,
-            href: '/forms'
-        },
-        {
-            menuTitle: 'Loan Processor Tips',
-            icon: faBookmark,
-            href: '/processor-tips'
-        }
-    ];
-
+export default function SideBar ({ props }) {
+    console.log(props);
     const [isMobile, setMobile] = useState(false);
-    const [isActive, setIsActive] = useState(menuItems[0].menuTitle);
+    const [isActive, setIsActive] = useState(props.data[0].attributes.menuTitle);
     
     const handleToggle = () => {
         setMobile(!isMobile);
     }
     
-    
+    console.log(isActive)
     
     const sideBarDeskTopClassNames = 'h-screen min-w-fit bg-white w-64 z-10 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out border-r shadow-md';
     const sideBarMobileClassNames = 'bg-white w-64 z-10 absolute inset-y-0 left-0 transform md:relative md:translate-x-0 transition duration-200 ease-in-out border-r shadow-md';
@@ -59,15 +33,17 @@ export default function SideBar ({ children }) {
             </div>
             <div className={isMobile ? sideBarMobileClassNames : sideBarDeskTopClassNames}>
                 <nav>
-                {menuItems.map((item, key) => (
-                    <Link href={item.href} key={key} >
+                {props.data?.map((item, key) => (
+                    <Link href={item.attributes.slug} key={key} >
                     <a className="text-lg font-medium ">
                     <li 
-                    className={isActive === item.menuTitle ? "flex items-center gap-3 bg-[#0033A1] text-white p-3 rounded" : "flex items-center gap-3 p-3 rounded"} 
-                    onClick={() => {setIsActive(item.menuTitle); handleToggle();}}
+                    className={isActive === item.attributes.menuTitle ? "flex items-center gap-3 bg-[#0033A1] text-white p-3 rounded" : "flex items-center gap-3 p-3 rounded"} 
+                    onClick={() => {setIsActive(item.attributes.menuTitle); handleToggle();}}
                     >
-                        <FontAwesomeIcon icon={item.icon}/>
-                        {item.menuTitle}
+                        {/* <img>
+                            {item.attributes.icon}
+                        </img> */}
+                        {item.attributes.menuTitle}
                     </li>
                     </a>
                 </Link>

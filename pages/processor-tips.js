@@ -5,9 +5,8 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { useState } from 'react';
-import SideBar from './components/SideBar';
-function processorTips({message}) {
-    console.log(message)
+import SideBar from './SideBar';
+function processorTips({menuItems}) {
     const [value, setValue] = useState('1');
 
     const handleChange = (event, newValue) => {
@@ -16,7 +15,7 @@ function processorTips({message}) {
 
     return (
     <div className='md:flex'>
-      <SideBar />
+      <SideBar props={menuItems}/>
       <div className="flex-1 p-10 text-2xl font-bold bg-slate-50">
         <div className="relative rounded-xl overflow-auto">
           <table className="border-collapse table-auto w-full text-sm">
@@ -189,9 +188,11 @@ function processorTips({message}) {
   );
 }
 
-export function getServerSideProps(context) {
+export async function getServerSideProps(context) {
+  const response = await fetch('http://localhost:1337/api/acra-broker-portal-menu-items')
+  const data = await response.json()
   return {
-    props: { message: "Welcome to the About Page" },
+      props: { menuItems: data },
   };
 }
 
