@@ -16,7 +16,7 @@ function processorTips({menuItems}) {
     return (
     <div className='md:flex'>
       <SideBar props={menuItems}/>
-      <div className="flex-1 p-10 text-2xl font-bold bg-slate-50">
+      <div className="flex-1 p-10 text-2xl font-bold bg-slate-50 md:w-2/3">
         <div className="relative rounded-xl overflow-auto">
           <table className="border-collapse table-auto w-full text-sm">
             <thead>
@@ -67,7 +67,6 @@ function processorTips({menuItems}) {
                     Lake Forest, CA 92630<br></br>
                     Loan #:
                   </p>
-        </div>
         <Box sx={{ width: '100%', typography: 'body1' }}>
         <TabContext value={value}>
           <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
@@ -183,6 +182,7 @@ function processorTips({menuItems}) {
           </TabPanel>
         </TabContext>
       </Box>
+  </div>
   </div>
 </div>
   );

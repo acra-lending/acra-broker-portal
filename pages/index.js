@@ -1,6 +1,5 @@
 import SideBar from "./SideBar"
 export default function Home({menuItems}) {
-  console.log(menuItems)
   return (
     <div className="bg-slate-50 h-screen">
       <SideBar 

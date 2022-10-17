@@ -5,7 +5,6 @@ import NavBar from './components/NavBar';
 config.autoAddCss = false
 
 function MyApp({ Component, pageProps }) {
-  console.log(pageProps)
   return (
     <>
       <NavBar />
