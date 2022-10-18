@@ -1,7 +1,6 @@
 import SideBar from "../components/SideBar";
 
 function formsTable({menuItems}) {
-    console.log(menuItems)
     return (
         <div className="md:flex">
             <SideBar props={menuItems}/>

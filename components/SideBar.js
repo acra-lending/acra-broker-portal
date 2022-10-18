@@ -3,7 +3,7 @@ import { useState } from "react";
 import AcraLogo from '../public/AcraLogo.png';
 import Image from "next/image";
 import { useRouter } from "next/router";
-
+import SVG from 'react-inlinesvg';
 export default function SideBar ({ props }) {
     // console.log(props)
     /**
