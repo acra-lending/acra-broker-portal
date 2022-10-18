@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import SVG from 'react-inlinesvg';
 export default function SideBar ({ props }) {
+    // console.log(props)
     /**
      * hooks used for the following:
      *  isMobile - changes class names depending on whether user is using mobile or desktop screen
@@ -29,13 +30,8 @@ export default function SideBar ({ props }) {
 
     return (
         <>
-            <div className="text-black flex justify-between md:hidden p-3 items-center ">
-            <Image
-                src={AcraLogo}
-                height={50}
-                width={256}
-                className="p-52"
-                />
+            
+            <div className="flex justify-end flex-row bg-slate-700 md:hidden p-3">
                 <button className="p-4" onClick={handleToggle}>
                     <svg className="h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -44,32 +40,44 @@ export default function SideBar ({ props }) {
             </div>
             <div className={isMobile ? sideBarMobileClassNames : sideBarDeskTopClassNames}>
                 <nav>
-                {props?.data.map((item, key) => (
-                    <Link href={item.attributes.slug} key={key} >
-                    <a className="text-lg font-medium ">
-                    <li 
-                    className={router.pathname === item.attributes.slug ? activeTabClassNames : tabClassNames} 
-                    onClick={() => {setIsActive(item.attributes.menuTitle); handleToggle();}}
-                    >
-                        <SVG 
-                            src={item.attributes.icon}
-                            width={25}
-                            height="auto" 
-                        />
-                        {item.attributes.menuTitle}
-                    </li>
-                    </a>
-                </Link>
-            ))}
-                <Link href="/sign-out">
-                    <a className="text-lg font-medium sm:hidden">
-                        <li 
-                            className={"flex items-center gap-3 p-3 rounded"} 
+                    <div>
+                        <img 
+                            src="/AcraLogo.png" 
+                            style={{ 
+                                width: 'auto', 
+                                height: '50px', 
+                                padding: '10px'}}
+                            />
+                    </div>
+                    <div>
+                        {props?.data.map((item, key) => (
+                            <Link href={item.attributes.slug} key={key} >
+                            <a className="text-lg font-medium ">
+                                <li 
+                                    className={router.pathname === item.attributes.slug ? activeTabClassNames : tabClassNames} 
+                                    onClick={() => {setIsActive(item.attributes.menuTitle); handleToggle();}}
+                                >
+                                    {/* <svg>
+                                        {item.attributes.icon}
+                                    </svg> */}
+                                    {/* <img src={`data:image/svg+xml;utf8,${btoa(unescape(encodeURIComponent(item.attributes.icon)))}`} /> */}
+                                    {item.attributes.menuTitle}
+                                </li>
+                            </a>
+                        </Link>
+                    ))}
+                </div>
+                <div>
+                    <Link href="/sign-out">
+                        <a className="text-lg font-medium sm:hidden">
+                            <li 
+                                className={"flex items-center gap-3 p-3 rounded"} 
                             >
-                            Sign Out
-                        </li>
-                    </a>
-                </Link>
+                                Sign Out
+                            </li>
+                        </a>
+                    </Link>
+                </div>
                 </nav>
             </div>
         </>
