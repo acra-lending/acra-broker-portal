@@ -10,7 +10,7 @@ function conditionsUpload({menuItems}) {
     ];
 
     return (
-        <div className="md:flex">
+        <div className="md:flex relative">
 
             <SideBar props={menuItems} />
             <div className="md:flex p-10 md:w-2/3 md:ml-20">
@@ -42,7 +42,7 @@ export async function getServerSideProps(context) {
             {
               "id": 1,
               "attributes": {
-                "slug": "/dashboard",
+                "slug": "/",
                 "menuTitle": "Dashboard"
               }
             },

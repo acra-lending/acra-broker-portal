@@ -2,9 +2,9 @@ import SideBar from "../components/SideBar";
 
 function formsTable({menuItems}) {
     return (
-        <div className="md:flex">
+        <div className="md:flex relative">
             <SideBar props={menuItems}/>
-            <div className="flex-1 p-10 text-2xl font-bold bg-slate-50 md:w-2/3">
+            <div className="flex-1 p-10 text-2xl font-bold bg-slate-50 md:w-2/3 h-screen">
                 <div className="relative rounded-xl overflow-auto">
                     <table className="border-collapse table-auto w-full text-sm">
                         <thead>
@@ -57,7 +57,7 @@ export async function getServerSideProps(context) {
             {
               "id": 1,
               "attributes": {
-                "slug": "/dashboard",
+                "slug": "/",
                 "menuTitle": "Dashboard"
               }
             },
