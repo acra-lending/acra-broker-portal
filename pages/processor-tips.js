@@ -5,7 +5,9 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { useState } from 'react';
-import SideBar from './SideBar';
+import SideBar from '../components/SideBar';
+
+
 function processorTips({menuItems}) {
     const [value, setValue] = useState('1');
 
@@ -189,10 +191,41 @@ function processorTips({menuItems}) {
 }
 
 export async function getServerSideProps(context) {
-  const response = await fetch('http://localhost:1337/api/acra-broker-portal-menu-items')
-  const data = await response.json()
+  // const response = await fetch('http://localhost:1337/api/acra-broker-portal-menu-items')
+  // const data = await response.json()
   return {
-      props: { menuItems: data },
+      props: { menuItems: {
+        "data": [
+          {
+            "id": 1,
+            "attributes": {
+              "slug": "/dashboard",
+              "menuTitle": "Dashboard"
+            }
+          },
+          {
+            "id": 1,
+            "attributes": {
+              "slug": "/conditions",
+              "menuTitle": "Conditions Upload"
+            }
+          },
+          {
+            "id": 1,
+            "attributes": {
+              "slug": "/forms",
+              "menuTitle": "Forms & Requests"
+            }
+          },
+          {
+            "id": 1,
+            "attributes": {
+              "slug": "/processor-tips",
+              "menuTitle": "Loan Processor Tips"
+            }
+          },
+
+      ]} },
   };
 }
 

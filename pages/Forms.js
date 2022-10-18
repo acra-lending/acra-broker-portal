@@ -1,4 +1,5 @@
-import SideBar from "./SideBar";
+import SideBar from "../components/SideBar";
+
 function formsTable({menuItems}) {
     console.log(menuItems)
     return (
@@ -47,11 +48,44 @@ function formsTable({menuItems}) {
     </div>
     )
 }
-export default formsTable;
+
 export async function getServerSideProps(context) {
-    const response = await fetch('http://localhost:1337/api/acra-broker-portal-menu-items')
-    const data = await response.json()
+    // const response = await fetch('http://localhost:1337/api/acra-broker-portal-menu-items')
+    // const data = await response.json()
     return {
-        props: { menuItems: data },
+        props: { menuItems: {
+          "data": [
+            {
+              "id": 1,
+              "attributes": {
+                "slug": "/dashboard",
+                "menuTitle": "Dashboard"
+              }
+            },
+            {
+              "id": 1,
+              "attributes": {
+                "slug": "/conditions",
+                "menuTitle": "Conditions Upload"
+              }
+            },
+            {
+              "id": 1,
+              "attributes": {
+                "slug": "/forms",
+                "menuTitle": "Forms & Requests"
+              }
+            },
+            {
+              "id": 1,
+              "attributes": {
+                "slug": "/processor-tips",
+                "menuTitle": "Loan Processor Tips"
+              }
+            },
+  
+        ]} },
     };
-  }
+}
+
+export default formsTable;
