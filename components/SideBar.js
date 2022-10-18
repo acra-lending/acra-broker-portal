@@ -1,11 +1,8 @@
 import Link from "next/link";
 import { useState } from "react";
-import AcraLogo from '../public/AcraLogo.png';
-import Image from "next/image";
 import { useRouter } from "next/router";
 import SVG from 'react-inlinesvg';
 export default function SideBar ({ props }) {
-    // console.log(props)
     /**
      * hooks used for the following:
      *  isMobile - changes class names depending on whether user is using mobile or desktop screen
@@ -19,7 +16,7 @@ export default function SideBar ({ props }) {
 
     //Classnames for div and tabs
     const sideBarDeskTopClassNames = 'min-h-screen min-w-fit bg-white w-64 z-10 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out border-r shadow-md';
-    const sideBarMobileClassNames = 'h-screen w-64 z-40 bg-white absolute inset-y-0 left-0 transform md:relative md:translate-x-0 transition duration-200 ease-in-out border-r shadow-md';
+    const sideBarMobileClassNames = 'h-screen w-64 z-40 bg-white fixed inset-y-0 left-0 transform md:relative md:translate-x-0 transition duration-200 ease-in-out border-r shadow-md';
     const activeTabClassNames = 'flex items-center gap-3 bg-[#0033A1] text-white p-3 rounded';
     const tabClassNames = 'flex items-center gap-3 p-3 rounded';
    
@@ -27,7 +24,7 @@ export default function SideBar ({ props }) {
     const handleToggle = () => {
         setMobile(!isMobile);
     }
-
+    
     return (
         <>
             
@@ -55,12 +52,8 @@ export default function SideBar ({ props }) {
                             <a className="text-lg font-medium ">
                                 <li 
                                     className={router.pathname === item.attributes.slug ? activeTabClassNames : tabClassNames} 
-                                    
                                 >
-                                    {/* <svg>
-                                        {item.attributes.icon}
-                                    </svg> */}
-                                    {/* <img src={`data:image/svg+xml;utf8,${btoa(unescape(encodeURIComponent(item.attributes.icon)))}`} /> */}
+                                    <SVG src={item.attributes.icon} />
                                     {item.attributes.menuTitle}
                                 </li>
                             </a>
