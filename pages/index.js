@@ -1,13 +1,17 @@
-import SideBar from "./components/SideBar"
-export default function Home() {
+import SideBar from "./SideBar"
+export default function Home({menuItems}) {
   return (
     <div className="bg-slate-50 h-screen">
-      <SideBar />
+      <SideBar 
+        props={menuItems}
+      />
     </div>
   )
 }
-export function getServerSideProps(context) {
+export async function getServerSideProps(context) {
+  const response = await fetch('http://localhost:1337/api/acra-broker-portal-menu-items')
+  const data = await response.json()
   return {
-      props: { message: "Welcome to the About Page" },
+      props: { menuItems: data },
   };
 }

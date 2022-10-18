@@ -1,5 +1,5 @@
-import SideBar from "./components/SideBar";
-function conditionsUpload() {
+import SideBar from "./SideBar";
+function conditionsUpload({menuItems}) {
     const reminderBulletPoints = [
         'Save each condition, individually, as a PDF document',
         'Label each PDF with the number noted on the Conditional Loan Approval',
@@ -8,11 +8,10 @@ function conditionsUpload() {
     ];
 
     return (
-        <>
         <div className="md:flex">
 
-            <SideBar />
-            <div className="md:flex p-5">
+            <SideBar props={menuItems} />
+            <div className="md:flex p-10 md:w-2/3 md:ml-20">
                 <iframe className="md:w-8/12 w-full aspect-video min-h-[510px]" src="https://acralending.com/box-api/box-wholesale-upload.html"></iframe>
                 <div className="md:w-4/12 w-full pt-8 md:pt-0 md:pl-8">
                     <h2 className="font-medium">Reminder:</h2>
@@ -21,12 +20,23 @@ function conditionsUpload() {
                             <li key={key} className="pb-4">{point}</li>
                         ))}
                     </ul>
-                    <h3 className="text-base"><mark>EXAMPLE: If you have 10 conditions, we need 10 LEGIBLE PDF documents</mark></h3>
+                    <h3 className="text-base">
+                        <mark>
+                            EXAMPLE: If you have 10 conditions, we need 10 LEGIBLE PDF documents
+                        </mark>
+                    </h3>
                 </div>
             </div>
         </div>
-        </>
     )
 }
+
+export async function getServerSideProps(context) {
+    const response = await fetch('http://localhost:1337/api/acra-broker-portal-menu-items')
+    const data = await response.json()
+    return {
+        props: { menuItems: data },
+    };
+  }
 
 export default conditionsUpload;
