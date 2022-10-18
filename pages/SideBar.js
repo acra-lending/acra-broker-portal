@@ -3,7 +3,7 @@ import { useState } from "react";
 import AcraLogo from '../public/AcraLogo.png';
 import Image from "next/image";
 import { useRouter } from "next/router";
-
+import SVG from 'react-inlinesvg';
 export default function SideBar ({ props }) {
     /**
      * hooks used for the following:
@@ -51,10 +51,11 @@ export default function SideBar ({ props }) {
                     className={router.pathname === item.attributes.slug ? activeTabClassNames : tabClassNames} 
                     onClick={() => {setIsActive(item.attributes.menuTitle); handleToggle();}}
                     >
-                        {/* <svg>
-                            {item.attributes.icon}
-                        </svg> */}
-                        {/* <img src={`data:image/svg+xml;utf8,${btoa(unescape(encodeURIComponent(item.attributes.icon)))}`} /> */}
+                        <SVG 
+                            src={item.attributes.icon}
+                            width={25}
+                            height="auto" 
+                        />
                         {item.attributes.menuTitle}
                     </li>
                     </a>
