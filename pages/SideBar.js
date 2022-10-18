@@ -54,7 +54,7 @@ export default function SideBar ({ props }) {
                         {/* <svg>
                             {item.attributes.icon}
                         </svg> */}
-                        <img src={`data:image/svg+xml;utf8,${btoa(unescape(encodeURIComponent(item.attributes.icon)))}`} />
+                        {/* <img src={`data:image/svg+xml;utf8,${btoa(unescape(encodeURIComponent(item.attributes.icon)))}`} /> */}
                         {item.attributes.menuTitle}
                     </li>
                     </a>
