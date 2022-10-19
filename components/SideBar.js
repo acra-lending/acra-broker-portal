@@ -53,7 +53,10 @@ export default function SideBar ({ props }) {
                                 <li 
                                     className={router.pathname === item.attributes.slug ? activeTabClassNames : tabClassNames} 
                                 >
-                                    <SVG src={item.attributes.icon} />
+                                    <SVG 
+                                        src={item.attributes.icon} 
+                                        width={30}
+                                    />
                                     {item.attributes.menuTitle}
                                 </li>
                             </a>
