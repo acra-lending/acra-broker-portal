@@ -5,10 +5,11 @@ import DashLinks from "../components/DashLinks";
 
 export default function Home({menuItems}) {
   return (
-    <div className="md:flex static">
+    <div className="md:flex relative">
     <SideBar props={menuItems}/>
         <div className="mx-auto">
-            <DashLinks />
+            {/* <DashLinks /> */}
+            dashboard
         </div>
 </div>
   )
