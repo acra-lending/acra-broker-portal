@@ -49,42 +49,11 @@ function formsTable({menuItems}) {
 }
 
 export async function getServerSideProps(context) {
-    // const response = await fetch('http://localhost:1337/api/acra-broker-portal-menu-items')
-    // const data = await response.json()
-    return {
-        props: { menuItems: {
-          "data": [
-            {
-              "id": 1,
-              "attributes": {
-                "slug": "/",
-                "menuTitle": "Dashboard"
-              }
-            },
-            {
-              "id": 1,
-              "attributes": {
-                "slug": "/conditions",
-                "menuTitle": "Conditions Upload"
-              }
-            },
-            {
-              "id": 1,
-              "attributes": {
-                "slug": "/forms",
-                "menuTitle": "Forms & Requests"
-              }
-            },
-            {
-              "id": 1,
-              "attributes": {
-                "slug": "/processor-tips",
-                "menuTitle": "Loan Processor Tips"
-              }
-            },
-  
-        ]} },
-    };
+  const response = await fetch('http://localhost:1337/api/acra-broker-portal-menu-items')
+  const data = await response.json()
+  return {
+      props: { menuItems: data },
+  };
 }
 
 export default formsTable;
