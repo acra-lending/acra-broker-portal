@@ -38,7 +38,7 @@ function conditionsUpload({menuItems}) {
 }
 
 export async function getServerSideProps(context) {
-    const response = await fetch('http://localhost:1337/api/broker-portal-menu-items')
+    const response = await fetch('https://1532-70-183-23-147.ngrok.io/api/broker-portal-menu-items')
     const data = await response.json()
     return {
         props: { menuItems: data },

@@ -1,8 +1,7 @@
 import SideBar from "../components/SideBar";
 import Navbar from '../components/NavBar'
 
-
-function formsTable({menuItems}) {
+function formsTable({menuItems, formsItems}) {
     return (
         <div className="relative w-full">
             <Navbar />
@@ -19,31 +18,16 @@ function formsTable({menuItems}) {
                             </tr>
                             </thead>
                             <tbody className="bg-white dark:bg-slate-800">
-                            <tr>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">BPO Ordering Policy & Procedure</td>
+                            {formsItems?.data.map((item, key) => (
+                                
+                            <tr key={key}>
+                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">{item.attributes.formTitle}</td>
                                 <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"></td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
+                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">
+                                    <a href={item.attributes.pdfLink} target="_blank">Download</a>
+                                </td>
                             </tr>
-                            <tr>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">Broker Package Addendum</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"></td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                            </tr>
-                            <tr>
-                                <td className="border-b border-slate-200 dark:border-slate-600 p-4 pl-8 text-slate-500 dark:text-slate-400">Rework Request Form</td>
-                                <td className="border-b border-slate-200 dark:border-slate-600 p-4 text-slate-500 dark:text-slate-400"></td>
-                                <td className="border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                            </tr>
-                            <tr>
-                                <td className="border-b border-slate-200 dark:border-slate-600 p-4 pl-8 text-slate-500 dark:text-slate-400">Settlement Agent Fee</td>
-                                <td className="border-b border-slate-200 dark:border-slate-600 p-4 text-slate-500 dark:text-slate-400"></td>
-                                <td className="border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                            </tr>
-                            <tr>
-                                <td className="border-b border-slate-200 dark:border-slate-600 p-4 pl-8 text-slate-500 dark:text-slate-400">Business Purpose Attestation</td>
-                                <td className="border-b border-slate-200 dark:border-slate-600 p-4 text-slate-500 dark:text-slate-400"></td>
-                                <td className="border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                            </tr>
+                            ))}
                             </tbody>
                     </table>
                 </div>
@@ -54,11 +38,17 @@ function formsTable({menuItems}) {
 }
 
 export async function getServerSideProps(context) {
-  const response = await fetch('http://localhost:1337/api/broker-portal-menu-items')
-  const data = await response.json()
-  return {
-      props: { menuItems: data },
-  };
-}
+    const [menuResponse, formsResponse] = await Promise.all([
+      fetch('https://1532-70-183-23-147.ngrok.io/api/broker-portal-menu-items'),
+      fetch('https://1532-70-183-23-147.ngrok.io/api/broker-portal-forms-and-requests-items')
+    ]); 
+  
+      const [menuItems, formsItems] = await Promise.all([
+        menuResponse.json(),
+        formsResponse.json()
+      ]);
+      
+      return { props: { menuItems, formsItems } };
+  }
 
 export default formsTable;
