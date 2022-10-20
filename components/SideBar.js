@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import SVG from 'react-inlinesvg';
 export default function SideBar ({ props }) {
+    console.log(props)
     /**
      * hooks used for the following:
      *  isMobile - changes class names depending on whether user is using mobile or desktop screen
@@ -49,13 +50,13 @@ export default function SideBar ({ props }) {
                     <div>
                         {props?.data.map((item, key) => (
                             <Link href={item.attributes.slug} key={key} >
-                            <a className="text-lg font-medium ">
+                            <a className="text-lg font-normal ">
                                 <li 
                                     className={router.pathname === item.attributes.slug ? activeTabClassNames : tabClassNames} 
                                 >
                                     <SVG 
                                         src={item.attributes.icon} 
-                                        width={30}
+                                        width={25}
                                     />
                                     {item.attributes.menuTitle}
                                 </li>
