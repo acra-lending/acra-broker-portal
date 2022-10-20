@@ -3,28 +3,25 @@ import Image from 'next/image';
 import Sidebar from './SideBar';
 export default function NavBar({props}) {
   return (
-    // <div className="mx-auto mb-1">
-    //   <nav className="font-sans md:flex hidden items-center justify-between text-center sm:flex-row sm:text-left sm:justify-between py-4 px-6 bg-white shadow w-full">
-    //     <div className="mb-2 sm:mb-0">
-    //     <Image
-    //             src={AcraLogo}
-    //             height={50}
-    //             width={256}
-    //         />
-    //     </div>
-    //     <div>
-    //       <a
-    //         href="/one"
-    //         className="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2"
-    //       >
-    //         Sign Out
-    //       </a>
-    //     </div>
-    //   </nav>
-    // </div>
-    
 <>
-    <div className='h-screen flex flex-row justify-start'>
+
+    <div className="absolute left-0 top-0 w-full z-10">
+      <nav className="font-sans md:flex hidden items-center justify-between text-center sm:flex-row sm:text-left sm:justify-between py-4 px-6 bg-white shadow w-full">
+        <div className="mb-2 sm:mb-0">
+        
+        </div>
+        <div>
+          <a
+            href="/one"
+            className="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2"
+          >
+            Sign Out
+          </a>
+        </div>
+      </nav>
+    </div>
+    
+    {/* <div className='h-screen flex flex-row justify-start'>
       <Sidebar props={props}/>
       </div>
 
@@ -37,7 +34,7 @@ export default function NavBar({props}) {
              Sign Out
            </a>
           </div>
-         </div>
+         </div> */}
 </>
   );
 }
