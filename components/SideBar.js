@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import SVG from 'react-inlinesvg';
 export default function SideBar ({ props }) {
-    console.log(props)
     /**
      * hooks used for the following:
      *  isMobile - changes class names depending on whether user is using mobile or desktop screen
