@@ -5,11 +5,16 @@ import DashLinks from "../components/DashLinks";
 
 export default function Home({menuItems, dashboardItems}) {
   return (
+    <div className="relative w-full">
+      <Navbar />
+
     <div className="md:flex static">
       <SideBar props={menuItems}/>
-      <div className="mx-auto">
+
+      <div className="xl:mx-32 lg:mx-24 md:mx-auto pt-32">
          <DashLinks props={dashboardItems}/>
       </div>
+    </div>
     </div>
   )
 }
