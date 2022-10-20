@@ -20,8 +20,8 @@ export default function Home({menuItems, dashboardItems}) {
 }
 export async function getServerSideProps(context) {
   const [menuResponse, dashResponse] = await Promise.all([
-    fetch('http://localhost:1337/api/broker-portal-menu-items'),
-    fetch('http://localhost:1337/api/broker-portal-dashboard-items')
+    fetch('https://1532-70-183-23-147.ngrok.io/api/broker-portal-menu-items'),
+    fetch('https://1532-70-183-23-147.ngrok.io/api/broker-portal-dashboard-items')
   ]); 
 
     const [menuItems, dashboardItems] = await Promise.all([
