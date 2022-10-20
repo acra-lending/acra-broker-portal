@@ -1,7 +1,18 @@
 import SideBar from "../components/SideBar";
 import Navbar from '../components/NavBar'
-
+import { useState } from "react";
+import { fetcher } from "../lib/api";
+import useSWR from "swr";
 function formsTable({menuItems, formsItems}) {
+    const [pageNumber, setPageNumber] = useState(1);
+    const URL = `https://1532-70-183-23-147.ngrok.io/api/broker-portal-forms-and-requests-items?pagination[page]=${pageNumber}&pagination[pageSize]=10`;
+    const { data } = useSWR(URL,
+        fetcher,
+        {
+            fallbackData: formsItems
+        }
+    );
+    console.log(data)
     return (
         <div className="relative w-full">
             <Navbar />
@@ -18,7 +29,7 @@ function formsTable({menuItems, formsItems}) {
                             </tr>
                             </thead>
                             <tbody className="bg-white dark:bg-slate-800">
-                            {formsItems?.data.map((item, key) => (
+                            {data.data.map((item, key) => (
                                 
                             <tr key={key}>
                                 <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">{item.attributes.formTitle}</td>
@@ -30,6 +41,29 @@ function formsTable({menuItems, formsItems}) {
                             ))}
                             </tbody>
                     </table>
+                    <div className="flex justify-center mt-4 gap-4">
+                        <button
+                        className={`inline-flex items-center py-2 px-4 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white ${
+                            pageNumber === 1 ? 'bg-gray-300' : 'bg-white'
+                        }`}
+                        disabled={pageNumber === 1}
+                        onClick={() => setPageNumber(pageNumber - 1)}
+                        >
+                        {' '}
+                        Previous
+                        </button>
+                        <button
+                        className={`inline-flex items-center py-2 px-4 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white ${
+                            pageNumber === (data && data.meta.pagination.pageCount)
+                            ? 'bg-gray-300'
+                            : 'bg-white'
+                        }`}
+                        disabled={pageNumber === (data && data.meta.pagination.pageCount)}
+                        onClick={() => setPageNumber(pageNumber + 1)}
+                        >
+                        Next
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -37,10 +71,10 @@ function formsTable({menuItems, formsItems}) {
     )
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
     const [menuResponse, formsResponse] = await Promise.all([
       fetch('https://1532-70-183-23-147.ngrok.io/api/broker-portal-menu-items'),
-      fetch('https://1532-70-183-23-147.ngrok.io/api/broker-portal-forms-and-requests-items')
+      fetch(`https://1532-70-183-23-147.ngrok.io/api/broker-portal-forms-and-requests-items?pagination[page]=1&pagination[pageSize]=10`)
     ]); 
   
       const [menuItems, formsItems] = await Promise.all([
