@@ -8,8 +8,8 @@ export default function Home({menuItems}) {
     <div className="md:flex static">
     <SideBar props={menuItems}/>
         <div className="mx-auto">
-            {/* <DashLinks /> */}
-            dashboard
+            <DashLinks />
+            {/* dashboard */}
         </div>
 </div>
   )
