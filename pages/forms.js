@@ -49,7 +49,7 @@ function formsTable({menuItems}) {
 }
 
 export async function getServerSideProps(context) {
-  const response = await fetch('http://localhost:1337/api/acra-broker-portal-menu-items')
+  const response = await fetch('http://localhost:1337/api/broker-portal-menu-items')
   const data = await response.json()
   return {
       props: { menuItems: data },
