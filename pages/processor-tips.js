@@ -7,21 +7,23 @@ import TabPanel from '@mui/lab/TabPanel';
 import { useState } from 'react';
 import SideBar from '../components/SideBar';
 import Navbar from '../components/NavBar'
+import formatPhoneNumber from '../lib/phoneFormatter.js';
+import Link from 'next/link';
 
 
-
-function processorTips({menuItems}) {
+function processorTips({menuItems, contactPoints, processorTipsItems}) {
     const [value, setValue] = useState('1');
-
+    console.log(processorTipsItems)
     const handleChange = (event, newValue) => {
       setValue(newValue);
     };
-
+    // console.log(process.env.PDF_BASE_URL);
+    // console.log(process.env.BASE_URL);
     return (
       <div className="relative w-full">
       <Navbar />
         <div className='md:flex relative'>
-          <SideBar props={menuItems}/>
+          <SideBar props={menuItems} />
           <div className="flex-1 p-10 text-2xl font-bold bg-slate-50 md:w-2/3 pt-32">
             <div className="relative rounded-xl overflow-auto">
               <table className="border-collapse table-auto w-full text-sm">
@@ -36,34 +38,25 @@ function processorTips({menuItems}) {
                   </tr>
                 </thead>
                 <tbody className="bg-white dark:bg-slate-800">
-                  <tr>
+                  {contactPoints?.data.map(item => (
+                  <tr key={item.id}>
                     <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                      Trisa Nelson
+                      {item.attributes.contactName}
                     </td>
                     <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
-                      Director Of Operations
+                    {item.attributes.position}
                     </td>
                     <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">
-                      xxx-xxx-xxxx
+                      <a href={'tel:' + item.attributes.phoneNumber}>
+                        {formatPhoneNumber(item.attributes.phoneNumber)}
+                      </a>
+                      {' ' + item.attributes.ext}
                     </td>
                     <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">
-                      email@email.com
+                    {item.attributes.email}
                     </td>
                   </tr>
-                  <tr>
-                    <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                      Trisa Nelson
-                    </td>
-                    <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
-                      Director Of Operations
-                    </td>
-                    <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">
-                      xxx-xxx-xxxx
-                    </td>
-                    <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">
-                      email@email.com
-                    </td>
-                  </tr>
+                  ))}
                 </tbody>
               </table>
               <p className='text-slate-500 dark:text-slate-400 text-base pl-8 pt-8 pb-8'>
@@ -92,81 +85,25 @@ function processorTips({menuItems}) {
                     </tr>
                     </thead>
                     <tbody className="bg-white dark:bg-slate-800">
-                    <tr>
-                        <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">Wet Dry States</td>
+              {processorTipsItems?.data.map(item => (
+                item.attributes.category === 'File Flow' && (
+                <tr key={item.id}>
+                        <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">{item.attributes.formTitle}</td>
                         <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"></td>
-                        <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
+                        <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">
+                          <a 
+                            target="_blank"
+                            href={`https://b71a-107-194-134-60.ngrok.io${item.attributes.pdf.data[0].attributes.url}`}
+                          >
+
+                            Download
+                            </a>
+                         
+                        </td>
                     </tr>
-                    <tr>
-                        <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">Document Expiration Dates</td>
-                        <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"></td>
-                        <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                    </tr>
-                    <tr>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pl-8 text-slate-500 dark:text-slate-400">TRID Calendar</td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 text-slate-500 dark:text-slate-400"></td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                    </tr>
-                    <tr>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pl-8 text-slate-500 dark:text-slate-400">Pre-Screen Process</td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 text-slate-500 dark:text-slate-400"></td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                    </tr>
-                    <tr>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pl-8 text-slate-500 dark:text-slate-400">4506-C Instructions</td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 text-slate-500 dark:text-slate-400"></td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                    </tr>
-                    <tr>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pl-8 text-slate-500 dark:text-slate-400">4506-C Instructions</td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 text-slate-500 dark:text-slate-400"></td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                    </tr>
-                    <tr>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pl-8 text-slate-500 dark:text-slate-400">4506-C Instructions</td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 text-slate-500 dark:text-slate-400"></td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                    </tr>
-                    <tr>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pl-8 text-slate-500 dark:text-slate-400">4506-C Instructions</td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 text-slate-500 dark:text-slate-400"></td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                    </tr>
-                    <tr>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pl-8 text-slate-500 dark:text-slate-400">4506-C Instructions</td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 text-slate-500 dark:text-slate-400"></td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                    </tr>
-                    <tr>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pl-8 text-slate-500 dark:text-slate-400">4506-C Instructions</td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 text-slate-500 dark:text-slate-400"></td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                    </tr>
-                    <tr>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pl-8 text-slate-500 dark:text-slate-400">4506-C Instructions</td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 text-slate-500 dark:text-slate-400"></td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                    </tr>
-                    <tr>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pl-8 text-slate-500 dark:text-slate-400">4506-C Instructions</td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 text-slate-500 dark:text-slate-400"></td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                    </tr>
-                    <tr>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pl-8 text-slate-500 dark:text-slate-400">4506-C Instructions</td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 text-slate-500 dark:text-slate-400"></td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                    </tr>
-                    <tr>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pl-8 text-slate-500 dark:text-slate-400">4506-C Instructions</td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 text-slate-500 dark:text-slate-400"></td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                    </tr>
-                    <tr>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pl-8 text-slate-500 dark:text-slate-400">4506-C Instructions</td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 text-slate-500 dark:text-slate-400"></td>
-                        <td className="border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                    </tr>
+                )
+              ))}
+                   
                     </tbody>
                 </table>
               </TabPanel>
@@ -245,12 +182,27 @@ function processorTips({menuItems}) {
   );
 }
 
-export async function getServerSideProps(context) {
-  const response = await fetch(`${process.env.BASE_URL}/broker-portal-menu-items`)
-    const data = await response.json()
-    return {
-        props: { menuItems: data },
-    };
+// export async function getServerSideProps(context) {
+//   const [response] = await fetch(`${process.env.BASE_URL}/broker-portal-menu-items`)
+//     const data = await response.json()
+//     return {
+//         props: { menuItems: data },
+//     };
+// }
+export async function getServerSideProps() {
+  const [menuResponse, contactPointsResponse, processorTipsItemsResponse] = await Promise.all([
+    fetch(`${process.env.BASE_URL}/broker-portal-menu-items`),
+    fetch(`${process.env.BASE_URL}/broker-portal-processor-tips-contacts`),
+    fetch(`${process.env.BASE_URL}/broker-portal-processor-tips-items?populate=*`)
+  ]); 
+
+    const [menuItems, contactPoints, processorTipsItems] = await Promise.all([
+      menuResponse.json(),
+      contactPointsResponse.json(),
+      processorTipsItemsResponse.json()
+    ]);
+    
+    return { props: { menuItems, contactPoints, processorTipsItems } };
 }
 
 

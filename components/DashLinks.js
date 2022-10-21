@@ -9,7 +9,7 @@ function DashLinks ({ props }) {
                     href={item.attributes.link}
                 >
                     <a target='_blank'>
-                        <div className="flex items-center justify-center gap-3 cursor-pointer break-normal font-medium text-lg p-6 bg-white border-1 rounded-xl drop-shadow-lg">
+                        <div className="flex items-center justify-center hover:scale-105 gap-3 cursor-pointer break-normal font-medium text-lg p-6 bg-white border-1 rounded-xl drop-shadow-lg">
                             <SVG 
                                 src={item.attributes.icon}
                                 width={35}
