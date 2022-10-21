@@ -1,7 +1,7 @@
 import SideBar from "../components/SideBar"
 import Navbar from '../components/NavBar'
 import DashLinks from "../components/DashLinks";
-
+// require('dotenv').config('../.env');
 
 export default function Home({menuItems, dashboardItems}) {
   return (
@@ -20,14 +20,15 @@ export default function Home({menuItems, dashboardItems}) {
 }
 export async function getServerSideProps(context) {
   const [menuResponse, dashResponse] = await Promise.all([
-    fetch('https://1532-70-183-23-147.ngrok.io/api/broker-portal-menu-items'),
-    fetch('https://1532-70-183-23-147.ngrok.io/api/broker-portal-dashboard-items')
+    fetch(`${process.env.BASE_URL}/broker-portal-menu-items`),
+    fetch(`${process.env.BASE_URL}/broker-portal-dashboard-items`)
   ]); 
 
     const [menuItems, dashboardItems] = await Promise.all([
       menuResponse.json(),
       dashResponse.json()
     ]);
+    console.log(menuItems)
     
     return { props: { menuItems, dashboardItems } };
 }

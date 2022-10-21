@@ -17,7 +17,7 @@ function conditionsUpload({menuItems}) {
             <div className="md:flex relative">
                 <SideBar props={menuItems} />
                 <div className="md:flex p-10 md:w-2/3 md:ml-20 pt-32">
-                    <iframe className="md:w-8/12 w-full aspect-video min-h-[510px]" src="https://acralending.com/box-api/box-wholesale-upload.html"></iframe>
+                    <iframe className="md:w-8/12 w-full aspect-video min-h-[510px]" src="https://acralending.com/box-api/box-wholesale-conditions-upload.html"></iframe>
                     <div className="md:w-4/12 w-full pt-8 md:pt-0 md:pl-8">
                         <h2 className="font-medium">Reminder:</h2>
                         <ul className="font-normal text-base mt-2 list-disc">
@@ -38,7 +38,7 @@ function conditionsUpload({menuItems}) {
 }
 
 export async function getServerSideProps(context) {
-    const response = await fetch('https://1532-70-183-23-147.ngrok.io/api/broker-portal-menu-items')
+    const response = await fetch(`${process.env.BASE_URL}/broker-portal-menu-items`)
     const data = await response.json()
     return {
         props: { menuItems: data },

@@ -5,14 +5,13 @@ import { fetcher } from "../lib/api";
 import useSWR from "swr";
 function formsTable({menuItems, formsItems}) {
     const [pageNumber, setPageNumber] = useState(1);
-    const URL = `https://1532-70-183-23-147.ngrok.io/api/broker-portal-forms-and-requests-items?pagination[page]=${pageNumber}&pagination[pageSize]=10`;
+    const URL = `https://4455-107-194-134-60.ngrok.io/api/broker-portal-forms-and-requests-items?pagination[page]=${pageNumber}&pagination[pageSize]=10`;
     const { data } = useSWR(URL,
         fetcher,
         {
             fallbackData: formsItems
         }
     );
-    console.log(data)
     return (
         <div className="relative w-full">
             <Navbar />
@@ -73,8 +72,8 @@ function formsTable({menuItems, formsItems}) {
 
 export async function getServerSideProps() {
     const [menuResponse, formsResponse] = await Promise.all([
-      fetch('https://1532-70-183-23-147.ngrok.io/api/broker-portal-menu-items'),
-      fetch(`https://1532-70-183-23-147.ngrok.io/api/broker-portal-forms-and-requests-items?pagination[page]=1&pagination[pageSize]=10`)
+      fetch(`${process.env.BASE_URL}/broker-portal-menu-items`),
+      fetch(`${process.env.BASE_URL}/broker-portal-forms-and-requests-items?pagination[page]=1&pagination[pageSize]=10`)
     ]); 
   
       const [menuItems, formsItems] = await Promise.all([
