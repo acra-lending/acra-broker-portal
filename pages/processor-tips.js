@@ -66,7 +66,7 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
             <TabContext value={value}>
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <TabList onChange={handleChange} aria-label="lab API tabs example">
-                  <Tab label="File Flows" value="1" />
+                  <Tab label="File Flow" value="1" />
                   <Tab label="Underwriting" value="2" />
                   <Tab label="CD/Closing" value="3" />
                 </TabList>
