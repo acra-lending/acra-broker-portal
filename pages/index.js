@@ -1,6 +1,7 @@
 import SideBar from "../components/SideBar"
 import Navbar from '../components/NavBar'
 import DashLinks from "../components/DashLinks";
+// import UsefulLinks from "../components/UsefulLinks";
 // require('dotenv').config('../.env');
 
 export default function Home({menuItems, dashboardItems}) {
@@ -13,6 +14,9 @@ export default function Home({menuItems, dashboardItems}) {
 
       <div className="xl:mx-32 lg:mx-24 md:mx-auto pt-32">
          <DashLinks props={dashboardItems}/>
+        {/* <div>
+          <UsefulLinks />
+        </div> */}
       </div>
     </div>
     </div>
