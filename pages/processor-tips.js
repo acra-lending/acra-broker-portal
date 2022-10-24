@@ -90,6 +90,7 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                           <a 
                             target="_blank"
                             href={`https://068c-107-194-134-60.ngrok.io${item.attributes.pdf.data[0].attributes.url}`}
+                            className="hover:underline"
                           >
                             Download
                             </a>
@@ -121,6 +122,7 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                               <a 
                                 target="_blank"
                                 href={`https://068c-107-194-134-60.ngrok.io${item.attributes.pdf.data[0].attributes.url}`}
+                                className="hover:underline"
                               >
                                  Download
                               </a>
@@ -151,6 +153,7 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                               <a 
                                 target="_blank"
                                 href={`https://068c-107-194-134-60.ngrok.io${item.attributes.pdf.data[0].attributes.url}`}
+                                className="hover:underline"
                               >
                                 Download
                               </a>
