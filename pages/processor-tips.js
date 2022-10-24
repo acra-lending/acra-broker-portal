@@ -8,17 +8,13 @@ import { useState } from 'react';
 import SideBar from '../components/SideBar';
 import Navbar from '../components/NavBar'
 import formatPhoneNumber from '../lib/phoneFormatter.js';
-import Link from 'next/link';
-
 
 function processorTips({menuItems, contactPoints, processorTipsItems}) {
     const [value, setValue] = useState('1');
-    console.log(processorTipsItems)
     const handleChange = (event, newValue) => {
       setValue(newValue);
     };
-    // console.log(process.env.PDF_BASE_URL);
-    // console.log(process.env.BASE_URL);
+
     return (
       <div className="relative w-full">
       <Navbar />
@@ -93,9 +89,8 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                         <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">
                           <a 
                             target="_blank"
-                            href={`https://b71a-107-194-134-60.ngrok.io${item.attributes.pdf.data[0].attributes.url}`}
+                            href={`https://068c-107-194-134-60.ngrok.io${item.attributes.pdf.data[0].attributes.url}`}
                           >
-
                             Download
                             </a>
                          
@@ -117,31 +112,23 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                   </tr>
                   </thead>
                   <tbody className="bg-white dark:bg-slate-800">
-                  <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">Cond 4503 Vetting Training</td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"></td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                  </tr>
-                  <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">Vetting Review</td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"></td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                  </tr>
-                  <tr>
-                      <td className="border-b border-slate-200 dark:border-slate-600 p-4 pl-8 text-slate-500 dark:text-slate-400">Cond 4503 - Secure Insight Registration</td>
-                      <td className="border-b border-slate-200 dark:border-slate-600 p-4 text-slate-500 dark:text-slate-400"></td>
-                      <td className="border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                  </tr>
-                  <tr>
-                      <td className="border-b border-slate-200 dark:border-slate-600 p-4 pl-8 text-slate-500 dark:text-slate-400">Secure Insights - Acra's Agents List</td>
-                      <td className="border-b border-slate-200 dark:border-slate-600 p-4 text-slate-500 dark:text-slate-400"></td>
-                      <td className="border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                  </tr>
-                  <tr>
-                      <td className="border-b border-slate-200 dark:border-slate-600 p-4 pl-8 text-slate-500 dark:text-slate-400">Interest Only Calculator</td>
-                      <td className="border-b border-slate-200 dark:border-slate-600 p-4 text-slate-500 dark:text-slate-400"></td>
-                      <td className="border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                  </tr>
+                    {processorTipsItems?.data.map(item => (
+                      item.attributes.category === 'Underwriting' && (
+                        <tr key={item.id}>
+                            <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">{item.attributes.formTitle}</td>
+                            <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"></td>
+                            <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">
+                              <a 
+                                target="_blank"
+                                href={`https://068c-107-194-134-60.ngrok.io${item.attributes.pdf.data[0].attributes.url}`}
+                              >
+                                 Download
+                              </a>
+                            </td>
+                        </tr>
+                      )
+                    ))}
+                  
                   </tbody>
               </table>
               </TabPanel>
@@ -155,21 +142,22 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                   </tr>
                   </thead>
                   <tbody className="bg-white dark:bg-slate-800">
-                  <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">Taxing Nuances</td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"></td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                  </tr>
-                  <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">Subject Property FAQ Feb 2019</td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"></td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                  </tr>
-                  <tr>
-                      <td className="border-b border-slate-200 dark:border-slate-600 p-4 pl-8 text-slate-500 dark:text-slate-400">Seller Credit Apr 2019</td>
-                      <td className="border-b border-slate-200 dark:border-slate-600 p-4 text-slate-500 dark:text-slate-400"></td>
-                      <td className="border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400">Download</td>
-                  </tr>
+                    {processorTipsItems?.data.map(item => (
+                      item.attributes.category === 'Closing' && (
+                        <tr key={item.id}>
+                            <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">{item.attributes.formTitle}</td>
+                            <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"></td>
+                            <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">
+                              <a 
+                                target="_blank"
+                                href={`https://068c-107-194-134-60.ngrok.io${item.attributes.pdf.data[0].attributes.url}`}
+                              >
+                                Download
+                              </a>
+                            </td>
+                        </tr>
+                      )
+                    ))}
                   </tbody>
               </table>
               </TabPanel>
