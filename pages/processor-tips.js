@@ -72,7 +72,7 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                 </TabList>
               </Box>
               <TabPanel value="1">
-                <table className="border-collapse table-auto w-full text-sm">
+                <table className="border-collapse table-auto w-full text-sm font-sans">
                     <thead>
                     <tr>
                         <th className="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">Filename</th>
@@ -86,11 +86,11 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                 <tr key={item.id}>
                         <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">{item.attributes.formTitle}</td>
                         <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"></td>
-                        <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">
+                        <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400 pl-0">
                           <a 
                             target="_blank"
                             href={`https://068c-107-194-134-60.ngrok.io${item.attributes.pdf.data[0].attributes.url}`}
-                            className="hover:underline"
+                            className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-semibold hover:text-white py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
                           >
                             Download
                             </a>
@@ -118,11 +118,11 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                         <tr key={item.id}>
                             <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">{item.attributes.formTitle}</td>
                             <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"></td>
-                            <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">
+                            <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400 pl-0">
                               <a 
                                 target="_blank"
                                 href={`https://068c-107-194-134-60.ngrok.io${item.attributes.pdf.data[0].attributes.url}`}
-                                className="hover:underline"
+                                className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-semibold hover:text-white py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
                               >
                                  Download
                               </a>
@@ -149,11 +149,11 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                         <tr key={item.id}>
                             <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">{item.attributes.formTitle}</td>
                             <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"></td>
-                            <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">
+                            <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400 pl-0">
                               <a 
                                 target="_blank"
                                 href={`https://068c-107-194-134-60.ngrok.io${item.attributes.pdf.data[0].attributes.url}`}
-                                className="hover:underline"
+                                className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-semibold hover:text-white py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
                               >
                                 Download
                               </a>

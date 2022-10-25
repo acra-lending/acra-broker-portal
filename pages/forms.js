@@ -17,7 +17,7 @@ function formsTable({menuItems, formsItems}) {
             <Navbar />
             <div className="md:flex relative">
                 <SideBar props={menuItems}/>
-                <div className="flex-1 p-10 text-2xl font-bold bg-slate-50 md:w-2/3 h-screen pt-32" >
+                <div className="flex-1 p-10 text-2xl bg-slate-50 md:w-2/3 h-screen pt-32" >
                     <div className="relative rounded-xl overflow-auto">
                         <table className="border-collapse table-auto w-full text-sm">
                             <thead>
@@ -33,8 +33,13 @@ function formsTable({menuItems, formsItems}) {
                             <tr key={key}>
                                 <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">{item.attributes.formTitle}</td>
                                 <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"></td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">
-                                    <a href={item.attributes.pdfLink} target="_blank">Download</a>
+                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400 pl-0">
+                                    <a 
+                                        href={item.attributes.pdfLink} 
+                                        className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-semibold hover:text-white py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
+                                        target="_blank">
+                                            Download
+                                    </a>
                                 </td>
                             </tr>
                             ))}
