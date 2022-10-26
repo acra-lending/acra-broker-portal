@@ -36,7 +36,7 @@ export default function SideBar ({ props }) {
                 </button>
             </div>
             <div className={isMobile ? sideBarMobileClassNames : sideBarDeskTopClassNames}>
-                <nav>
+                <nav className="pl-1 pr-1 md:min-w-[275px]">
                     <div>
                         <img 
                             src="/AcraLogo.png" 
@@ -49,7 +49,7 @@ export default function SideBar ({ props }) {
                     <div>
                         {props?.data.map((item, key) => (
                             <Link href={item.attributes.slug} key={key} >
-                            <a className="text-lg font-normal ">
+                            <a className={item.attributes.menuTitle !== 'Pre-Screen Request' ? 'text-lg font-medium' : 'hidden'}>
                                 <li 
                                     className={router.pathname === item.attributes.slug ? activeTabClassNames : tabClassNames} 
                                 >
