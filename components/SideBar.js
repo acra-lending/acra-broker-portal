@@ -49,7 +49,7 @@ export default function SideBar ({ props }) {
                     <div>
                         {props?.data.map((item, key) => (
                             <Link href={item.attributes.slug} key={key} >
-                            <a className={item.attributes.menuTitle !== 'Pre-Screen Request' ? 'text-lg font-medium' : 'hidden'}>
+                            <a className='text-lg font-medium'>
                                 <li 
                                     className={router.pathname === item.attributes.slug ? activeTabClassNames : tabClassNames} 
                                 >
