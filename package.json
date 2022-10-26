@@ -20,11 +20,8 @@
     "@mui/lab": "^5.0.0-alpha.103",
     "@mui/material": "^5.10.9",
     "@syncfusion/ej2-react-navigations": "^20.3.49",
-<<<<<<< HEAD
     "bootstrap": "^5.2.2",
     "axios": "^1.1.2",
-=======
->>>>>>> parent of ea90af4 (sellers guide ip. include react-bootstrap to display post json data containing sellers guide content)
     "dotenv": "^16.0.3",
     "formik": "^2.2.9",
     "next": "12.3.1",
