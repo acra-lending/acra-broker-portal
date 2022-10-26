@@ -6,8 +6,9 @@ import DashLinks from "../components/DashLinks";
 import UsefulLinks from "../components/UsefulLinks";
 import Login from '../components/Login';
 // require('dotenv').config('../.env');
-// import sellersGuide from "./sellers-guide";
+import sellersGuide from "./sellers-guide";
 export default function Home({menuItems, dashboardItems, useLinksItems}) {
+<<<<<<< HEAD
 
   const [isLogged, setIsLogged] = useState();
 
@@ -52,6 +53,22 @@ export default function Home({menuItems, dashboardItems, useLinksItems}) {
             )}
         </main>
 
+=======
+  return (
+    <div className="relative w-full">
+      <Navbar />
+      <sellersGuide />
+    <div className="md:flex static">
+      <SideBar props={menuItems}/>
+
+      <div className="xl:mx-32 lg:mx-24 md:mx-auto md:pt-32">
+         <DashLinks props={dashboardItems}/>
+        <div>
+          <UsefulLinks props={useLinksItems}/>
+        </div>
+      </div>
+    </div>
+>>>>>>> parent of ea90af4 (sellers guide ip. include react-bootstrap to display post json data containing sellers guide content)
     </div>
   )
 }
