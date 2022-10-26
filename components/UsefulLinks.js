@@ -2,7 +2,7 @@ function UsefulLinks ({ props }) {
     console.log(props)
     return (
         <div className="p-6">
-            <h5 className="text-gray-900 text-xl font-medium mb-2">Usefull Links</h5>
+            <h5 className="text-gray-900 text-xl font-medium mb-2">Useful Links</h5>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {props?.data.map(item => (
                     <a 
