@@ -1,26 +1,58 @@
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router'; 
 import SideBar from "../components/SideBar"
 import Navbar from '../components/NavBar'
 import DashLinks from "../components/DashLinks";
 import UsefulLinks from "../components/UsefulLinks";
+import Login from '../components/Login';
 // require('dotenv').config('../.env');
 // import sellersGuide from "./sellers-guide";
 export default function Home({menuItems, dashboardItems, useLinksItems}) {
-  return (
-    <>
-      <div className="relative w-full">
-        <Navbar />
-      <div className="md:flex static">
-        <SideBar props={menuItems}/>
 
-        <div className="xl:mx-32 lg:mx-24 md:mx-auto md:pt-32">
-          <DashLinks props={dashboardItems}/>
-          <div>
-            <UsefulLinks props={useLinksItems}/>
-          </div>
-        </div>
-      </div>
-      </div>
-    </>
+  const [isLogged, setIsLogged] = useState();
+
+  useEffect(() => {
+    setIsLogged(!!localStorage.getItem('jwt'));
+  }, []);
+
+  const router = useRouter();
+
+  return (
+    <div className="relative w-full">
+      <Navbar />
+      <main>
+            {isLogged ? (
+              <>
+
+
+                <div className="md:flex static">
+                <SideBar props={menuItems}/>
+                  <div className="xl:mx-32 lg:mx-24 md:mx-auto md:pt-32">
+
+                      <p>Welcome back, <b>{localStorage.username}</b>!</p>
+
+                    <DashLinks props={dashboardItems}/>
+                    <div>
+                      <UsefulLinks props={useLinksItems}/>
+                    </div>
+                  </div>
+                </div>
+              
+              </>
+            ) : (
+              <>
+                <div 
+                  className="xl:mx-32 lg:mx-24 md:mx-auto md:pt-32"
+                >
+                  <p className="text-center">Welcome, please log in.</p>
+                  <p className="pt-5 text-center">If this is your first time logging in since the update, you have to reset your password with "Forgot password"</p>
+                  <Login />
+                </div>
+              </>
+            )}
+        </main>
+
+    </div>
   )
 }
 export async function getServerSideProps(context) {
