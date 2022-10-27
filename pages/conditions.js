@@ -10,7 +10,7 @@ function conditionsUpload({menuItems}) {
         'Avoid uploading password protected documents through the portal',
         'Do not combine multiple conditions into on PDF'
     ];
-
+    console.log(menuItems)
     return (
         <div className="relative w-full">
             <Navbar />
