@@ -5,7 +5,6 @@ import Navbar from '../components/NavBar'
 import DashLinks from "../components/DashLinks";
 import UsefulLinks from "../components/UsefulLinks";
 import Login from '../components/Login';
-// require('dotenv').config('../.env');
 
 export default function Home({menuItems, dashboardItems, useLinksItems}) {
 
@@ -51,10 +50,26 @@ export default function Home({menuItems, dashboardItems, useLinksItems}) {
               </>
             )}
         </main>
-
-    </div>
+      </div>
   )
 }
+  {/* return (
+    <div className="relative w-full">
+      <Navbar />
+      <sellersGuide />
+    <div className="md:flex static">
+      <SideBar props={menuItems}/>
+
+      <div className="xl:mx-32 lg:mx-24 md:mx-auto md:pt-32">
+         <DashLinks props={dashboardItems}/>
+        <div>
+          <UsefulLinks props={useLinksItems}/>
+        </div>
+      </div>
+    </div>
+    </div>
+  )
+} */}
 export async function getServerSideProps(context) {
   const [menuResponse, dashResponse, useLinksResponse] = await Promise.all([
     fetch(`${process.env.BASE_URL}/broker-portal-menu-items`),
