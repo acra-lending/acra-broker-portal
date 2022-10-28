@@ -11,7 +11,7 @@ function sellersGuide ({menuItems}) {
     const handleSelect = (e) => {
         setSelected(e.target.value);
     }
-
+    
     const handleReset = (e) => {
         setSelected('');
     }
@@ -21,7 +21,7 @@ function sellersGuide ({menuItems}) {
             <NavBar />
             <div className='md:flex relative'>
                 <SideBar props={menuItems} />
-                <div className='md:w-1/3 md:mt-[4rem] p-7'>
+                <div className='md:w-1/3 md:mt-[4rem] p-7 pl-4 pr-4'>
                     <select value={selected} onChange={handleSelect} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <option>Filter by Category</option>
                     {postData.Section.map((category, i) => (
@@ -33,7 +33,7 @@ function sellersGuide ({menuItems}) {
                     </button>
 
                 </div>
-                <div className='md:w-2/3 md:mt-[3.9rem]'>
+                <div className='md:w-2/3 md:mt-[3.9rem] pl-4 pr-4'>
                 <Accordion>
                     {postData.Section?.map((Sections, index) => (
                             <Accordion.Item 

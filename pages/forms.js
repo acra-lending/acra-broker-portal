@@ -36,7 +36,7 @@ function formsTable({menuItems, formsItems}) {
                                 <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400 pl-0">
                                     <a 
                                         href={item.attributes.pdfLink} 
-                                        className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-semibold hover:text-white py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
+                                        className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-semibold py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
                                         target="_blank">
                                             Download
                                     </a>

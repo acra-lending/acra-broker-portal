@@ -55,8 +55,7 @@ const Login = () => {
 
     return (
         <>
-
-        <div className="flex flex-col pt-24 justify-center items-center">
+        <div className="flex flex-col pt-16 justify-center items-center">
 
             {alert && (
               
@@ -69,6 +68,17 @@ const Login = () => {
                 />
             </div>
             )}
+            <div className='pb-16 text-center'>
+                <mark>
+                    <strong>
+                        IMPORTANT:&nbsp;
+                    </strong>
+                    <em>
+                        Brokers must log in below to upload loan conditions to your assigned Transaction Manager.
+                    </em>
+                </mark>
+            </div>
+            <div className=' p-8  max-w-md bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 md:p-8'>
 
             <br />
             <Formik
@@ -77,40 +87,40 @@ const Login = () => {
                 onSubmit={(values, {  setSubmitting, resetForm }) => onSubmit(values, { setSubmitting, resetForm })}
             >
             { ({ isSubmitting, isValid }) => (
-                <Form>
-                    <div>
-                        <div><label htmlFor='identifier'>Username or Email</label></div>
-                        <Field type='text' id='identifier' name='identifier' placeholder='' className="rounded w-64" />
-                        <div className='error text-red-500'><ErrorMessage name='identifier' /></div>
-                    </div>
-                    <br />
-                    <div>
-                        <div><label htmlFor='password'>Password</label></div>
-                        <Field type='password' id='password' name='password' placeholder='' className="rounded w-64" />
-                        <div className='error text-red-500'><ErrorMessage name='password' /></div>
-                        <div className="mt-3">
-                            <small>
-                                <Link href='/auth/forgot-password'>
-                                    <a>Forgot password?</a>
-                                </Link>
-                            </small>
+                    <Form className='flex flex-col items-center'>
+                        <div>
+                            <div><label htmlFor='identifier'>Username or Email</label></div>
+                            <Field type='text' id='identifier' name='identifier' placeholder='' className="rounded w-64" />
+                            <div className='error text-red-500'><ErrorMessage name='identifier' /></div>
                         </div>
-                    </div>
-                    <br />
-                    <button 
-                        type='submit'
-                        disabled={!isValid}
-                        className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-semibold hover:text-white py-2 px-4 border border-[#0033A1] hover:border-transparent rounded w-64"
-                    >
-                        {!isSubmitting && 'Login'}
-                        {isSubmitting && 'Loading'}
-                    </button>
+                        <br />
+                        <div>
+                            <div><label htmlFor='password'>Password</label></div>
+                            <Field type='password' id='password' name='password' placeholder='' className="rounded w-64" />
+                            <div className='error text-red-500'><ErrorMessage name='password' /></div>
+                            <div className="mt-3">
+                                <small>
+                                    <Link href='/auth/forgot-password'>
+                                        <a>Forgot password?</a>
+                                    </Link>
+                                </small>
+                            </div>
+                        </div>
+                        <br />
+                        <button 
+                            type='submit'
+                            disabled={!isValid}
+                            className="text-[#0033A1] hover:text-white border border-[#0033A1] hover:bg-[#0033A1] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 w-64"
+                        >
+                            {!isSubmitting && 'Login'}
+                            {isSubmitting && 'Loading'}
+                        </button>
 
-                </Form>
+                    </Form>
             )}
             </Formik>
         </div>
-            
+            </div>
         </>
 
     )
