@@ -12,7 +12,7 @@ function formsTable({menuItems, formsItems}) {
             fallbackData: formsItems
         }
     );
-    console.log(data);
+
     return (
         <div className="relative w-full">
             <Navbar />
