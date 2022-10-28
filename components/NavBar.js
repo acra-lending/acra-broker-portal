@@ -17,7 +17,7 @@ export default function NavBar({props}) {
     <>
 
       <div className="absolute left-0 top-0 w-full z-10">
-        <nav className="flex justify-between font-sans md:flex hidden items-center text-center sm:flex-row sm:text-left py-1.5 px-6 bg-white shadow w-full">
+        <nav className=" justify-between font-sans md:flex hidden items-center text-center sm:flex-row sm:text-left py-1.5 px-6 bg-white shadow w-full">
           <div>
             <Link href="/">
               <a>
