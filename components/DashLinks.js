@@ -2,7 +2,7 @@ import SVG from 'react-inlinesvg';
 import Link from 'next/link';
 function DashLinks ({ props }) {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-3 pt-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-3 pt-4">
             {props?.data.map(item => (
                 <Link
                     key={item.id} 

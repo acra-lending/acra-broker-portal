@@ -90,7 +90,7 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                           <a 
                             target="_blank"
                             href={`https://068c-107-194-134-60.ngrok.io${item.attributes.pdf.data[0].attributes.url}`}
-                            className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-semibold hover:text-white py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
+                            className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-medium  py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
                           >
                             Download
                             </a>
@@ -122,7 +122,7 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                               <a 
                                 target="_blank"
                                 href={`https://068c-107-194-134-60.ngrok.io${item.attributes.pdf.data[0].attributes.url}`}
-                                className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-semibold hover:text-white py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
+                                className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-medium py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
                               >
                                  Download
                               </a>
@@ -153,7 +153,7 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                               <a 
                                 target="_blank"
                                 href={`https://068c-107-194-134-60.ngrok.io${item.attributes.pdf.data[0].attributes.url}`}
-                                className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-semibold hover:text-white py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
+                                className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-medium py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
                               >
                                 Download
                               </a>
@@ -173,13 +173,6 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
   );
 }
 
-// export async function getServerSideProps(context) {
-//   const [response] = await fetch(`${process.env.BASE_URL}/broker-portal-menu-items`)
-//     const data = await response.json()
-//     return {
-//         props: { menuItems: data },
-//     };
-// }
 export async function getServerSideProps() {
   const [menuResponse, contactPointsResponse, processorTipsItemsResponse] = await Promise.all([
     fetch(`${process.env.BASE_URL}/broker-portal-menu-items`),

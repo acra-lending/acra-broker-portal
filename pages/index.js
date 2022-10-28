@@ -26,9 +26,9 @@ export default function Home({menuItems, dashboardItems, useLinksItems}) {
 
                 <div className="md:flex static">
                 <SideBar props={menuItems}/>
-                  <div className="xl:mx-32 lg:mx-24 md:mx-auto md:pt-32">
+                  <div className="mx-auto md:pt-32">
 
-                      <p>Welcome back, <b>{localStorage.username}</b>!</p>
+                      <p className='px-3'>Welcome back, <b>{localStorage.username}</b>!</p>
 
                     <DashLinks props={dashboardItems}/>
                     <div>
