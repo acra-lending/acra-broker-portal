@@ -72,7 +72,7 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                 </TabList>
               </Box>
               <TabPanel value="1">
-                <table className="border-collapse table-auto w-full text-sm font-sans">
+                <table className="border-collapse table-auto w-full text-sm">
                     <thead>
                     <tr>
                         <th className="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left">Filename</th>
@@ -90,7 +90,7 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                           <a 
                             target="_blank"
                             href={`https://068c-107-194-134-60.ngrok.io${item.attributes.pdf.data[0].attributes.url}`}
-                            className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-medium  py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
+                            className="hover:bg-gray-50 text-[#0033A1] font-medium py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
                           >
                             Download
                             </a>
@@ -122,7 +122,7 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                               <a 
                                 target="_blank"
                                 href={`https://068c-107-194-134-60.ngrok.io${item.attributes.pdf.data[0].attributes.url}`}
-                                className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-medium py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
+                                className="hover:bg-gray-50 text-[#0033A1] font-medium py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
                               >
                                  Download
                               </a>
@@ -153,7 +153,7 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                               <a 
                                 target="_blank"
                                 href={`https://068c-107-194-134-60.ngrok.io${item.attributes.pdf.data[0].attributes.url}`}
-                                className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-medium py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
+                                className="hover:bg-gray-50 text-[#0033A1] font-medium py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
                               >
                                 Download
                               </a>

@@ -37,7 +37,7 @@ function formsTable({menuItems, formsItems}) {
                                 <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400 pl-0">
                                     <a 
                                         href={`https://068c-107-194-134-60.ngrok.io${item.attributes?.pdf?.data[0]?.attributes.url}`} 
-                                        className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-semibold py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
+                                        className="hover:bg-gray-50 text-[#0033A1] font-medium py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
                                         target="_blank">
                                             Download
                                     </a>
@@ -46,7 +46,7 @@ function formsTable({menuItems, formsItems}) {
                             ))}
                             </tbody>
                     </table>
-                    <div className="flex justify-center mt-4 gap-4">
+                    <div className="flex justify-center mt-4 gap-4 pb-4">
                         <button
                         className={`inline-flex items-center py-2 px-4 text-sm font-medium text-gray-500 rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white ${
                             pageNumber === 1 ? 'bg-gray-300' : 'bg-white'
