@@ -45,6 +45,11 @@ function sellersGuide ({menuItems}) {
                                 {Sections.Title}
                             </Accordion.Header>
                             <Accordion.Body>
+                            <div>
+                                {Sections?.content?.map((content, i) => (
+                                        <div index={i} dangerouslySetInnerHTML={{__html: content.content}}/>
+                            ))}
+                            </div>
                                 <Accordion>
                             {Sections?.Subsection?.map((subSection, i) => (
                                 <Accordion.Item eventKey={i} key={i}>
