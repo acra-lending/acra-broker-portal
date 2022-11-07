@@ -43,6 +43,6 @@ export async function getServerSideProps(context) {
     return {
         props: { menuItems: data },
     };
-  }
+}
 
 export default conditionsUpload;
