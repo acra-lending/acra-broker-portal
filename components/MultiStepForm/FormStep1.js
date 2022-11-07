@@ -51,7 +51,7 @@ export default function FormStep1(props) {
         </select>
       </div>
       <div className="flex justify-end pt-4">
-        <button className="btn" onClick={next}>
+        <button className="text-white bg-[#0033A1] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2" onClick={next}>
           Next
         </button>
       </div>
