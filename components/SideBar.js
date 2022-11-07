@@ -18,7 +18,7 @@ export default function SideBar ({ props }) {
     const sideBarDeskTopClassNames = 'min-h-screen min-w-fit bg-white w-64 z-10 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out border-r shadow-md';
     const sideBarMobileClassNames = 'h-screen w-64 z-40 bg-white fixed inset-y-0 left-0 transform md:relative md:translate-x-0 transition duration-200 ease-in-out border-r shadow-md';
     const activeTabClassNames = 'flex items-center gap-3 bg-[#0033A1] text-white p-3 rounded';
-    const tabClassNames = 'flex items-center gap-3 p-3 rounded';
+    const tabClassNames = 'flex items-center gap-3 p-3 rounded hover:bg-[#f3f4f6]';
    
     //function to toggle th sidebar close when user taps on a menu item on mobile
     const handleToggle = () => {
@@ -27,7 +27,6 @@ export default function SideBar ({ props }) {
     
     return (
         <>
-            
             <div className="flex justify-end flex-row bg-slate-300 md:hidden p-3">
                 <button className="p-4" onClick={handleToggle}>
                     <svg className="h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -49,7 +48,7 @@ export default function SideBar ({ props }) {
                     <div>
                         {props?.data.map((item, key) => (
                             <Link href={item.attributes.slug} key={key} >
-                            <a className={item.attributes.menuTitle !== 'Pre-Screen Request' ? 'text-lg font-medium' : 'hidden'}>
+                            <a className='text-lg font-medium text-black no-underline'>
                                 <li 
                                     className={router.pathname === item.attributes.slug ? activeTabClassNames : tabClassNames} 
                                 >
@@ -64,8 +63,8 @@ export default function SideBar ({ props }) {
                     ))}
                 </div>
                 <div>
-                    <Link href="/sign-out">
-                        <a className="text-lg font-medium sm:hidden">
+                    <Link href="/auth/logout">
+                        <a className="text-lg font-medium md:hidden">
                             <li 
                                 className={"flex items-center gap-3 p-3 rounded"} 
                             >
@@ -76,7 +75,6 @@ export default function SideBar ({ props }) {
                 </div>
                 </nav>
             </div>
-        </>
-            
+        </>       
     )
 }
