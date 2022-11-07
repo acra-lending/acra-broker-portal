@@ -24,6 +24,7 @@ export default function FormStep2(props) {
         </label>
         <input
           type="text"
+          required
           id="branchId"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
           onChange={handleChange("branchId")}
@@ -39,6 +40,7 @@ export default function FormStep2(props) {
         </label>
         <input
           type="text"
+          required
           id="companyName"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
           onChange={handleChange("companyName")}
@@ -54,6 +56,7 @@ export default function FormStep2(props) {
         </label>
         <input
           type="text"
+          required
           id="contactName"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
           onChange={handleChange("contactName")}
@@ -69,6 +72,7 @@ export default function FormStep2(props) {
         </label>
         <input
           type="text"
+          required
           id="contactPhone"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
           onChange={handleChange("contactPhone")}
@@ -84,6 +88,7 @@ export default function FormStep2(props) {
         </label>
         <input
           type="email"
+          required
           id="contactEmail"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
           onChange={handleChange("contactEmail")}

@@ -36,6 +36,7 @@ export default function FormStep3(props) {
       </label>
         <select
           id="loanType"
+          required
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
           onChange={handleChange("loanType")}
           defaultValue={values.loanType}
@@ -56,6 +57,7 @@ export default function FormStep3(props) {
         </label>
         <input
           type="text"
+          required
           id="borrowerName"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
           onChange={handleChange("borrowerName")}
@@ -71,6 +73,7 @@ export default function FormStep3(props) {
         </label>
         <input
           type="text"
+          required
           id="borrowerAddress"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
           onChange={handleChange("borrowerAddress")}
@@ -86,6 +89,7 @@ export default function FormStep3(props) {
         </label>
         <input
           type="text"
+          required
           id="borrowerBusinessName"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
           onChange={handleChange("borrowerBusinessName")}
@@ -101,6 +105,7 @@ export default function FormStep3(props) {
         </label>
         <input
           type="text"
+          required
           id="businessType"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
           onChange={handleChange("businessType")}
@@ -116,6 +121,7 @@ export default function FormStep3(props) {
         </label>
         <input
           type="text"
+          required
           id="ownership"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
           onChange={handleChange("ownership")}
@@ -130,6 +136,7 @@ export default function FormStep3(props) {
       </label>
         <select
           id="bankStatementType"
+          required
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
           onChange={handleChange("bankStatementType")}
           defaultValue={values.bankStatementType}
@@ -149,6 +156,7 @@ export default function FormStep3(props) {
         </label>
         <textarea
           id="explanation"
+          required
           rows="3"
           cols="40"
           onChange={handleChange("explanation")}

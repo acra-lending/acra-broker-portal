@@ -39,6 +39,7 @@ export default function FormStep4(props) {
         </label>
         <input
           type="text"
+          required
           id="loanAmount"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
           // onChange={handleChange("loanAmount")}
@@ -56,6 +57,7 @@ export default function FormStep4(props) {
         </label>
         <input
           type="text"
+          required
           id="appraisedValue"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
           // onChange={handleChange("appraisedValue")}

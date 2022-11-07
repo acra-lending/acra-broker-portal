@@ -25,6 +25,7 @@ export default function FormStep1(props) {
         <input
           type="text"
           id="brokerId"
+          required
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
           onChange={handleChange("brokerId")}
           defaultValue={values.brokerId}
@@ -39,6 +40,7 @@ export default function FormStep1(props) {
         </label>
         <select
           id="aeSelect"
+          required
           onChange={handleChange("aeSelect")}
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
           defaultValue={values.aeSelect}
