@@ -32,7 +32,7 @@ function preScreenRequest ({ menuItems }) {
         <Navbar />
             <div className="md:flex static">
                 <SideBar props={menuItems}/>
-                    <div className="xl:mx-32 lg:mx-24 md:mx-auto md:pt-32">
+                    <div className="w-[95%] md:w-2/4 mx-auto pt-24 md:pt-36">
                         <MultiStepForm />
                     </div>
             </div>
