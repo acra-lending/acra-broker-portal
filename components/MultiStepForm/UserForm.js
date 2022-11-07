@@ -7,17 +7,16 @@ import FormStep4 from "./FormStep4";
 import Confirm from "./Confirm";
 import Success from "./Success";
 
-const StyledCard = styled.div`
-  background: #fff;
-  padding: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: fit-content;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0.25);
-`;
+// const StyledCard = styled.div`
+// overflow: hidden;
+// padding: 0 0 32px;
+// margin: 48px auto 0;
+// width: 50%;
+// min-height: 300px;
+// font-family: Quicksand, arial, sans-serif;
+// box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0px 40px rgba(0, 0, 0, 0.08);
+// border-radius: 5px;
+// `;
 
 export default function UserForm() {
   const [step, setStep] = useState(1);
@@ -117,5 +116,9 @@ export default function UserForm() {
   };
   console.log(values);
 
-  return <StyledCard>{switchStep()}</StyledCard>;
+  return (
+    <div className="p-10 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100">
+      {switchStep()}
+    </div>
+  );
 }

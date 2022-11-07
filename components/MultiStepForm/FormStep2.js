@@ -14,53 +14,83 @@ export default function FormStep2(props) {
   const { values, handleChange } = props;
   return (
     <>
-      <h1>Broker Details</h1>
+      <h2 className="mb-5">Broker Details</h2>
       <div className="input-field">
-        <label htmlFor="branchId">Branch NMLS ID Number *</label>
+        <label 
+          htmlFor="branchId"
+          className="block mb-2 text-sm font-medium text-gray-900"
+        >
+            Branch NMLS ID Number *
+        </label>
         <input
           type="text"
           id="branchId"
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
           onChange={handleChange("branchId")}
           defaultValue={values.branchId}
         />
       </div>
       <div className="input-field">
-        <label htmlFor="companyName">Company Name *</label>
+        <label 
+          htmlFor="companyName"
+          className="block mb-2 text-sm font-medium text-gray-900"  
+        >
+            Company Name *
+        </label>
         <input
           type="text"
           id="companyName"
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
           onChange={handleChange("companyName")}
           defaultValue={values.companyName}
         />
       </div>
       <div className="input-field">
-        <label htmlFor="contactName">Contact Name *</label>
+        <label 
+          htmlFor="contactName"
+          className="block mb-2 text-sm font-medium text-gray-900"  
+        >
+            Contact Name *
+        </label>
         <input
           type="text"
           id="contactName"
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
           onChange={handleChange("contactName")}
           defaultValue={values.contactName}
         />
       </div>
       <div className="input-field">
-        <label htmlFor="contactPhone">Contact Phone *</label>
+        <label 
+          htmlFor="contactPhone"
+          className="block mb-2 text-sm font-medium text-gray-900"  
+        >
+            Contact Phone *
+        </label>
         <input
           type="text"
           id="contactPhone"
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
           onChange={handleChange("contactPhone")}
           defaultValue={values.contactPhone}
         />
       </div>
       <div className="input-field">
-        <label htmlFor="contactEmail">Contact Email *</label>
+        <label 
+          htmlFor="contactEmail"
+          className="block mb-2 text-sm font-medium text-gray-900"    
+        >
+            Contact Email *
+        </label>
         <input
           type="email"
           id="contactEmail"
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
           onChange={handleChange("contactEmail")}
           defaultValue={values.contactEmail}
         />
       </div>
-      <div>
+      <div className="flex justify-between pt-4">
         <button className="btn" onClick={back}>
           Back
         </button>
