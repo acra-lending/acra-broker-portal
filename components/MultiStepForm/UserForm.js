@@ -1,22 +1,10 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import FormStep1 from "./FormStep1";
 import FormStep2 from "./FormStep2";
 import FormStep3 from "./FormStep3";
 import FormStep4 from "./FormStep4";
 import Confirm from "./Confirm";
 import Success from "./Success";
-
-// const StyledCard = styled.div`
-// overflow: hidden;
-// padding: 0 0 32px;
-// margin: 48px auto 0;
-// width: 50%;
-// min-height: 300px;
-// font-family: Quicksand, arial, sans-serif;
-// box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0px 40px rgba(0, 0, 0, 0.08);
-// border-radius: 5px;
-// `;
 
 export default function UserForm() {
   const [step, setStep] = useState(1);

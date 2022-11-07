@@ -157,10 +157,10 @@ export default function FormStep3(props) {
         ></textarea>
       </div>
       <div className="flex justify-between pt-4">
-        <button className="btn" onClick={back}>
+      <button className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700" onClick={back}>
           Back
         </button>
-        <button className="btn" onClick={next}>
+        <button className="text-white bg-[#0033A1] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2" onClick={next}>
           Next
         </button>
       </div>
