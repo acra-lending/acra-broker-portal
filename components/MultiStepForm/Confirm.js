@@ -77,27 +77,27 @@ export default function Confirm(props) {
 
   return (
     <>
-      <h1>Please confirm and submit</h1>
+      <h2 className="mb-5">Please confirm and submit</h2>
       <br/>
-      <span>Acra Broker ID or NMLS Number: {brokerId}</span>
-      <span>Acra Lending Account Executive: {aeSelect}</span>
-      <span>Branch NMLS ID Number: {branchId}</span>
-      <span>Company Name: {companyName}</span>
-      <span>Contact Name: {contactName}</span>
-      <span>Contact Phone: {contactPhone}</span>
-      <span>Contact Email: {contactEmail}</span>
-      <span>Loan Type: {loanType}</span>
-      <span>Borrower Name: {borrowerName}</span>
-      <span>Borrower's Mailing Address: {borrowerAddress}</span>
-      <span>Borrower's Self-Employment Business Name: {borrowerBusinessName}</span>
-      <span>Type of Business: {businessType}</span>
-      <span>Percentage of Ownership: {ownership}</span>
-      <span>Bank Statement Type: {bankStatementType}</span>
-      <span>Explanation of Non-Business, Payroll Deposits, etc.: {explanation}</span>
-      <span>Loan Amount: {loanAmount}</span>
-      <span>Appraised Value: {appraisedValue}</span>
-      <span>LTV: {ltv}</span>
-      <div>
+      <span className="block">Acra Broker ID or NMLS Number: {brokerId}</span>
+      <span className="block">Acra Lending Account Executive: {aeSelect}</span>
+      <span className="block">Branch NMLS ID Number: {branchId}</span>
+      <span className="block">Company Name: {companyName}</span>
+      <span className="block">Contact Name: {contactName}</span>
+      <span className="block">Contact Phone: {contactPhone}</span>
+      <span className="block">Contact Email: {contactEmail}</span>
+      <span className="block">Loan Type: {loanType}</span>
+      <span className="block">Borrower Name: {borrowerName}</span>
+      <span className="block">Borrower's Mailing Address: {borrowerAddress}</span>
+      <span className="block">Borrower's Self-Employment Business Name: {borrowerBusinessName}</span>
+      <span className="block">Type of Business: {businessType}</span>
+      <span className="block">Percentage of Ownership: {ownership}</span>
+      <span className="block">Bank Statement Type: {bankStatementType}</span>
+      <span className="block">Explanation of Non-Business, Payroll Deposits, etc.: {explanation}</span>
+      <span className="block">Loan Amount: {loanAmount}</span>
+      <span className="block">Appraised Value: {appraisedValue}</span>
+      <span className="block">LTV: {ltv}</span>
+      <div className="flex justify-between pt-4">
         <button className="btn" onClick={back}>
           Back
         </button>
