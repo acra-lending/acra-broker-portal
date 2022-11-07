@@ -27,10 +27,10 @@ const Login = () => {
             .then(response => {
                 console.log(response.data);
                 const jwt = response.data.jwt;
-                const username = response.data.user.username;
+                const firstName = response.data.user.firstName;
 
                 localStorage.setItem('jwt', jwt);
-                localStorage.setItem('username', username);
+                localStorage.setItem('firstName', firstName);
 
                 // push('/');
                 window.location.replace('/');

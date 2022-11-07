@@ -5,7 +5,7 @@ import { fetcher } from "../lib/api";
 import useSWR from "swr";
 function formsTable({menuItems, formsItems}) {
     const [pageNumber, setPageNumber] = useState(1);
-    const URL = `https://068c-107-194-134-60.ngrok.io/api/broker-portal-forms-and-requests-items?pagination[page]=${pageNumber}&pagination[pageSize]=10`;
+    const URL = `https://b6fe-107-194-134-60.ngrok.io/api/broker-portal-forms-and-requests-items?pagination[page]=${pageNumber}&pagination[pageSize]=10`;
     const { data } = useSWR(URL,
         fetcher,
         {
@@ -87,6 +87,6 @@ export async function getServerSideProps() {
       ]);
       
       return { props: { menuItems, formsItems } };
-  }
+}
 
 export default formsTable;

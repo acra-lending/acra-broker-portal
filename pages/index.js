@@ -29,7 +29,7 @@ export default function Home({menuItems, dashboardItems, useLinksItems}) {
                 <SideBar props={menuItems}/>
                   <div className="xl:mx-32 lg:mx-24 md:mx-auto md:pt-32">
 
-                      <p>Welcome back, <b>{localStorage.username}</b>!</p>
+                      <p className="px-3 pb-4">Welcome to your Broker Portal, <b>{localStorage.firstName}</b>!</p>
 
                     <DashLinks props={dashboardItems}/>
                     <div>
