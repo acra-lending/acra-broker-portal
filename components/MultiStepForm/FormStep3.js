@@ -1,9 +1,23 @@
 import React from "react";
-
+import { useState } from "react";
+import validator from "validator";
 export default function FormStep3(props) {
   const next = (e) => {
     e.preventDefault();
-    props.nextStep();
+    if (
+      validator.isEmpty(values.loanType) || 
+      validator.isEmpty(values.borrowerName) ||
+      validator.isEmpty(values.borrowerAddress) || 
+      validator.isEmpty(values.borrowerBusinessName) ||
+      validator.isEmpty(values.businessType) || 
+      validator.isEmpty(values.ownership) || 
+      validator.isEmpty(values.bankStatementType) || 
+      validator.isEmpty(values.explanation)
+      ) {
+        setError(true)
+      } else {
+        props.nextStep();
+    }
   };
 
   const back = (e) => {
@@ -12,6 +26,7 @@ export default function FormStep3(props) {
   };
 
   const { values, handleChange } = props;
+  const [error, setError] = useState(false);
 
   const loanType = [
     'Purchase',
@@ -24,6 +39,9 @@ export default function FormStep3(props) {
     'Personal Bank Statement used for Business Purpose',
   ]
 
+  const inputClass = "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-2";
+  const errorInputClass = "bg-gray-50 border-red-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-2";
+  
   return (
     <>
       <h2 className="mb-5">Borrower Details</h2>
@@ -36,16 +54,27 @@ export default function FormStep3(props) {
       </label>
         <select
           id="loanType"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
+          required
+          className={error ? errorInputClass : inputClass}
           onChange={handleChange("loanType")}
           defaultValue={values.loanType}
         >
           <option value="" disabled>---</option>
-          {loanType.map(loanType => (
-            <option value={loanType}>{loanType}</option>
+          {loanType.map((loanType, i) => (
+            <option 
+              key={i}
+              value={loanType}>
+                {loanType}
+            </option>
 
           ))}
         </select>
+        {error ? (
+          <div className="flex justify-center text-red-500">This field is required</div>
+        ) : (
+          ''
+        )
+      }
       </div>
       <div className="input-field">
         <label 
@@ -56,11 +85,18 @@ export default function FormStep3(props) {
         </label>
         <input
           type="text"
+          required
           id="borrowerName"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
+          className={error ? errorInputClass : inputClass}
           onChange={handleChange("borrowerName")}
           defaultValue={values.borrowerName}
         />
+        {error ? (
+          <div className="flex justify-center text-red-500">This field is required</div>
+        ) : (
+          ''
+        )
+      }
       </div>
       <div className="input-field">
         <label 
@@ -71,11 +107,18 @@ export default function FormStep3(props) {
         </label>
         <input
           type="text"
+          required
           id="borrowerAddress"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
+          className={error ? errorInputClass : inputClass}
           onChange={handleChange("borrowerAddress")}
           defaultValue={values.borrowerAddress}
         />
+        {error ? (
+          <div className="flex justify-center text-red-500">This field is required</div>
+        ) : (
+          ''
+        )
+      }
       </div>
       <div className="input-field">
         <label 
@@ -86,11 +129,18 @@ export default function FormStep3(props) {
         </label>
         <input
           type="text"
+          required
           id="borrowerBusinessName"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
+          className={error ? errorInputClass : inputClass}
           onChange={handleChange("borrowerBusinessName")}
           defaultValue={values.borrowerBusinessName}
         />
+        {error ? (
+          <div className="flex justify-center text-red-500">This field is required</div>
+        ) : (
+          ''
+        )
+      }
       </div>
       <div className="input-field">
         <label 
@@ -101,11 +151,18 @@ export default function FormStep3(props) {
         </label>
         <input
           type="text"
+          required
           id="businessType"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
+          className={error ? errorInputClass : inputClass}
           onChange={handleChange("businessType")}
           defaultValue={values.businessType}
         />
+        {error ? (
+          <div className="flex justify-center text-red-500">This field is required</div>
+        ) : (
+          ''
+        )
+      }
       </div>
       <div className="input-field">
         <label 
@@ -116,11 +173,18 @@ export default function FormStep3(props) {
         </label>
         <input
           type="text"
+          required
           id="ownership"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
+          className={error ? errorInputClass : inputClass}
           onChange={handleChange("ownership")}
           defaultValue={values.ownership}
         />
+        {error ? (
+          <div className="flex justify-center text-red-500">This field is required</div>
+        ) : (
+          ''
+        )
+      }
       </div>
       <label 
         htmlFor="bankStatementType"
@@ -130,16 +194,27 @@ export default function FormStep3(props) {
       </label>
         <select
           id="bankStatementType"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
+          required
+          className={error ? errorInputClass : inputClass}
           onChange={handleChange("bankStatementType")}
           defaultValue={values.bankStatementType}
         >
           <option value="" disabled>---</option>
-          {bankStatementType.map(bankStatementType => (
-            <option value={bankStatementType}>{bankStatementType}</option>
+          {bankStatementType.map((bankStatementType, i) => (
+            <option 
+              key={i}
+              value={bankStatementType}>
+                {bankStatementType}
+            </option>
 
           ))}
         </select>
+        {error ? (
+          <div className="flex justify-center text-red-500">This field is required</div>
+        ) : (
+          ''
+        )
+      }
         <div className="input-field">
         <label 
           htmlFor="explanation"
@@ -149,18 +224,25 @@ export default function FormStep3(props) {
         </label>
         <textarea
           id="explanation"
+          required
           rows="3"
           cols="40"
           onChange={handleChange("explanation")}
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+          className={error ? errorInputClass : inputClass}
           defaultValue={values.explanation}
         ></textarea>
+        {error ? (
+          <div className="flex justify-center text-red-500">This field is required</div>
+        ) : (
+          ''
+        )
+      }
       </div>
       <div className="flex justify-between pt-4">
-        <button className="btn" onClick={back}>
+      <button className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700" onClick={back}>
           Back
         </button>
-        <button className="btn" onClick={next}>
+        <button className="text-white bg-[#0033A1] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2" onClick={next}>
           Next
         </button>
       </div>
