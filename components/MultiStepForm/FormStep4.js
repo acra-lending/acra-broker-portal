@@ -1,9 +1,18 @@
 import React from "react";
+import { useState } from "react";
+import validator from "validator";
 
 export default function FormStep4(props) {
   const next = (e) => {
     e.preventDefault();
-    props.nextStep();
+    if (
+      validator.isEmpty(values.loanAmount) || 
+      validator.isEmpty(values.appraisedValue) 
+      ) {
+        setError(true)
+      } else {
+        props.nextStep();
+    }
   };
 
   const back = (e) => {
@@ -12,6 +21,7 @@ export default function FormStep4(props) {
   };
 
   const { values, setLoanAmount, setAppraisedValue, setLtv } = props;
+  const [error, setError] = useState(false);
 
 
   const ltvCalculator = (e) => {
@@ -23,6 +33,8 @@ export default function FormStep4(props) {
   const addCommas = num => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   const removeNonNumeric = num => num.toString().replace(/[^0-9]/g, "");
 
+  const inputClass = "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-2";
+  const errorInputClass = "bg-gray-50 border-red-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-2";
 
   return (
     <>
@@ -41,12 +53,18 @@ export default function FormStep4(props) {
           type="text"
           required
           id="loanAmount"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
+          className={error ? errorInputClass : inputClass}
           // onChange={handleChange("loanAmount")}
           onChange={event => setLoanAmount(addCommas(removeNonNumeric(event.target.value)))}
           // defaultValue={values.loanAmount}
-          value={values.loanAmount}
+          defaultValue={values.loanAmount}
         />
+        {error ? (
+          <div className="flex justify-center text-red-500">This field is required</div>
+        ) : (
+          ''
+        )
+      }
       </div>
       <div className="input-field">
         <label 
@@ -59,12 +77,18 @@ export default function FormStep4(props) {
           type="text"
           required
           id="appraisedValue"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3"
+          className={error ? errorInputClass : inputClass}
           // onChange={handleChange("appraisedValue")}
           onChange={event => setAppraisedValue(addCommas(removeNonNumeric(event.target.value)))}
           // defaultValue={values.appraisedValue}
-          value={values.appraisedValue}
+          defaultValue={values.appraisedValue}
         />
+        {error ? (
+          <div className="flex justify-center text-red-500">This field is required</div>
+        ) : (
+          ''
+        )
+      }
       </div>
       <div className="input-field">
         <label 
@@ -76,10 +100,10 @@ export default function FormStep4(props) {
         <input
           type="text"
           id="ltv"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+          className={inputClass}
           // onChange={handleChange("ltv")}
           onFocus={ltvCalculator}
-          value={values.ltv}
+          defaultValue={values.ltv}
         />
       </div>
       <div className="flex justify-between pt-4">

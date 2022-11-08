@@ -102,7 +102,6 @@ export default function UserForm() {
         return null;
     }
   };
-  console.log(values);
 
   return (
     <div className="p-10 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100">
