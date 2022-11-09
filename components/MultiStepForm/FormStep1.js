@@ -17,7 +17,6 @@ export default function FormStep1(props) {
   const { values, handleChange } = props;
   // const [error, setError] = useState(false);
 
-  console.log(typeof aeList)
   const inputClass = "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-2";
   // const errorInputClass = "bg-gray-50 border-red-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-2";
   return (
