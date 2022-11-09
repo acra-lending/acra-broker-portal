@@ -15,25 +15,39 @@ export default function Confirm(props) {
     e.preventDefault();
 
     let form = {
-      formName: 'Test Form<br/><br/>', 
       formData:{
-        name: `${brokerId}<br/>`,
-        email: 'test@gmail.com<br/>',
-        message: 'Hello World'
+        brokerId: brokerId,
+        aeSelect: aeSelect,
+        branchId: branchId,
+        companyName: companyName,
+        contactName: contactName,
+        contactPhone: contactPhone,
+        contactEmail: contactEmail,
+        loanType: loanType,
+        borrowerName: borrowerName,
+        borrowerAddress: borrowerAddress,
+        borrowerBusinessName: borrowerBusinessName,
+        businessType: businessType,
+        ownership: ownership,
+        bankStatementType: bankStatementType,
+        explanation: explanation,
+        loanAmount: loanAmount,
+        appraisedValue: appraisedValue,
+        ltv: ltv,
       }
     }
 
     // Send it
     await axios({
       method: 'post',
-      url: `http://localhost:1337/api/ezforms/submit`,
+      url: `https://b6fe-107-194-134-60.ngrok.io/api/ezforms/submit`,
       data: form,
       headers: {
           'Content-Type': 'application/json'
       },
       }).then(response => {
       // actions taken when submission goes OK
-      console.log(response)
+      // console.log(response)
       reset({})
       // setMessageSent(true)
       // setMessage(response.data.message)
@@ -46,7 +60,7 @@ export default function Confirm(props) {
       console.log(error)
       })
 
-      setTimeout(() => {next(); window.scrollTo(0,0) }, 4000);
+      // setTimeout(() => {next(); window.scrollTo(0,0) }, 2000);
 
   }
 
