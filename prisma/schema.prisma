@@ -308,7 +308,7 @@ model s2zar_users {
   block          Int       @default(0) @db.TinyInt
   sendEmail      Int?      @default(0) @db.TinyInt
   created_at     DateTime? @db.Timestamp(0)
-  startDate      DateTime  @default(dbgenerated("('0000-00-00 00:00:00')")) @db.Timestamp(0)
+  startDate      DateTime? @db.Timestamp(0)
   lastvisitDate  DateTime? @db.DateTime(0)
   activation     String    @default("") @db.VarChar(100)
   params         String    @db.MediumText

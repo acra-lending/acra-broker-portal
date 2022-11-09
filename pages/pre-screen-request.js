@@ -45,7 +45,7 @@ function preScreenRequest ({ menuItems, aeList }) {
 
 export async function getServerSideProps() {
     const response = await fetch(`${process.env.BASE_URL}/broker-portal-menu-items`)
-    const users = await prisma.$queryRaw`SELECT * FROM role_user, s2zar_users WHERE role_user.role_id = 7 AND role_user.user_id = s2zar_users.id ORDER BY s2zar_users.name ASC`
+    const users = await prisma.$queryRaw`SELECT * FROM role_user, s2zar_jsn_users WHERE role_user.role_id = 7 AND role_user.user_id = s2zar_jsn_users.id ORDER BY s2zar_jsn_users.firstname ASC`
     const data = await response.json()
     const rawAEList = JSON.stringify(users, (key, value) =>  (typeof value === 'bigint' ? value.toString() : value))
     const aeList = JSON.parse(rawAEList)
