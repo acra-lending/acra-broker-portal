@@ -22,6 +22,11 @@ export default function FormStep1(props) {
   return (
     <>
       <h2 className="mb-5">Pre-Screen Request</h2>
+      <p className="leading-8 font-medium mb-5 text-[15px]">
+        <strong>Note: </strong>Requests will only be processed for APPROVED Acra Lending brokers.<br></br>
+        Contact brokers@acralending.com or your AE to confirm Broker ID #<br></br>
+        Acra Pre-Screen Desk will not process ‘updated’ income requests. Please contact your Account Executive on next steps for submission.
+      </p>
       <div className="input-field">
         <label 
           htmlFor="brokerID"
