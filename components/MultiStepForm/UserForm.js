@@ -105,8 +105,29 @@ export default function UserForm({ aeList }) {
   };
 
   return (
-    <div className="p-10 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100">
-      {switchStep()}
-    </div>
+    <>
+      <div className="p-10 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100">
+        {switchStep()}
+      </div>
+      <div className="text-[15px] p-10">
+        <p className="font-medium pt-3">
+          <strong>Note: </strong>
+          1:00 pm PT request cut off time; Please allow 1 – 3 business days for feedback
+        </p>
+        <p className="text-[#ff0000]">
+        <span className="font-medium">Consecutive statements, including the <u>most recent statement issued</u> through the statement closing date must be provided.</span><br></br>
+        (Ex. statement ending date on the 30th of each month; Pre-Screen request submitted 07/06/21; Broker must include 12 (or 24) statements including the 06/30/21 statement)
+        </p>
+        <p className="text-xs">
+          <em>
+            <strong>Disclaimer: </strong>The preliminary bank statement analysis is intended for informational purposes, for mortgage professionals only. This is not a credit application, credit
+            approval, or a commitment to lend and should not be construed as lending advice. Loans are subject to borrower qualifications, including but not limited to, verified
+            credit score, assets, existing debt, property evaluation or other factors, and final credit approval. Approvals are subject to underwriting guidelines, rates, terms, and
+            program guidelines, which are subject to change without notice based on the applicant’s eligibility and market conditions. Not all applicants may qualify. Acra is an
+            equal opportunity lender. See State Licenses Information for where we lend.
+          </em>
+        </p>
+      </div>
+    </>
   );
 }
