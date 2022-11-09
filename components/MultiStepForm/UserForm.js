@@ -6,7 +6,7 @@ import FormStep4 from "./FormStep4";
 import Confirm from "./Confirm";
 import Success from "./Success";
 
-export default function UserForm() {
+export default function UserForm({ aeList }) {
   const [step, setStep] = useState(1);
   const [user, setUser] = useState({
     brokerId: "",
@@ -57,6 +57,7 @@ export default function UserForm() {
             nextStep={nextStep}
             handleChange={handleChange}
             values={values}
+            aeList={aeList}
           />
         );
       case 2:
