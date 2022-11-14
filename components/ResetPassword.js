@@ -65,7 +65,7 @@ const ResetPassword = () => {
                 </div>
             )}
 
-            <br />
+            <div className='p-8 max-w-md bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 md:p-8'>
             <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
@@ -91,7 +91,7 @@ const ResetPassword = () => {
                         <button 
                             type="submit"
                             disabled={!isValid}
-                            className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-semibold hover:text-white py-2 px-4 border border-[#0033A1] hover:border-transparent rounded w-64"
+                            className="text-[#0033A1] hover:text-white border border-[#0033A1] hover:bg-[#0033A1] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 w-64"
                             >
                             {!isSubmitting && "Reset password"}
                             {isSubmitting && "Loading..."}
@@ -99,6 +99,7 @@ const ResetPassword = () => {
                     </Form>
                 )}
             </Formik>
+            </div>
         </div>
         
         </>

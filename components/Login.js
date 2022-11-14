@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import * as Yup from 'yup';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { useRouter } from 'next/router'; 
+// import { useRouter } from 'next/router'; 
 import Link from 'next/link';
 import axiosWithBaseURL from '../lib/nextstrapi-axios';
 
 
 const Login = () => {
-    const { push } = useRouter();
+    // const { push } = useRouter();
     const [alert, setAlert] = useState();
 
     const initialValues = {
@@ -27,10 +27,10 @@ const Login = () => {
             .then(response => {
                 console.log(response.data);
                 const jwt = response.data.jwt;
-                const firstName = response.data.user.firstName;
+                const firstname = response.data.user.firstname;
 
                 localStorage.setItem('jwt', jwt);
-                localStorage.setItem('firstName', firstName);
+                localStorage.setItem('firstname', firstname);
 
                 // push('/');
                 window.location.replace('/');
@@ -78,9 +78,8 @@ const Login = () => {
                     </em>
                 </mark>
             </div>
-            <div className=' p-8  max-w-md bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 md:p-8'>
+            <div className='p-8 max-w-md bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 md:p-8'>
 
-            <br />
             <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}

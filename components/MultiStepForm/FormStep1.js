@@ -25,7 +25,7 @@ export default function FormStep1(props) {
       <p className="leading-8 font-medium mb-5 text-[15px]">
         <strong>Note: </strong>Requests will only be processed for APPROVED Acra Lending brokers.<br></br>
         Contact brokers@acralending.com or your AE to confirm Broker ID #<br></br>
-        Acra Pre-Screen Desk will not process ‘updated’ income requests. Please contact your Account Executive on next steps for submission.
+        Acra Pre-Screen Desk will not process 'updated' income requests. Please contact your Account Executive on next steps for submission.
       </p>
       <div className="input-field">
         <label 
@@ -67,7 +67,7 @@ export default function FormStep1(props) {
           {props.aeList.map((ae, i) => (
             <option 
               key={i} 
-              value={ae.name}>{ae.name}
+              value={ae.firstname + ' ' + ae.lastname}>{ae.firstname + ' ' + ae.lastname}
             </option>
           ))}
         </select>

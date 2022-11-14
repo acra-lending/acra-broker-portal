@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router'; 
+// import { useRouter } from 'next/router'; 
 import SideBar from "../components/SideBar"
 import Navbar from '../components/NavBar'
 import DashLinks from "../components/DashLinks";
@@ -14,8 +14,7 @@ export default function Home({menuItems, dashboardItems, useLinksItems}) {
     setIsLogged(!!localStorage.getItem('jwt'));
   }, []);
 
-  const router = useRouter();
-
+  // const router = useRouter();
   return (
     <div className="relative w-full">
       <Navbar />
@@ -28,7 +27,7 @@ export default function Home({menuItems, dashboardItems, useLinksItems}) {
                 <SideBar props={menuItems}/>
                   <div className="mx-auto md:pt-32">
 
-                      <p className="px-3 pb-4">Welcome to your Broker Portal, <b>{localStorage.firstName}</b>!</p>
+                      <h2 className="px-3 pb-2">Welcome, <b>{localStorage.firstname}</b>!</h2>
 
                     <DashLinks props={dashboardItems}/>
                     <div>

@@ -8,7 +8,7 @@ const ResetPasswordPage = () => {
         <>
             <Navbar />
             <div className="xl:mx-32 lg:mx-24 md:mx-auto md:pt-32">
-                <p className="text-center">Please reset your password</p>
+                <h4 className="text-center">Set Password</h4>
                 <ResetPassword />
             </div>
         </>
