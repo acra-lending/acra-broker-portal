@@ -43,7 +43,7 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                     {item.attributes.position}
                     </td>
                     <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400">
-                      <a href={'tel:' + item.attributes.phoneNumber}>
+                      <a href={'tel:' + item.attributes.phoneNumber + ',363'}>
                         {formatPhoneNumber(item.attributes.phoneNumber)}
                       </a>
                       {' ' + item.attributes.ext}
