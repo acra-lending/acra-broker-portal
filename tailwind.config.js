@@ -7,7 +7,11 @@ module.exports = {
     './components/MultiStepForm/*.js'
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'preScreen': "url('/pre-screen-instructions.jpg')",
+      }
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),
