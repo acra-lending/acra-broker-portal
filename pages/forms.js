@@ -5,14 +5,14 @@ import { fetcher } from "../lib/api";
 import useSWR from "swr";
 function formsTable({menuItems, formsItems}) {
     const [pageNumber, setPageNumber] = useState(1);
-    const URL = `https://7abe-107-194-134-60.ngrok.io/api/broker-portal-forms-and-requests-items?pagination[page]=${pageNumber}&pagination[pageSize]=10`;
+    const URL = `https://7abe-107-194-134-60.ngrok.io/api/broker-portal-forms-and-requests-items?pagination[page]=${pageNumber}&pagination[pageSize]=10&populate=*`;
     const { data } = useSWR(URL,
         fetcher,
         {
             fallbackData: formsItems
         }
     );
-
+    
     return (
         <div className="relative w-full">
             <Navbar />
@@ -36,7 +36,7 @@ function formsTable({menuItems, formsItems}) {
                                 <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"></td>
                                 <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400 pl-0">
                                     <a 
-                                        href={`https://7abe-107-194-134-60.ngrok.io${item.attributes?.pdf?.data[0]?.attributes.url}`} 
+                                        href={`https://7abe-107-194-134-60.ngrok.io${item?.attributes?.pdf?.data[0]?.attributes.url}`} 
                                         className="hover:bg-gray-50 text-[#0033A1] font-medium py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
                                         target="_blank">
                                             Download
@@ -79,7 +79,7 @@ function formsTable({menuItems, formsItems}) {
 export async function getServerSideProps() {
     const [menuResponse, formsResponse] = await Promise.all([
       fetch(`${process.env.BASE_URL}/broker-portal-menu-items`),
-      fetch(`${process.env.BASE_URL}/broker-portal-forms-and-requests-items?populate=*?pagination[page]=1&pagination[pageSize]=8`)
+      fetch(`${process.env.BASE_URL}/broker-portal-forms-and-requests-items?pagination[page]=1&pagination[pageSize]=8&populate=*`)
     ]); 
   
       const [menuItems, formsItems] = await Promise.all([
