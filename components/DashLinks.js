@@ -6,7 +6,7 @@ function DashLinks ({ props }) {
             {props?.data.map(item => (
                 <Link
                     key={item.id} 
-                    href={item.attributes?.file?.data ? `https://b6fe-107-194-134-60.ngrok.io${item.attributes.file.data.attributes.url}` : item.attributes.link}
+                    href={item.attributes?.file?.data ? `https://7abe-107-194-134-60.ngrok.io${item.attributes.file.data.attributes.url}` : item.attributes.link}
                 >
                     <a className='text-black no-underline'>
                         <div className="flex items-center justify-center hover:scale-105 gap-3 cursor-pointer break-normal font-medium text-lg p-6 bg-white border-1 rounded-xl drop-shadow-lg">

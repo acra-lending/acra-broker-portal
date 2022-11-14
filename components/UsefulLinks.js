@@ -10,7 +10,7 @@ function UsefulLinks ({ props }) {
                         key={item.id}
                     >
                         <img 
-                            src={`https://b6fe-107-194-134-60.ngrok.io${item.attributes.previewImage.data[0].attributes.url}`}
+                            src={`https://7abe-107-194-134-60.ngrok.io${item.attributes.previewImage.data[0].attributes.url}`}
                             alt={item.attributes.linkName}
                         />
                     </a>
