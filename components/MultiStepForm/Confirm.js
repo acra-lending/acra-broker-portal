@@ -40,7 +40,7 @@ export default function Confirm(props) {
     // Send it
     await axios({
       method: 'post',
-      url: `https://b6fe-107-194-134-60.ngrok.io/api/ezforms/submit`,
+      url: `${process.env.BASE_URL}/ezforms/submit`,
       data: form,
       headers: {
           'Content-Type': 'application/json'
