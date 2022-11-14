@@ -36,8 +36,8 @@ function preScreenRequest ({ menuItems, aeList }) {
         <Navbar />
             <div className="md:flex static">
                 <SideBar props={menuItems}/> 
-                    <div className='flex flex-col md:flex-row ml-8 mr-8 gap-12'>
-                        <div className='w-full md:w-1/2 lg:w-1/3 mt-36 bg-preScreen flex flex-col items-center border'>
+                    <div className='flex flex-col lg:flex-row ml-8 mr-8 gap-12'>
+                        <div className='w-full lg:w-1/3 mt-24 lg:mt-36 bg-preScreen flex flex-col items-center border'>
                             <div className="flex py-5 items-center w-full">
                                 <div className="flex-grow h-px bg-white w-full ml-2"></div>
                                 <span className='text-white text-center px-2 text-lg'>Instructions</span>
@@ -79,7 +79,7 @@ function preScreenRequest ({ menuItems, aeList }) {
                                 </div>
                            </div>
                         </div>
-                        <div className="w-[95%] md:w-1/2 lg:w-2/3 mx-auto pt-24 md:pt-36">
+                        <div className="w-[95%] lg:w-2/3 mx-auto pt-24 md:pt-36">
                             <MultiStepForm aeList={aeList}/>
                         </div>
                     </div>
