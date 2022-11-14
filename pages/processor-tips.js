@@ -91,7 +91,7 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                             target="_blank"
 
                             href={`${process.env.NEXT_PUBLIC_API_URL}${item.attributes.pdf.data[0].attributes.url}`}
-                            className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-semibold hover:text-white py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
+                            className="hover:bg-gray-50 text-[#0033A1] font-medium py-2 px-4 border border-[#0033A1] hover:border-transparent rounded no-underline"
                           >
                             Download
                             </a>
@@ -123,7 +123,7 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                               <a 
                                 target="_blank"
                                 href={`${process.env.NEXT_PUBLIC_API_URL}${item.attributes.pdf.data[0].attributes.url}`}
-                                className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-semibold hover:text-white py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
+                                className="hover:bg-gray-50 text-[#0033A1] font-medium py-2 px-4 border border-[#0033A1] hover:border-transparent rounded no-underline"
                               >
                                  Download
                               </a>
@@ -154,7 +154,7 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                               <a 
                                 target="_blank"
                                 href={`${process.env.NEXT_PUBLIC_API_URL}${item.attributes.pdf.data[0].attributes.url}`}
-                                className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-semibold hover:text-white py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
+                                className="hover:bg-gray-50 text-[#0033A1] font-medium py-2 px-4 border border-[#0033A1] hover:border-transparent rounded no-underline"
                               >
                                 Download
                               </a>

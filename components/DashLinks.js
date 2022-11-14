@@ -6,7 +6,7 @@ function DashLinks ({ props }) {
             {props?.data.map(item => (
                 <Link
                     key={item.id} 
-                    href={item.attributes?.file?.data ? `${process.env.NEXT_PUBLIC_API_URL}/${item.attributes.file.data.attributes.url}` : item.attributes.link}
+                    href={item.attributes?.file?.data ? `${process.env.NEXT_PUBLIC_API_URL}${item.attributes.file.data.attributes.url}` : item.attributes.link}
                 >
                     <a className='text-black no-underline'>
                         <div className="flex items-center justify-center hover:scale-105 gap-3 cursor-pointer break-normal font-medium text-lg p-6 bg-white border-1 rounded-xl drop-shadow-lg">
