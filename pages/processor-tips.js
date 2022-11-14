@@ -90,7 +90,7 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                           <a 
                             target="_blank"
 
-                            href={`https://b6fe-107-194-134-60.ngrok.io${item.attributes.pdf.data[0].attributes.url}`}
+                            href={`https://7abe-107-194-134-60.ngrok.io${item.attributes.pdf.data[0].attributes.url}`}
                             className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-semibold hover:text-white py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
                           >
                             Download
@@ -122,7 +122,7 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                             <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400 pl-0">
                               <a 
                                 target="_blank"
-                                href={`https://b6fe-107-194-134-60.ngrok.io${item.attributes.pdf.data[0].attributes.url}`}
+                                href={`https://7abe-107-194-134-60.ngrok.io${item.attributes.pdf.data[0].attributes.url}`}
                                 className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-semibold hover:text-white py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
                               >
                                  Download
@@ -153,7 +153,7 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
                             <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400 pl-0">
                               <a 
                                 target="_blank"
-                                href={`https://b6fe-107-194-134-60.ngrok.io${item.attributes.pdf.data[0].attributes.url}`}
+                                href={`https://7abe-107-194-134-60.ngrok.io${item.attributes.pdf.data[0].attributes.url}`}
                                 className="bg-transparent hover:bg-[#0033A1] text-[#0033A1] font-semibold hover:text-white py-2 px-4 border border-[#0033A1] hover:border-transparent rounded"
                               >
                                 Download
