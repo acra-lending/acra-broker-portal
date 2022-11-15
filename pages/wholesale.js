@@ -26,7 +26,7 @@ function wholesaleUpload({menuItems}) {
                             ))}
                         </ul>
                         <h3 className="text-base">
-                            <mark>
+                            <mark className="bg-[#FFFF00]">
                                 EXAMPLE: If you have 10 conditions, we need 10 LEGIBLE PDF documents
                             </mark>
                         </h3>

@@ -69,7 +69,7 @@ const Login = () => {
             </div>
             )}
             <div className='pb-16 text-center'>
-                <mark>
+                <mark className='bg-[#ffff00]'>
                     <strong>
                         IMPORTANT:&nbsp;
                     </strong>
