@@ -78,7 +78,7 @@ function formsTable({menuItems, formsItems}) {
 
 export async function getServerSideProps() {
     const [menuResponse, formsResponse] = await Promise.all([
-      fetch(`${process.env.BASE_URL}/broker-portal-menu-items`),
+      fetch(`${process.env.BASE_URL}/corr-portal-menu-items`),
       fetch(`${process.env.BASE_URL}/broker-portal-forms-and-requests-items?pagination[page]=1&pagination[pageSize]=8&populate=*`)
     ]); 
   
