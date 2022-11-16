@@ -3,7 +3,7 @@ import NavBar from '../components/NavBar';
 import SideBar from '../components/SideBar';
 import { Table, Column, HeaderCell, Cell } from 'rsuite-table';
 // import 'rsuite-table/lib/less/index.less'; 
-
+import { useState } from 'react';
 const columns = [
     {
         name: 'Summary',
@@ -47,9 +47,9 @@ function Announcements({ menuItems, announcementsItems }) {
             outPut.push(announcementsItems.data[i].attributes)
         }
     console.log(outPut);
-    const [sortColumn, setSortColumn] = React.useState('id');
-  const [sortType, setSortType] = React.useState('asc');
-  const [loading, setLoading] = React.useState(false);
+    const [sortColumn, setSortColumn] = useState('id');
+  const [sortType, setSortType] = useState('asc');
+  const [loading, setLoading] = useState(false);
 
   const sortData = () => {
     if (sortColumn && sortType) {
