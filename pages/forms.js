@@ -1,11 +1,33 @@
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import SideBar from "../components/SideBar";
 import Navbar from '../components/NavBar'
-import { useState } from "react";
 import { fetcher } from "../lib/api";
 import useSWR from "swr";
 function formsTable({menuItems, formsItems}) {
     const [pageNumber, setPageNumber] = useState(1);
+    const router = useRouter();
+
+    const [isLogged, setIsLogged] = useState();
+
+    const fetchData = () => {
+        let token = localStorage.getItem('jwt');
+
+        if(token) {
+            setIsLogged(token);
+        } else {
+            router.push('/')
+        }
+    }
+
+    useEffect(() => {
+        
+        fetchData();
+
+    }, [isLogged]);
+    
     const URL = `https://7abe-107-194-134-60.ngrok.io/api/broker-portal-forms-and-requests-items?pagination[page]=${pageNumber}&pagination[pageSize]=10&populate=*`;
+    
     const { data } = useSWR(URL,
         fetcher,
         {

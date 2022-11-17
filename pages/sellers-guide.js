@@ -1,12 +1,31 @@
+import { React, useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { Accordion } from 'react-bootstrap';
-import React from 'react';
-import  postData  from '../postData.json';
+import postData  from '../postData.json';
 import NavBar from '../components/NavBar';
 import SideBar from '../components/SideBar';
-import { useState } from 'react';
 
 function sellersGuide ({menuItems}) {
     const [selected, setSelected] = useState();
+    const [isLogged, setIsLogged] = useState();
+
+    const router = useRouter();
+
+    const fetchData = () => {
+        let token = localStorage.getItem('jwt');
+
+        if(token) {
+            setIsLogged(token);
+        } else {
+            router.push('/')
+        }
+    }
+
+    useEffect(() => {
+        
+        fetchData();
+
+    }, [isLogged]);
     
     const handleSelect = (e) => {
         setSelected(e.target.value);

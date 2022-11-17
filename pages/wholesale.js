@@ -1,8 +1,29 @@
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import SideBar from "../components/SideBar";
 import Navbar from '../components/NavBar'
 
 
 function wholesaleUpload({menuItems}) {
+    const [isLogged, setIsLogged] = useState();
+    
+    const router = useRouter();
+
+    const fetchData = () => {
+        let token = localStorage.getItem('jwt');
+
+        if(token) {
+            setIsLogged(token);
+        } else {
+            router.push('/')
+        }
+    }
+
+    useEffect(() => {
+        
+        fetchData();
+
+    }, [isLogged]);
 
     const reminderBulletPoints = [
         'Save each condition, individually, as a PDF document',

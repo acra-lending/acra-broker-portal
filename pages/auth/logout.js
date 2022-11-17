@@ -7,7 +7,7 @@ const Logout = () => {
     useEffect(() => {
 
         localStorage.removeItem('jwt');
-        localStorage.removeItem('username');
+        localStorage.removeItem('firstname');
         push('/');
 
     }, [push])

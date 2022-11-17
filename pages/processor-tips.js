@@ -1,4 +1,5 @@
-// import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
@@ -11,6 +12,26 @@ import formatPhoneNumber from '../lib/phoneFormatter.js';
 
 function processorTips({menuItems, contactPoints, processorTipsItems}) {
     const [value, setValue] = useState('1');
+    const [isLogged, setIsLogged] = useState();
+
+    const router = useRouter();
+
+    const fetchData = () => {
+        let token = localStorage.getItem('jwt');
+
+        if(token) {
+            setIsLogged(token);
+        } else {
+            router.push('/')
+        }
+    }
+
+    useEffect(() => {
+        
+        fetchData();
+
+    }, [isLogged]);
+    
     const handleChange = (event, newValue) => {
       setValue(newValue);
     };

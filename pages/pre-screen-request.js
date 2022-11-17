@@ -10,9 +10,9 @@ import { faUserTie, faCreditCard, faFileInvoiceDollar, faLightbulb } from '@fort
 const prisma = new PrismaClient();
 
 function preScreenRequest ({ menuItems, aeList }) {
-    const router = useRouter();
-
     const [isLogged, setIsLogged] = useState();
+    
+    const router = useRouter();
 
     const fetchData = () => {
         let token = localStorage.getItem('jwt');
