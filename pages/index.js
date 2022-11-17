@@ -16,7 +16,7 @@ export default function Home({menuItems, dashboardItems, useLinksItems}) {
 
   // const router = useRouter();
   return (
-    <div className="relative w-full h-full bg-[url('https://7abe-107-194-134-60.ngrok.io/uploads/careers_navybg_b874f0bbad.jpg')]">
+    <div className="relative w-full h-full">
       <Navbar />
       <main>
             {isLogged ? (
@@ -39,7 +39,7 @@ export default function Home({menuItems, dashboardItems, useLinksItems}) {
               </>
             ) : (
               <>
-                <div className="h-screen px-12 flex space-x-4 flex-col xl:flex-row xl:mx-32 lg:flex-row lg:mx-24 md:flex-row md:mx-24 md:pt-32 sm:flex sm:flex-col">
+                <div className="h-screen px-12 flex space-x-4 flex-col xl:flex-row xl:px-32 lg:flex-row lg:px-24 md:flex-row md:px-24 md:pt-32 sm:flex sm:flex-col bg-[url('https://7abe-107-194-134-60.ngrok.io/uploads/careers_navybg_b874f0bbad.jpg')]">
                   <div>
                     <h4 className="text-white pt-16">Welcome, please log in. <br/><br/>If this is your first time logging in since the update, you have to reset your password with "Forgot password"</h4>
                   </div>
@@ -70,8 +70,8 @@ export default function Home({menuItems, dashboardItems, useLinksItems}) {
 } */}
 export async function getServerSideProps(context) {
   const [menuResponse, dashResponse, useLinksResponse] = await Promise.all([
-    fetch(`${process.env.BASE_URL}/corr-portal-menu-items`),
-    fetch(`${process.env.BASE_URL}/corr-portal-dashboard-items?populate=*`),
+    fetch(`${process.env.BASE_URL}/broker-portal-menu-items`),
+    fetch(`${process.env.BASE_URL}/broker-portal-dashboard-items?populate=*`),
     fetch(`${process.env.BASE_URL}/broker-portal-useful-links-items?populate=*`)
   ]); 
 

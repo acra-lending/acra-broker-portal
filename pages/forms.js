@@ -5,7 +5,7 @@ import { fetcher } from "../lib/api";
 import useSWR from "swr";
 function formsTable({menuItems, formsItems}) {
     const [pageNumber, setPageNumber] = useState(1);
-    const URL = `https://7abe-107-194-134-60.ngrok.io/api/corr-portal-forms?pagination[page]=${pageNumber}&pagination[pageSize]=10&populate=*`;
+    const URL = `https://7abe-107-194-134-60.ngrok.io/api/broker-portal-forms-and-requests-items?pagination[page]=${pageNumber}&pagination[pageSize]=10&populate=*`;
     const { data } = useSWR(URL,
         fetcher,
         {
@@ -78,8 +78,8 @@ function formsTable({menuItems, formsItems}) {
 
 export async function getServerSideProps() {
     const [menuResponse, formsResponse] = await Promise.all([
-      fetch(`${process.env.BASE_URL}/corr-portal-menu-items`),
-      fetch(`${process.env.BASE_URL}/corr-portal-forms?pagination[page]=1&pagination[pageSize]=8&populate=*`)
+      fetch(`${process.env.BASE_URL}/broker-portal-menu-items`),
+      fetch(`${process.env.BASE_URL}/broker-portal-forms-and-requests-items?pagination[page]=1&pagination[pageSize]=8&populate=*`)
     ]); 
   
       const [menuItems, formsItems] = await Promise.all([

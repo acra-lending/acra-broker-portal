@@ -176,7 +176,7 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
 
 export async function getServerSideProps() {
   const [menuResponse, contactPointsResponse, processorTipsItemsResponse] = await Promise.all([
-    fetch(`${process.env.BASE_URL}/corr-portal-menu-items`),
+    fetch(`${process.env.BASE_URL}/broker-portal-menu-items`),
     fetch(`${process.env.BASE_URL}/broker-portal-processor-tips-contacts`),
     fetch(`${process.env.BASE_URL}/broker-portal-processor-tips-items?populate=*`)
   ]); 

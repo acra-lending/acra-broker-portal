@@ -38,7 +38,7 @@ function conditionsUpload({menuItems}) {
 }
 
 export async function getServerSideProps(context) {
-    const response = await fetch(`${process.env.BASE_URL}/corr-portal-menu-items`)
+    const response = await fetch(`${process.env.BASE_URL}/broker-portal-menu-items`)
     const data = await response.json()
     return {
         props: { menuItems: data },
