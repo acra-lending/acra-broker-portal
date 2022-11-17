@@ -70,8 +70,8 @@ export default function Home({menuItems, dashboardItems, useLinksItems}) {
 } */}
 export async function getServerSideProps(context) {
   const [menuResponse, dashResponse, useLinksResponse] = await Promise.all([
-    fetch(`${process.env.BASE_URL}/broker-portal-menu-items`),
-    fetch(`${process.env.BASE_URL}/broker-portal-dashboard-items?populate=*`),
+    fetch(`${process.env.BASE_URL}/corr-portal-menu-items`),
+    fetch(`${process.env.BASE_URL}/corr-portal-dashboard-items?populate=*`),
     fetch(`${process.env.BASE_URL}/broker-portal-useful-links-items?populate=*`)
   ]); 
 

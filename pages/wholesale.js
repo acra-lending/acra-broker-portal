@@ -26,7 +26,7 @@ function wholesaleUpload({menuItems}) {
                             ))}
                         </ul>
                         <h3 className="text-base">
-                            <mark>
+                            <mark className="bg-[#FFFF00]">
                                 EXAMPLE: If you have 10 conditions, we need 10 LEGIBLE PDF documents
                             </mark>
                         </h3>
@@ -38,7 +38,7 @@ function wholesaleUpload({menuItems}) {
 }
 
 export async function getServerSideProps(context) {
-    const response = await fetch(`${process.env.BASE_URL}/broker-portal-menu-items`)
+    const response = await fetch(`${process.env.BASE_URL}/corr-portal-menu-items`)
     const data = await response.json()
     return {
         props: { menuItems: data },
