@@ -16,7 +16,7 @@ export default function Home({menuItems, dashboardItems, useLinksItems}) {
 
   // const router = useRouter();
   return (
-    <div className="relative w-full">
+    <div className="relative w-full h-full bg-[url('https://7abe-107-194-134-60.ngrok.io/uploads/careers_navybg_b874f0bbad.jpg')]">
       <Navbar />
       <main>
             {isLogged ? (
@@ -39,11 +39,10 @@ export default function Home({menuItems, dashboardItems, useLinksItems}) {
               </>
             ) : (
               <>
-                <div 
-                  className="xl:mx-32 lg:mx-24 md:mx-auto md:pt-32"
-                >
-                  <p className="text-center">Welcome, please log in.</p>
-                  <p className="pt-5 text-center">If this is your first time logging in since the update, you have to reset your password with "Forgot password"</p>
+                <div className="h-screen px-12 flex space-x-4 flex-col xl:flex-row xl:mx-32 lg:flex-row lg:mx-24 md:flex-row md:mx-24 md:pt-32 sm:flex sm:flex-col">
+                  <div>
+                    <h4 className="text-white pt-16">Welcome, please log in. <br/><br/>If this is your first time logging in since the update, you have to reset your password with "Forgot password"</h4>
+                  </div>
                   <Login />
                 </div>
               </>
