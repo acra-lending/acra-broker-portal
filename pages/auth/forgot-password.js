@@ -7,8 +7,8 @@ const ForgotPasswordPage = () => {
     return (
         <>
             <Navbar />
-            <div className="xl:mx-32 lg:mx-24 md:mx-auto md:pt-32">
-                <p className="text-center">Please enter your registered email address and we will send you a link to reset your password</p>
+            <div className="h-screen bg-gradient-to-b from-blue-500 to-blue-800 xl:pt-32 lg:pt-32 md:px-auto md:pt-32">
+                <h4 className="text-white text-center">Please enter your registered email address and we will send you a link to reset your password</h4>
                 <ForgotPassword />
             </div>
         </>

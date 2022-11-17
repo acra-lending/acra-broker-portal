@@ -7,8 +7,8 @@ const ResetPasswordPage = () => {
     return (
         <>
             <Navbar />
-            <div className="xl:mx-32 lg:mx-24 md:mx-auto md:pt-32">
-                <h4 className="text-center">Set Password</h4>
+            <div className="h-screen bg-gradient-to-b from-blue-500 to-blue-800 xl:pt-32 lg:pt-32 md:px-auto md:pt-32">
+                <h4 className="text-white text-center">Set Password</h4>
                 <ResetPassword />
             </div>
         </>

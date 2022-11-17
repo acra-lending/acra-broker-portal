@@ -41,16 +41,16 @@ const ForgotPassword = () => {
     return (
         <>
 
-        <div className="flex flex-col pt-24 justify-center items-center">
+        <div className="flex flex-col pt-10 justify-center items-center">
 
             {alert && (
                 <div 
                     className={
-                        alert[0] === 'success' ? 'w-2/3 bg-blue-400 rounded p-2' : 'w-2/3 bg-red-400 rounded py-1'   
+                        alert[0] === 'success' ? 'w-2/3 bg-blue-400 rounded p-2 my-4' : 'w-2/3 bg-red-400 rounded py-1'   
                     }>
                     <div 
                         dangerouslySetInnerHTML={{ __html: alert[1] }}
-                        className="text-center"
+                        className="text-center text-white"
                     />
                 </div>
             )}
