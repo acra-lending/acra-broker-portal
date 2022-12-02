@@ -60,7 +60,7 @@ export default function Confirm(props) {
       console.log(error)
       })
 
-      // setTimeout(() => {next(); window.scrollTo(0,0) }, 2000);
+      setTimeout(() => {next(); window.scrollTo(0,0) }, 2000);
 
   }
 
