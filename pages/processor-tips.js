@@ -5,9 +5,9 @@ import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
-import { useState } from 'react';
 import SideBar from '../components/SideBar';
 import Navbar from '../components/NavBar'
+import Footer from '../components/Footer'
 import formatPhoneNumber from '../lib/phoneFormatter.js';
 
 function processorTips({menuItems, contactPoints, processorTipsItems}) {
@@ -191,6 +191,7 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
       </div>
       </div>
     </div>
+    <Footer />
 </div>
   );
 }

@@ -3,6 +3,7 @@ import axiosWithBaseURL from '../lib/nextstrapi-axios'
 import * as Yup from 'yup';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useRouter } from 'next/router';
+import {Oval} from "react-loader-spinner";
 
 const ResetPassword = () => {
     const { push, query } = useRouter();
@@ -94,7 +95,22 @@ const ResetPassword = () => {
                             className="text-[#0033A1] hover:text-white border border-[#0033A1] hover:bg-[#0033A1] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 w-64"
                             >
                             {!isSubmitting && "Reset password"}
-                            {isSubmitting && "Loading..."}
+                            {isSubmitting && 
+                                <div style={{position: "relative", left: "40%"}}>
+                                    <Oval
+                                        height={30}
+                                        width={30}
+                                        color="#0033a1"
+                                        wrapperStyle={{}}
+                                        wrapperClass=""
+                                        visible={true}
+                                        ariaLabel='oval-loading'
+                                        secondaryColor="#8ab7e9"
+                                        strokeWidth={10}
+                                        strokeWidthSecondary={10}
+                                    />
+                                </div>
+                            }
                         </button>
                     </Form>
                 )}

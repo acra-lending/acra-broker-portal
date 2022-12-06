@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import MultiStepForm from '../components/MultiStepForm/UserForm';
 import Navbar from '../components/NavBar';
 import SideBar from '../components/SideBar';
+import Footer from '../components/Footer'
 import { PrismaClient } from "@prisma/client";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserTie, faCreditCard, faFileInvoiceDollar, faLightbulb } from '@fortawesome/free-solid-svg-icons';
@@ -84,6 +85,7 @@ function preScreenRequest ({ menuItems, aeList }) {
                         </div>
                     </div>
             </div>
+            <Footer />
         </div>
     )
 }

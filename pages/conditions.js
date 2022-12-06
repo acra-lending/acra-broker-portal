@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import SideBar from "../components/SideBar";
 import Navbar from '../components/NavBar'
+import Footer from '../components/Footer'
 
 
 function conditionsUpload({menuItems}) {
@@ -54,6 +55,7 @@ function conditionsUpload({menuItems}) {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }

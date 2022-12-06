@@ -1,9 +1,11 @@
-import { React, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import React from 'react';
 import { useRouter } from 'next/router';
 import { Accordion } from 'react-bootstrap';
 import postData  from '../postData.json';
 import NavBar from '../components/NavBar';
 import SideBar from '../components/SideBar';
+import Footer from '../components/Footer'
 
 function sellersGuide ({menuItems}) {
     const [selected, setSelected] = useState();
@@ -52,7 +54,7 @@ function sellersGuide ({menuItems}) {
                     </button>
 
                 </div>
-                <div className='md:w-2/3 md:mt-[3.9rem] pl-4 pr-4'>
+                <div className='md:w-2/3 md:mt-[3.9rem] pl-4 pr-4 pb-12 pt-3'>
                 <Accordion>
                     {postData.Section?.map((Sections, index) => (
                             <Accordion.Item 
@@ -108,6 +110,7 @@ function sellersGuide ({menuItems}) {
                     </Accordion>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }
