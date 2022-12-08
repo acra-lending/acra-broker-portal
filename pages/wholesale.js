@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 import {Grid} from "react-loader-spinner";
 
 
-function wholesaleUpload({menuItems}) {
+function WholesaleUpload({menuItems}) {
 
     const [isLoading, setIsLoading] = useState(false);
     const [isLogged, setIsLogged] = useState();
@@ -94,4 +94,4 @@ export async function getServerSideProps(context) {
     };
   }
 
-export default wholesaleUpload;
+export default WholesaleUpload;

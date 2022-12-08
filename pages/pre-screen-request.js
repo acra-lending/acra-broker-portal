@@ -11,7 +11,7 @@ import {Grid} from "react-loader-spinner";
 
 const prisma = new PrismaClient();
 
-function preScreenRequest ({ menuItems, aeList }) {
+function PreScreenRequest ({ menuItems, aeList }) {
 
     const [isLoading, setIsLoading] = useState(false);
     const [isLogged, setIsLogged] = useState();
@@ -129,4 +129,4 @@ export async function getServerSideProps() {
     };
 }
 
-export default preScreenRequest;
+export default PreScreenRequest;

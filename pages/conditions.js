@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 import {Grid} from "react-loader-spinner";
 
 
-function conditionsUpload({menuItems}) {
+function ConditionsUpload({menuItems}) {
     
     const [isLoading, setIsLoading] = useState(false);
     const [isLogged, setIsLogged] = useState();
@@ -94,4 +94,4 @@ export async function getServerSideProps(context) {
     };
 }
 
-export default conditionsUpload;
+export default ConditionsUpload;

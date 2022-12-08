@@ -8,7 +8,7 @@ import SideBar from '../components/SideBar';
 import Footer from '../components/Footer'
 import {Grid} from "react-loader-spinner";
 
-function sellersGuide ({menuItems}) {
+function SellersGuide ({menuItems}) {
 
     const [isLoading, setIsLoading] = useState(false);
     const [selected, setSelected] = useState();
@@ -147,4 +147,4 @@ export async function getServerSideProps(context) {
     };
   }
 
-export default sellersGuide;
+export default SellersGuide;

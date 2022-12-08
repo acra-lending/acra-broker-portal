@@ -11,7 +11,7 @@ import Footer from '../components/Footer'
 import formatPhoneNumber from '../lib/phoneFormatter.js';
 import {Grid} from "react-loader-spinner";
 
-function processorTips({menuItems, contactPoints, processorTipsItems}) {
+function ProcessorTips({menuItems, contactPoints, processorTipsItems}) {
 
     const [isLoading, setIsLoading] = useState(false);
     const [value, setValue] = useState('1');
@@ -239,4 +239,4 @@ export async function getServerSideProps() {
 }
 
 
-export default processorTips;
+export default ProcessorTips;

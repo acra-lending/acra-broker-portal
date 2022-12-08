@@ -7,7 +7,7 @@ import { fetcher } from "../lib/api";
 import useSWR from "swr";
 import {Grid} from "react-loader-spinner";
 
-function formsTable({menuItems, formsItems}) {
+function FormsTable({menuItems, formsItems}) {
 
     const [isLoading, setIsLoading] = useState(false);
 
@@ -141,4 +141,4 @@ export async function getServerSideProps() {
       return { props: { menuItems, formsItems } };
 }
 
-export default formsTable;
+export default FormsTable;
