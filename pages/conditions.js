@@ -3,18 +3,24 @@ import { useRouter } from 'next/router';
 import SideBar from "../components/SideBar";
 import Navbar from '../components/NavBar'
 import Footer from '../components/Footer'
+import {Grid} from "react-loader-spinner";
 
 
 function conditionsUpload({menuItems}) {
+    
+    const [isLoading, setIsLoading] = useState(false);
     const [isLogged, setIsLogged] = useState();
     
     const router = useRouter();
 
     const fetchData = () => {
+    
+        setIsLoading(true);
         let token = localStorage.getItem('jwt');
 
         if(token) {
             setIsLogged(token);
+            setIsLoading(false);
         } else {
             router.push('/')
         }
@@ -36,25 +42,45 @@ function conditionsUpload({menuItems}) {
     return (
         <div className="relative w-full">
             <Navbar />
-            <div className="md:flex relative">
-                <SideBar props={menuItems} />
-                <div className="md:flex p-10 md:w-2/3 md:ml-20 pt-32">
-                    <iframe className="md:w-8/12 w-full aspect-video min-h-[510px]" src="https://acralending.com/box-api/box-wholesale-conditions-upload.html"></iframe>
-                    <div className="md:w-4/12 w-full pt-8 md:pt-0 md:pl-8">
-                        <h2 className="font-medium">Reminder:</h2>
-                        <ul className="font-normal text-base mt-2 list-disc">
-                            {reminderBulletPoints.map((point, key) => (
-                                <li key={key} className="pb-4">{point}</li>
-                            ))}
-                        </ul>
-                        <h3 className="text-base">
-                            <mark className="bg-[#FFFF00]">
-                                EXAMPLE: If you have 10 conditions, we need 10 LEGIBLE PDF documents
-                            </mark>
-                        </h3>
+            {isLoading ? (
+                <div className="md:flex relative">
+                    <SideBar props={menuItems} />
+                        <div className="md:flex p-10 md:w-2/3 md:ml-20 pt-32">
+                            <div style={{position: "absolute", left: "47%", top: "35%"}}>
+                                <Grid
+                                height="80"
+                                width="80"
+                                color="#0033a1"
+                                ariaLabel="grid-loading"
+                                radius="12.5"
+                                wrapperStyle={{}}
+                                wrapperClass=""
+                                visible={true}
+                                />
+                            </div>
+                        </div>
+                </div>
+            ) : (
+                <div className="md:flex relative">
+                    <SideBar props={menuItems} />
+                    <div className="md:flex p-10 md:w-2/3 md:ml-20 pt-32">
+                        <iframe className="md:w-8/12 w-full aspect-video min-h-[510px]" src="https://acralending.com/box-api/box-wholesale-conditions-upload.html"></iframe>
+                        <div className="md:w-4/12 w-full pt-8 md:pt-0 md:pl-8">
+                            <h2 className="font-medium">Reminder:</h2>
+                            <ul className="font-normal text-base mt-2 list-disc">
+                                {reminderBulletPoints.map((point, key) => (
+                                    <li key={key} className="pb-4">{point}</li>
+                                ))}
+                            </ul>
+                            <h3 className="text-base">
+                                <mark className="bg-[#FFFF00]">
+                                    EXAMPLE: If you have 10 conditions, we need 10 LEGIBLE PDF documents
+                                </mark>
+                            </h3>
+                        </div>
                     </div>
                 </div>
-            </div>
+            )}
             <Footer />
         </div>
     )

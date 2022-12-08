@@ -9,17 +9,22 @@ import SideBar from '../components/SideBar';
 import Navbar from '../components/NavBar'
 import Footer from '../components/Footer'
 import formatPhoneNumber from '../lib/phoneFormatter.js';
+import {Grid} from "react-loader-spinner";
 
 function processorTips({menuItems, contactPoints, processorTipsItems}) {
+
+    const [isLoading, setIsLoading] = useState(false);
     const [value, setValue] = useState('1');
     const [isLogged, setIsLogged] = useState();
 
     const router = useRouter();
 
     const fetchData = () => {
+        setIsLoading(true);
         let token = localStorage.getItem('jwt');
 
         if(token) {
+            setIsLoading(false);
             setIsLogged(token);
         } else {
             router.push('/')
@@ -39,6 +44,25 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
     return (
       <div className="relative w-full">
       <Navbar />
+      {isLoading ? (
+        <div className='md:flex relative'>
+        <SideBar props={menuItems} />
+          <div className="flex-1 p-10 text-2xl font-bold bg-slate-50 md:w-2/3 pt-32">
+            <div style={{position: "absolute", left: "47%", top: "35%"}}>
+              <Grid
+              height="80"
+              width="80"
+              color="#0033a1"
+              ariaLabel="grid-loading"
+              radius="12.5"
+              wrapperStyle={{}}
+              wrapperClass=""
+              visible={true}
+              />
+            </div>              
+          </div>
+        </div>
+      ) : (
         <div className='md:flex relative'>
           <SideBar props={menuItems} />
           <div className="flex-1 p-10 text-2xl font-bold bg-slate-50 md:w-2/3 pt-32">
@@ -191,6 +215,8 @@ function processorTips({menuItems, contactPoints, processorTipsItems}) {
       </div>
       </div>
     </div>
+
+      )}
     <Footer />
 </div>
   );

@@ -7,19 +7,24 @@ import Footer from '../components/Footer'
 import { PrismaClient } from "@prisma/client";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserTie, faCreditCard, faFileInvoiceDollar, faLightbulb } from '@fortawesome/free-solid-svg-icons';
-// import card from './'
+import {Grid} from "react-loader-spinner";
+
 const prisma = new PrismaClient();
 
 function preScreenRequest ({ menuItems, aeList }) {
+
+    const [isLoading, setIsLoading] = useState(false);
     const [isLogged, setIsLogged] = useState();
     
     const router = useRouter();
 
     const fetchData = () => {
+        setIsLoading(true);
         let token = localStorage.getItem('jwt');
 
         if(token) {
             setIsLogged(token);
+            setIsLoading(false);
         } else {
             router.push('/')
         }
@@ -35,6 +40,25 @@ function preScreenRequest ({ menuItems, aeList }) {
     return (
         <div className="relative w-full">
         <Navbar />
+        {isLoading ? (
+            <div className="md:flex static">
+                <SideBar props={menuItems}/> 
+                <div className='flex flex-col lg:flex-row ml-8 mr-8 gap-12'>
+                    <div style={{position: "absolute", left: "47%", top: "35%"}}>
+                        <Grid
+                        height="80"
+                        width="80"
+                        color="#0033a1"
+                        ariaLabel="grid-loading"
+                        radius="12.5"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                        visible={true}
+                        />
+                    </div>                    
+                </div>
+            </div>            
+        ) : (
             <div className="md:flex static">
                 <SideBar props={menuItems}/> 
                     <div className='flex flex-col lg:flex-row ml-8 mr-8 gap-12'>
@@ -44,7 +68,7 @@ function preScreenRequest ({ menuItems, aeList }) {
                                 <span className='text-white text-center px-2 text-lg'>Instructions</span>
                                 <div className="flex-grow h-px bg-white w-full mr-2"></div>
                             </div>                   
-                           <div className='flex flex-col grow md:px-4'>
+                            <div className='flex flex-col grow md:px-4'>
                                 <div className='mb-[35px] bg-white rounded-lg border border-gray-200 shadow-md font-medium hover:bg-gray-100 transform hover:translate-y-[-5px] transition duration-500 ease-in-out'>
                                     <div className='text-center pt-4 pb-4'>
                                         <FontAwesomeIcon icon={faUserTie} size='2x' className='text-[#0033A1]'/>
@@ -78,14 +102,15 @@ function preScreenRequest ({ menuItems, aeList }) {
                                     <p className='text-center text-sm mb-[25px]'>ALL pages of bank statements</p>
                                     <p className='text-center text-sm mb-[25px]'>Bank Statements with redacted info are not acceptable</p>
                                 </div>
-                           </div>
+                            </div>
                         </div>
                         <div className="w-[95%] lg:w-2/3 mx-auto pt-24 md:pt-36">
                             <MultiStepForm aeList={aeList}/>
                         </div>
                     </div>
             </div>
-            <Footer />
+        )}
+        <Footer />
         </div>
     )
 }

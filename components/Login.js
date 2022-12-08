@@ -26,15 +26,20 @@ const Login = () => {
 
         axiosWithBaseURL.post('/api/auth/local', values)
             .then(response => {
-                console.log(response.data);
-                const jwt = response.data.jwt;
-                const firstname = response.data.user.firstname;
-
-                localStorage.setItem('jwt', jwt);
-                localStorage.setItem('firstname', firstname);
-
-                // push('/');
-                window.location.replace('/');
+                if(response.data.user.roleType.includes('Broker')) {
+                    const jwt = response.data.jwt;
+                    const firstname = response.data.user.firstname;
+                    const roleType = response.data.user.roleType;
+    
+                    localStorage.setItem('jwt', jwt);
+                    localStorage.setItem('firstname', firstname);
+                    localStorage.setItem('roleType', roleType);
+    
+                    // push('/');
+                    window.location.replace('/');
+                } else {
+                    setAlert(['alert', 'Incorrect Credentials'])
+                }
                 resetForm();
             })
             .catch(error => {
