@@ -22,7 +22,7 @@ export default function Footer() {
                     <a href="#" className="no-underline hover:underline text-gray-500 hover:text-blue-700">Contact</a>
                 </li>
             </ul> */}
-            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400 px-8">© {new Date().getFullYear()} Acra Lending. All Rights Reserved.
+            <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400 px-8">© {new Date().getFullYear()} Acra Lending. All Rights Reserved.
             </span>
         </footer>
 
