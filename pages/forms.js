@@ -34,7 +34,7 @@ function formsTable({menuItems, formsItems}) {
 
     }, [isLogged]);
     
-    const URL = `https://2da9-107-194-134-60.ngrok.io/api/broker-portal-forms-and-requests-items?pagination[page]=${pageNumber}&pagination[pageSize]=10&populate=*`;
+    const URL = `https://api.acralending.com/api/broker-portal-forms-and-requests-items?pagination[page]=${pageNumber}&pagination[pageSize]=10&populate=*`;
     
     const { data } = useSWR(URL,
         fetcher,
@@ -85,7 +85,7 @@ function formsTable({menuItems, formsItems}) {
                                     <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"></td>
                                     <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400 pl-0">
                                         <a 
-                                            href={`https://7abe-107-194-134-60.ngrok.io${item?.attributes?.pdf?.data[0]?.attributes.url}`} 
+                                            href={`https://api.acralending.com${item?.attributes?.pdf?.data[0]?.attributes.url}`} 
                                             className="hover:bg-gray-50 text-[#0033A1] font-medium py-2 px-4 border border-[#0033A1] hover:border-transparent rounded no-underline"
                                             target="_blank">
                                                 Download
