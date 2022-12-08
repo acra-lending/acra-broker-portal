@@ -19,7 +19,9 @@ function ProcessorTips({menuItems, contactPoints, processorTipsItems}) {
 
     const router = useRouter();
 
-    const fetchData = () => {
+    useEffect(() => {
+      
+      const fetchData = () => {
         setIsLoading(true);
         let token = localStorage.getItem('jwt');
 
@@ -29,9 +31,7 @@ function ProcessorTips({menuItems, contactPoints, processorTipsItems}) {
         } else {
             router.push('/')
         }
-    }
-
-    useEffect(() => {
+      }
         
         fetchData();
 

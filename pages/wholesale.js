@@ -13,20 +13,20 @@ function WholesaleUpload({menuItems}) {
     
     const router = useRouter();
 
-    const fetchData = () => {
-
-        setIsLoading(true);
-        let token = localStorage.getItem('jwt');
-
-        if(token) {
-            setIsLogged(token);
-            setIsLoading(false);
-        } else {
-            router.push('/')
-        }
-    }
-
     useEffect(() => {
+        
+        const fetchData = () => {
+
+            setIsLoading(true);
+            let token = localStorage.getItem('jwt');
+
+            if(token) {
+                setIsLogged(token);
+                setIsLoading(false);
+            } else {
+                router.push('/')
+            }
+        }
         
         fetchData();
 
