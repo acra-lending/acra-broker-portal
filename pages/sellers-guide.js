@@ -14,10 +14,9 @@ function SellersGuide ({menuItems}) {
     const [selected, setSelected] = useState();
     const [isLogged, setIsLogged] = useState();
 
+    const router = useRouter();
 
     useEffect(() => {
-        const router = useRouter();
-
         const fetchData = () => {
             setIsLoading(true);
             let token = localStorage.getItem('jwt');

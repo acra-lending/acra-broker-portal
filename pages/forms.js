@@ -13,9 +13,9 @@ function FormsTable({menuItems, formsItems}) {
     const [pageNumber, setPageNumber] = useState(1);
     const [isLogged, setIsLogged] = useState();
 
-    useEffect(() => {
-        const router = useRouter();
+    const router = useRouter();
 
+    useEffect(() => {
         const fetchData = () => {
             setIsLoading(true);
             let token = localStorage.getItem('jwt');

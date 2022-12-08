@@ -11,10 +11,9 @@ function ConditionsUpload({menuItems}) {
     const [isLoading, setIsLoading] = useState(false);
     const [isLogged, setIsLogged] = useState();
     
+    const router = useRouter();
 
     useEffect(() => {
-        const router = useRouter();
-
         const fetchData = () => {
     
             setIsLoading(true);
