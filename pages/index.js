@@ -61,7 +61,7 @@ export default function Home({menuItems, dashboardItems, useLinksItems}) {
                 </>
               ) : (
                 <>
-                  <div className="h-screen px-12 flex space-x-4 flex-col xl:flex-row xl:px-32 lg:flex-row lg:px-24 md:flex-row md:px-24 md:pt-32 sm:flex sm:flex-col bg-[url('https://2da9-107-194-134-60.ngrok.io/uploads/careers_navybg_b874f0bbad.jpg')] bg-cover">
+                  <div className="h-screen px-12 flex space-x-4 flex-col xl:flex-row xl:px-32 lg:flex-row lg:px-24 md:flex-row md:px-24 md:pt-32 sm:flex sm:flex-col bg-[url('https://api.acralending.com/uploads/careers_navybg_b874f0bbad.jpg')] bg-cover">
                     <div>
                       <h2 className="text-white   pt-10">Broker Portal</h2>
                       <h4 className="text-white pt-10">Welcome, please log in. <br/><br/>If this is your first time logging in since the update, you have to reset your password with "Forgot password"</h4>
