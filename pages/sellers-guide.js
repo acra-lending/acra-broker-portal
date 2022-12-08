@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import React from 'react';
-import { useRouter } from 'next/router';
+import Router from 'next/router';
 import { Accordion } from 'react-bootstrap';
 import postData  from '../postData.json';
 import NavBar from '../components/NavBar';
@@ -14,8 +14,6 @@ function SellersGuide ({menuItems}) {
     const [selected, setSelected] = useState();
     const [isLogged, setIsLogged] = useState();
 
-    const router = useRouter();
-
     useEffect(() => {
         const fetchData = () => {
             setIsLoading(true);
@@ -25,7 +23,7 @@ function SellersGuide ({menuItems}) {
                 setIsLogged(token);
                 setIsLoading(false);
             } else {
-                router.push('/')
+                Router.push('/')
             }
         }
         

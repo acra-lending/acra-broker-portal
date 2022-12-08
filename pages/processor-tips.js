@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import Router from 'next/router';
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
@@ -17,8 +17,6 @@ function ProcessorTips({menuItems, contactPoints, processorTipsItems}) {
     const [value, setValue] = useState('1');
     const [isLogged, setIsLogged] = useState();
 
-    const router = useRouter();
-
     useEffect(() => {
       
       const fetchData = () => {
@@ -29,7 +27,7 @@ function ProcessorTips({menuItems, contactPoints, processorTipsItems}) {
             setIsLoading(false);
             setIsLogged(token);
         } else {
-            router.push('/')
+            Router.push('/')
         }
       }
         

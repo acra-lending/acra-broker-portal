@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import Router from 'next/router';
 import MultiStepForm from '../components/MultiStepForm/UserForm';
 import Navbar from '../components/NavBar';
 import SideBar from '../components/SideBar';
@@ -16,8 +16,6 @@ function PreScreenRequest ({ menuItems, aeList }) {
     const [isLoading, setIsLoading] = useState(false);
     const [isLogged, setIsLogged] = useState();
     
-    const router = useRouter();
-
     useEffect(() => {
         
         const fetchData = () => {
@@ -28,7 +26,7 @@ function PreScreenRequest ({ menuItems, aeList }) {
                 setIsLogged(token);
                 setIsLoading(false);
             } else {
-                router.push('/')
+                Router.push('/')
             }
         }
         

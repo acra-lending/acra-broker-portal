@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import Router from 'next/router';
 import SideBar from "../components/SideBar";
 import Navbar from '../components/NavBar'
 import Footer from '../components/Footer'
@@ -13,8 +13,6 @@ function FormsTable({menuItems, formsItems}) {
     const [pageNumber, setPageNumber] = useState(1);
     const [isLogged, setIsLogged] = useState();
 
-    const router = useRouter();
-
     useEffect(() => {
         const fetchData = () => {
             setIsLoading(true);
@@ -24,7 +22,7 @@ function FormsTable({menuItems, formsItems}) {
                 setIsLogged(token);
                 setIsLoading(false);
             } else {
-                router.push('/')
+                Router.push('/')
             }
         }
         

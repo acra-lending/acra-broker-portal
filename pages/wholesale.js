@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import Router from 'next/router';
 import SideBar from "../components/SideBar";
 import Navbar from '../components/NavBar'
 import Footer from '../components/Footer'
@@ -10,8 +10,6 @@ function WholesaleUpload({menuItems}) {
 
     const [isLoading, setIsLoading] = useState(false);
     const [isLogged, setIsLogged] = useState();
-    
-    const router = useRouter();
 
     useEffect(() => {
         
@@ -24,7 +22,7 @@ function WholesaleUpload({menuItems}) {
                 setIsLogged(token);
                 setIsLoading(false);
             } else {
-                router.push('/')
+                Router.push('/')
             }
         }
         
