@@ -83,7 +83,9 @@ function FormsTable({menuItems, formsItems}) {
                                         <a 
                                             href={`${process.env.NEXT_PUBLIC_API_URL}${item?.attributes?.pdf?.data[0]?.attributes.url}`} 
                                             className="hover:bg-gray-50 text-[#0033A1] font-medium py-2 px-4 border border-[#0033A1] hover:border-transparent rounded no-underline"
-                                            target="_blank">
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            >
                                                 Download
                                         </a>
                                     </td>

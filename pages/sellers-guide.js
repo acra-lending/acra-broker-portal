@@ -89,7 +89,7 @@ function SellersGuide ({menuItems}) {
                                 <Accordion.Body>
                                 <div>
                                     {Sections?.content?.map((content, i) => (
-                                            <div index={i} dangerouslySetInnerHTML={{__html: content.content}}/>
+                                            <div index={i} key={i}dangerouslySetInnerHTML={{__html: content.content}}/>
                                 ))}
                                 </div>
                                     <Accordion>
