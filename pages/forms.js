@@ -10,13 +10,12 @@ import {Grid} from "react-loader-spinner";
 function FormsTable({menuItems, formsItems}) {
 
     const [isLoading, setIsLoading] = useState(false);
-
     const [pageNumber, setPageNumber] = useState(1);
-    const router = useRouter();
-
     const [isLogged, setIsLogged] = useState();
 
     useEffect(() => {
+        const router = useRouter();
+
         const fetchData = () => {
             setIsLoading(true);
             let token = localStorage.getItem('jwt');

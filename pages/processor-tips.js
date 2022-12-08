@@ -17,9 +17,9 @@ function ProcessorTips({menuItems, contactPoints, processorTipsItems}) {
     const [value, setValue] = useState('1');
     const [isLogged, setIsLogged] = useState();
 
-    const router = useRouter();
 
     useEffect(() => {
+      const router = useRouter();
       
       const fetchData = () => {
         setIsLoading(true);
