@@ -39,6 +39,7 @@ export default function SideBar ({ props }) {
                     <div>
                         <img 
                             src="/AcraLogo.png" 
+                            alt="acra-logo"
                             style={{ 
                                 width: 'auto', 
                                 height: '50px', 
