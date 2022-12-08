@@ -8,6 +8,7 @@ function UsefulLinks ({ props }) {
                         href={item.attributes.url}
                         target="_blank"
                         key={item.id}
+                        rel="noreferrer"
                     >
                         <img 
                             src={`${process.env.NEXT_PUBLIC_API_URL}${item.attributes.previewImage.data[0].attributes.url}`}
