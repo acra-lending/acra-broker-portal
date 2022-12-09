@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import SideBar from "../components/SideBar"
 import Navbar from '../components/NavBar'
-import Footer from '../components/Footer'
 import DashLinks from "../components/DashLinks";
 import UsefulLinks from "../components/UsefulLinks";
 import Login from '../components/Login';
@@ -82,7 +81,6 @@ export default function Home({menuItems, dashboardItems, useLinksItems}) {
               )
             )}
           </main>
-        {/* <Footer /> */}
       </div>
   )
 }

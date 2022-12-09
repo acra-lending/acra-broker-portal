@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import Router from 'next/router';
 import SideBar from "../components/SideBar";
 import Navbar from '../components/NavBar'
-import Footer from '../components/Footer'
 import { fetcher } from "../lib/api";
 import useSWR from "swr";
 import {Grid} from "react-loader-spinner";
@@ -69,7 +68,6 @@ function FormsTable({menuItems, formsItems}) {
                                 <thead>
                                 <tr>
                                     <th className="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-600 dark:text-slate-500 text-left">Filename</th>
-                                    {/* <th className="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left"></th> */}
                                     <th className="border-b dark:border-slate-600 font-medium p-4 pt-0 pb-3 text-slate-600 dark:text-slate-500 text-left">Download</th>
                                 </tr>
                                 </thead>
@@ -78,7 +76,6 @@ function FormsTable({menuItems, formsItems}) {
                                     
                                 <tr key={key}>
                                     <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-600 dark:text-slate-500">{item.attributes.formTitle}</td>
-                                    {/* <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"></td> */}
                                     <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-600 dark:text-slate-500 pl-0">
                                         <a 
                                             href={`${process.env.NEXT_PUBLIC_API_URL}${item?.attributes?.pdf?.data[0]?.attributes.url}`} 
@@ -120,7 +117,6 @@ function FormsTable({menuItems, formsItems}) {
                 </div>
             </div>
             )}
-        {/* <Footer /> */}
     </div>
     )
 }
