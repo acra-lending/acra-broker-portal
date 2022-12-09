@@ -30,7 +30,7 @@ function FormsTable({menuItems, formsItems}) {
 
     }, [isLogged]);
     
-    const URL = `https://api.acralending.com/api/broker-portal-forms-and-requests-items?pagination[page]=${pageNumber}&pagination[pageSize]=10&populate=*`;
+    const URL = `https://api.acralending.com/api/broker-portal-forms-and-requests-items?pagination[page]=${pageNumber}&pagination[pageSize]=6&populate=*`;
     
     const { data } = useSWR(URL,
         fetcher,
