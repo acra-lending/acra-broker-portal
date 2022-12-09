@@ -67,7 +67,7 @@ function ProcessorTips({menuItems, contactPoints, processorTipsItems}) {
               <h6 className="px-4 pb-2 w-full">Essential Contact Points</h6>
                 <div className="md:flex content-center flex-wrap -mx-2 p-3">
                   {contactPoints?.data.map(item => (
-                    <div className="md:flex md:w-1/2 lg:w-1/3 px-2 py-2">
+                    <div key={item.id}className="md:flex md:w-1/2 lg:w-1/3 px-2 py-2">
                       <div className="md:flex-1 p-4 rounded shadow bg-white border-b border-r border-grey-dark">
                         <h4 className="mb-2 font-bold tracking-tight text-slate-800 dark:text-white">
                           {item.attributes.contactName}
