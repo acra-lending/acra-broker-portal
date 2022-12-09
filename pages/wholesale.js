@@ -60,7 +60,7 @@ function WholesaleUpload({menuItems}) {
             ) : (
                 <div className="md:flex relative">
                     <SideBar props={menuItems} />
-                    <div className="md:flex p-10 md:w-2/3 md:ml-20 pt-32">
+                    <div className="lg:pt-32 lg:p-10 md:flex md:pt-32 md:w-2/3 md:ml-20 sm:pt-8 sm:p-4 sm:pb-20">
                         <iframe className="md:w-8/12 w-full aspect-video min-h-[510px]" src="https://acralending.com/box-api/box-wholesale-upload.html"></iframe>
                         <div className="md:w-4/12 w-full pt-8 md:pt-0 md:pl-8">
                             <h2 className="font-medium">Reminder:</h2>
