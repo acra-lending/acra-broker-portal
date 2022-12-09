@@ -20,7 +20,7 @@ export default function SideBar ({ props }) {
     const activeTabClassNames = 'flex items-center gap-3 bg-[#0033A1] text-white p-3 rounded';
     const tabClassNames = 'flex items-center gap-3 p-3 rounded hover:bg-[#f3f4f6]';
    
-    //function to toggle th sidebar close when user taps on a menu item on mobile
+    //function to toggle the sidebar close when user taps on a menu item on mobile
     const handleToggle = () => {
         setMobile(!isMobile);
     }
