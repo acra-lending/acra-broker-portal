@@ -79,7 +79,7 @@ function WholesaleUpload({menuItems}) {
                     </div>
                 </div>
             )}
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }

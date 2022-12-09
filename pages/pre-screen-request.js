@@ -102,13 +102,13 @@ function PreScreenRequest ({ menuItems, aeList }) {
                                 </div>
                             </div>
                         </div>
-                        <div className="w-[95%] lg:w-2/3 mx-auto pt-24 md:pt-36">
+                        <div className="w-[95%] lg:w-2/3 mx-auto pt-24 md:pt-36 xs:pt-1">
                             <MultiStepForm aeList={aeList}/>
                         </div>
                     </div>
             </div>
         )}
-        <Footer />
+        {/* <Footer /> */}
         </div>
     )
 }

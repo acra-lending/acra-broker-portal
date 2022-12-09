@@ -15,7 +15,7 @@ export default function SideBar ({ props }) {
     const router = useRouter(); 
 
     //Classnames for div and tabs
-    const sideBarDeskTopClassNames = 'min-h-screen min-w-fit bg-white w-64 z-10 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out border-r shadow-md';
+    const sideBarDeskTopClassNames = 'min-h-screen min-w-fit bg-white w-64 z-10 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out border-r';
     const sideBarMobileClassNames = 'min-h-screen min-w-fit bg-white w-64 z-40 fixed inset-y-0 left-0 transform md:relative md:translate-x-0 transition duration-200 ease-in-out border-r shadow-md';
     const activeTabClassNames = 'flex items-center gap-3 bg-[#0033A1] text-white p-3 rounded';
     const tabClassNames = 'flex items-center gap-3 p-3 rounded hover:bg-[#f3f4f6]';
@@ -27,7 +27,7 @@ export default function SideBar ({ props }) {
     
     return (
         <>
-            <div className="flex justify-end flex-row bg-slate-300 md:hidden p-3">
+            <div className="flex justify-end flex-row bg-slate-300 md:hidden p-1">
                 <button className="p-4" onClick={handleToggle}>
                     <svg className="h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />

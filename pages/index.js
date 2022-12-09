@@ -46,9 +46,9 @@ export default function Home({menuItems, dashboardItems, useLinksItems}) {
   
                   <div className="md:flex static">
                   <SideBar props={menuItems}/>
-                    <div className="mx-auto md:pt-32">
+                    <div className="mx-auto md:pt-32 sm:pb-16">
   
-                        <h2 className="px-3 pb-2">Welcome, <b>{localStorage.firstname}</b>!</h2>
+                        <h2 className="px-3 pb-2 sm:pt-4">Welcome, <b>{localStorage.firstname}</b>!</h2>
                         <h2 className="px-3 pb-2">Broker Portal Dashboard</h2>
                       <DashLinks props={dashboardItems}/>
                       <div>
@@ -60,10 +60,10 @@ export default function Home({menuItems, dashboardItems, useLinksItems}) {
                 </>
               ) : (
                 <>
-                  <div className="h-screen px-12 flex space-x-4 flex-col xl:flex-row xl:px-32 lg:flex-row lg:px-24 md:flex-row md:px-24 md:pt-32 sm:flex sm:flex-col bg-[url('https://api.acralending.com/uploads/careers_navybg_b874f0bbad.jpg')] bg-cover">
+                  <div className="h-screen px-12 flex space-x-4 flex-col xl:flex-row xl:px-32 lg:flex-row lg:px-24 md:flex-row md:px-24 md:pt-32 sm:flex sm:flex-col sm:px-6 sm:space-x-0 bg-[url('https://api.acralending.com/uploads/careers_navybg_b874f0bbad.jpg')] bg-cover">
                     <div>
-                      <h2 className="text-white   pt-10">Broker Portal</h2>
-                      <h4 className="text-white pt-10">Welcome, please log in. <br/><br/>If this is your first time logging in since the update, you have to reset your password with "Forgot password"</h4>
+                      <h2 className="text-white pt-10 sm:pt-2">Broker Portal</h2>
+                      <h4 className="text-white pt-10 sm:py-2">Welcome, please log in. <br/><br/>If this is your first time logging in since the update, you have to reset your password with "Forgot password"</h4>
                     </div>
                     {alert && (
                 
@@ -82,7 +82,7 @@ export default function Home({menuItems, dashboardItems, useLinksItems}) {
               )
             )}
           </main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
   )
 }

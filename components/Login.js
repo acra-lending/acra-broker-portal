@@ -76,7 +76,7 @@ const Login = () => {
                 )}
 
 
-                <div className='p-8 max-w-md bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 md:p-8'>
+                <div className='p-8 max-w-md bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 md:p-8 sm:p-2'>
 
                 <div className='pb-3 text-center'>
                     <p className=''>
@@ -97,13 +97,13 @@ const Login = () => {
                             <Form className='flex flex-col items-center'>
                                 <div>
                                     <div><label htmlFor='identifier'>Username or Email</label></div>
-                                    <Field type='text' id='identifier' name='identifier' placeholder='' className="rounded w-64" />
+                                    <Field type='text' id='identifier' name='identifier' placeholder='' className="rounded lg:w-64 sm:w-auto" />
                                     <div className='error text-red-500'><ErrorMessage name='identifier' /></div>
                                 </div>
                                 <br />
                                 <div>
                                     <div><label htmlFor='password'>Password</label></div>
-                                    <Field type='password' id='password' name='password' placeholder='' className="rounded w-64" />
+                                    <Field type='password' id='password' name='password' placeholder='' className="rounded lg:w-64 sm:w-auto" />
                                     <div className='error text-red-500'><ErrorMessage name='password' /></div>
                                     <div className="mt-3">
                                         <small>
@@ -117,7 +117,7 @@ const Login = () => {
                                 <button 
                                     type='submit'
                                     disabled={!isValid}
-                                    className="text-[#0033A1] hover:text-white border border-[#0033A1] hover:bg-[#0033A1] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 w-64"
+                                    className="text-[#0033A1] hover:text-white border border-[#0033A1] hover:bg-[#0033A1] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 lg:w-64 sm:w-48"
                                 >
                                     {!isSubmitting && 'Login'}
                                     {isSubmitting && 

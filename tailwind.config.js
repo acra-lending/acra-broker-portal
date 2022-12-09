@@ -8,10 +8,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'sm': '340px',
+      },
       backgroundImage: {
         'preScreen': "url('/pre-screen-instructions.jpg')",
       }
-    },
+    }
+    
   },
   plugins: [
     require('@tailwindcss/forms'),

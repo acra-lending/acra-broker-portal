@@ -132,7 +132,7 @@ function SellersGuide ({menuItems}) {
                     </div>
                 </div>
             )}
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }

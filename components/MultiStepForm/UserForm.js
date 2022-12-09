@@ -106,10 +106,10 @@ export default function UserForm({ aeList }) {
 
   return (
     <>
-      <div className="p-10 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100">
+      <div className="p-10 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 xs:p-6">
         {switchStep()}
       </div>
-      <div className="text-[15px] p-10">
+      <div className="text-[15px] p-10 xs:px-2">
         <p className="font-medium pt-3">
           <strong>Note: </strong>
           1:00 pm PT request cut off time; Please allow 1 – 3 business days for feedback
