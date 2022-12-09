@@ -99,7 +99,7 @@ function ProcessorTips({menuItems, contactPoints, processorTipsItems}) {
                   ))}
                 </tbody>
               </table>
-              <p className='text-slate-500 dark:text-slate-400 text-base pl-8 pt-8 pb-8'>
+              <p className='text-slate-500 dark:text-slate-400 text-base pl-8 pt-8 pb-8 sm:p-4'>
                         Loss Payee Clause<br></br>
                         Citadel Servicing Corporation ISAOA<br></br>
                         25531 Commercentre Drive, Suite 160<br></br>
@@ -115,7 +115,7 @@ function ProcessorTips({menuItems, contactPoints, processorTipsItems}) {
                   <Tab label="CD/Closing" value="3" />
                 </TabList>
               </Box>
-              <TabPanel value="1">
+              <TabPanel value="1" sx={{ paddingLeft: '4px', paddingRight: '4px' }}>
                 <table className="border-collapse table-auto w-full text-sm">
                     <thead>
                     <tr>
