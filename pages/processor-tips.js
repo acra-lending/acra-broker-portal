@@ -140,7 +140,7 @@ function ProcessorTips({menuItems, contactPoints, processorTipsItems}) {
                         </tbody>
                     </table>
                   </TabPanel>
-                  <TabPanel value="2">
+                  <TabPanel value="2" sx={{ paddingLeft: '4px', paddingRight: '4px' }}>
                   <table className="border-collapse table-auto w-full text-sm">
                       <thead>
                       <tr>
@@ -170,7 +170,7 @@ function ProcessorTips({menuItems, contactPoints, processorTipsItems}) {
                       </tbody>
                   </table>
                   </TabPanel>
-                  <TabPanel value="3">
+                  <TabPanel value="3" sx={{ paddingLeft: '4px', paddingRight: '4px' }}>
                   <table className="border-collapse table-auto w-full text-sm">
                       <thead>
                       <tr>
