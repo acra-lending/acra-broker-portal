@@ -36,18 +36,15 @@ export default function SideBar ({ props }) {
             </div>
             <div className={isMobile ? sideBarMobileClassNames : sideBarDeskTopClassNames}>
                 <nav className="pl-1 pr-1 md:min-w-[275px]">
-                    <div className="flex justify-between">
+                    <div>
                         <img 
-                            src="/AcraLogo.png"
+                            src="/AcraLogo.png" 
                             alt="acra-logo"
                             style={{ 
                                 width: 'auto', 
                                 height: '50px', 
                                 padding: '10px'}}
                             />
-                        <button className="p-4" onClick={handleToggle}>
-                            &#x2715;
-                        </button>
                     </div>
                     <div>
                         {props?.data.map((item, key) => (
