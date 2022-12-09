@@ -145,7 +145,6 @@ function ProcessorTips({menuItems, contactPoints, processorTipsItems}) {
                       <thead>
                       <tr>
                           <th className="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-600 dark:text-slate-500 text-left">Filename</th>
-                          <th className="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-600 dark:text-slate-500 text-left"></th>
                           <th className="border-b dark:border-slate-600 font-medium p-4 pt-0 pb-3 text-slate-600 dark:text-slate-500 text-left">Download</th>
                       </tr>
                       </thead>
@@ -154,7 +153,6 @@ function ProcessorTips({menuItems, contactPoints, processorTipsItems}) {
                           item.attributes.category === 'Underwriting' && (
                             <tr key={item.id}>
                                 <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">{item.attributes.formTitle}</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"></td>
                                 <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400 pl-0">
                                   <a 
                                     target="_blank"
@@ -177,7 +175,6 @@ function ProcessorTips({menuItems, contactPoints, processorTipsItems}) {
                       <thead>
                       <tr>
                           <th className="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-600 dark:text-slate-500 text-left">Filename</th>
-                          <th className="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-600 dark:text-slate-500 text-left"></th>
                           <th className="border-b dark:border-slate-600 font-medium p-4 pt-0 pb-3 text-slate-600 dark:text-slate-500 text-left">Download</th>
                       </tr>
                       </thead>
@@ -186,7 +183,6 @@ function ProcessorTips({menuItems, contactPoints, processorTipsItems}) {
                           item.attributes.category === 'Closing' && (
                             <tr key={item.id}>
                                 <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">{item.attributes.formTitle}</td>
-                                <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"></td>
                                 <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400 pl-0">
                                   <a 
                                     target="_blank"
