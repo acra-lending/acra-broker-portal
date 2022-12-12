@@ -31,7 +31,7 @@ const ResetPassword = () => {
 
                 resetForm();
                 
-                setTimeout(() => { push('/') }, 5000);
+                setTimeout(() => { push('https://acralending.com/portal-redirect') }, 5000);
             })
             .catch(error => {
                 console.log(error);
