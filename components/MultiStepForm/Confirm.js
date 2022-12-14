@@ -40,7 +40,7 @@ export default function Confirm(props) {
     // Send it
     await axios({
       method: 'post',
-      url: `${process.env.BASE_URL}ezforms/submit`,
+      url: `${process.env.NEXT_PUBLIC_API_URL}/api/ezforms/submit`,
       data: form,
       headers: {
           'Content-Type': 'application/json'
@@ -48,7 +48,6 @@ export default function Confirm(props) {
       }).then(response => {
       // actions taken when submission goes OK
       // console.log(response)
-      reset({})
       // setMessageSent(true)
       // setMessage(response.data.message)
       // setIsSuccessMessage(true)
