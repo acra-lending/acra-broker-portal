@@ -40,7 +40,7 @@ export default function Confirm(props) {
     // Send it
     await axios({
       method: 'post',
-      url: `${process.env.BASE_URL}/ezforms/submit`,
+      url: `${process.env.BASE_URL}ezforms/submit`,
       data: form,
       headers: {
           'Content-Type': 'application/json'
