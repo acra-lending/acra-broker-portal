@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from 'axios';
+import {Oval} from "react-loader-spinner";
+
 
 export default function Confirm(props) {
+  const [isSubmitting, setIsSubmitting] = useState();
+  const [successMessage, setSuccessMessage] = useState();
+
   const next = (e) => {
     props.nextStep();
   };
@@ -13,6 +18,7 @@ export default function Confirm(props) {
 
   const submit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true)
 
     let form = {
       formData:{
@@ -47,15 +53,12 @@ export default function Confirm(props) {
       },
       }).then(response => {
       // actions taken when submission goes OK
-      // console.log(response)
-      // setMessageSent(true)
-      // setMessage(response.data.message)
-      // setIsSuccessMessage(true)
+      setIsSubmitting(false)
+      setSuccessMessage('Sent! Please upload files on next page.')
       }).catch(error => {
       // actions taken when submission goes wrong
-      // setMessageSent(true)
-      // setMessage(error.message)
-      // setIsSuccessMessage(false)
+      setIsSubmitting(false)
+      setSuccessMessage('Uh oh! Looks like there was an error.')
       console.log(error)
       })
 
@@ -114,9 +117,29 @@ export default function Confirm(props) {
       <button className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700" onClick={back}>
           Back
         </button>
-        <button className="text-white bg-[#0033A1] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2" onClick={submit}>
-          Submit
+        <button 
+        className="text-white bg-[#0033A1] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2" onClick={submit}>
+          {!isSubmitting && 'Submit'}
+          {isSubmitting && 
+            <div style={{position: "relative", left: "40%"}}>
+                <Oval
+                    height={30}
+                    width={30}
+                    color="#0033a1"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                    visible={true}
+                    ariaLabel='oval-loading'
+                    secondaryColor="#8ab7e9"
+                    strokeWidth={10}
+                    strokeWidthSecondary={10}
+                />
+            </div>
+            }
         </button>
+      </div>
+      <div className="flex flex-row-reverse">
+          <p>{successMessage ? successMessage : ''}</p>
       </div>
     </>
   );
