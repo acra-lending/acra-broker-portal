@@ -96,7 +96,7 @@ const Login = () => {
                     { ({ isSubmitting, isValid }) => (
                             <Form className='flex flex-col items-center'>
                                 <div>
-                                    <div><label htmlFor='identifier'>Username or Email</label></div>
+                                    <div><label htmlFor='identifier'>Email</label></div>
                                     <Field type='text' id='identifier' name='identifier' placeholder='' className="rounded lg:w-64 sm:w-auto" />
                                     <div className='error text-red-500'><ErrorMessage name='identifier' /></div>
                                 </div>
