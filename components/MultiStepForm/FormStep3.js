@@ -170,7 +170,7 @@ export default function FormStep3(props) {
           htmlFor="ownership"
           className="block mb-2 text-sm font-medium text-gray-900"
         >
-            Percentage of Onwership *
+            Percentage of Ownership *
         </label>
         <input
           type="text"
