@@ -19,7 +19,7 @@ export default function NavBar({props}) {
       <div className="absolute left-0 top-0 w-full z-10">
         <nav className=" justify-between font-sans md:flex hidden items-center text-center sm:flex-row sm:text-left py-1.5 px-6 bg-white shadow w-full">
           <div>
-            <Link href="/">
+            <Link href="https://acralending.com">
               <a>
                 <img 
                   src="/AcraLogo.png" 
@@ -34,7 +34,7 @@ export default function NavBar({props}) {
           </div>
           <div>
             {!isLogged ? (
-                <Link href="/">
+                <Link href="https://acralending.com">
                     <a className="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2"></a>
                 </Link>
               ) : (
