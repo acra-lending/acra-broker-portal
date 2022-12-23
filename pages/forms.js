@@ -64,11 +64,11 @@ function FormsTable({menuItems, formsItems}) {
                     <SideBar props={menuItems}/>
                     <div className="flex-1 p-10 lg:pt-28 text-2xl bg-slate-50 md:w-2/3 h-screen sm:pt-4 sm:p-4" >
                         <div className="relative rounded-xl overflow-auto sm:pb-20">
-                            <table className="border-collapse table-auto w-full text-sm">
+                            <table className="border-collapse table-fixed w-full text-sm">
                                 <thead>
                                 <tr>
                                     <th className="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-600 dark:text-slate-500 text-left">Filename</th>
-                                    <th className="border-b dark:border-slate-600 font-medium p-4 pt-0 pb-3 text-slate-600 dark:text-slate-500 text-left">Download</th>
+                                    <th className="border-b dark:border-slate-600 font-medium pl-11 pt-0 pb-3 text-slate-600 dark:text-slate-500 text-left">Download</th>
                                 </tr>
                                 </thead>
                                 <tbody className="bg-white dark:bg-slate-800">

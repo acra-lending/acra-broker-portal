@@ -111,11 +111,11 @@ function ProcessorTips({menuItems, contactPoints, processorTipsItems}) {
                     </TabList>
                   </Box>
                   <TabPanel value="1" sx={{ paddingLeft: '4px', paddingRight: '4px' }}>
-                    <table className="border-collapse table-auto w-full text-sm">
+                    <table className="border-collapse table-fixed w-full text-sm">
                         <thead>
                         <tr>
                             <th className="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-600 dark:text-slate-500 text-left">Filename</th>
-                            <th className="border-b dark:border-slate-600 font-medium p-4 pt-0 pb-3 text-slate-600 dark:text-slate-500 text-left">Download</th>
+                            <th className="border-b dark:border-slate-600 font-medium pl-11 pt-0 pb-3 text-slate-600 dark:text-slate-500 text-left">Download</th>
                         </tr>
                         </thead>
                         <tbody className="bg-white dark:bg-slate-800">
@@ -141,11 +141,11 @@ function ProcessorTips({menuItems, contactPoints, processorTipsItems}) {
                     </table>
                   </TabPanel>
                   <TabPanel value="2" sx={{ paddingLeft: '4px', paddingRight: '4px' }}>
-                  <table className="border-collapse table-auto w-full text-sm">
+                  <table className="border-collapse table-fixed w-full text-sm">
                       <thead>
                       <tr>
                           <th className="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-600 dark:text-slate-500 text-left">Filename</th>
-                          <th className="border-b dark:border-slate-600 font-medium p-4 pt-0 pb-3 text-slate-600 dark:text-slate-500 text-left">Download</th>
+                          <th className="border-b dark:border-slate-600 font-medium pl-11 pt-0 pb-3 text-slate-600 dark:text-slate-500 text-left">Download</th>
                       </tr>
                       </thead>
                       <tbody className="bg-white dark:bg-slate-800">
@@ -171,11 +171,11 @@ function ProcessorTips({menuItems, contactPoints, processorTipsItems}) {
                   </table>
                   </TabPanel>
                   <TabPanel value="3" sx={{ paddingLeft: '4px', paddingRight: '4px' }}>
-                  <table className="border-collapse table-auto w-full text-sm">
+                  <table className="border-collapse table-fixed w-full text-sm">
                       <thead>
                       <tr>
                           <th className="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-600 dark:text-slate-500 text-left">Filename</th>
-                          <th className="border-b dark:border-slate-600 font-medium p-4 pt-0 pb-3 text-slate-600 dark:text-slate-500 text-left">Download</th>
+                          <th className="border-b dark:border-slate-600 font-medium pl-11 pt-0 pb-3 text-slate-600 dark:text-slate-500 text-left">Download</th>
                       </tr>
                       </thead>
                       <tbody className="bg-white dark:bg-slate-800">
