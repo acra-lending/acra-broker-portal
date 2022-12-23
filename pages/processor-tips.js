@@ -63,7 +63,7 @@ function ProcessorTips({menuItems, contactPoints, processorTipsItems}) {
         <div className='md:flex relative'>
           <SideBar props={menuItems} />
           <div className="flex-1 lg:p-10 lg:pt-28 text-2xl font-bold bg-slate-50 md:w-2/3 md:pt-28 sm:pt-4 sm:p-2">
-            <div className="relative rounded-xl overflow-auto sm:pb-20">
+            <div className="relative rounded-xl sm:pb-20">
               <h6 className="px-4 pb-2 w-full">Essential Contact Points</h6>
                 <div className="md:flex content-center flex-wrap -mx-2 p-3">
                   {contactPoints?.data.map(item => (
