@@ -115,6 +115,16 @@ function SellersGuide ({menuItems}) {
                                                         <Accordion.Item eventKey={artSubKey} key={artSubKey}>
                                                             <Accordion.Header>{artSubSection.Title}</Accordion.Header>
                                                             <Accordion.Body>
+                                                            <Accordion>
+                                                                {artSubSection?.Subsection?.map((artSubSubSection, artSubSubKey) => (
+                                                                    <Accordion.Item eventKey={artSubSubKey} key={artSubSubKey}>
+                                                                        <Accordion.Header>{artSubSubSection.Title}</Accordion.Header>
+                                                                        <Accordion.Body>
+                                                                            <div><div dangerouslySetInnerHTML={{__html: artSubSubSection.content}}/></div>
+                                                                        </Accordion.Body>
+                                                                    </Accordion.Item>
+                                                                ))}
+                                                            </Accordion>
                                                                 <div><div dangerouslySetInnerHTML={{__html: artSubSection.content}}/></div>
                                                             </Accordion.Body>
                                                         </Accordion.Item>
