@@ -93,7 +93,7 @@ function ProcessorTips({menuItems, contactPoints, processorTipsItems}) {
                         Loss Payee Clause
                       </h4>
                       <p className="text-sm text-slate-500 dark:text-slate-400">
-                        Citadel Servicing Corporation <br/>dba Acra Lending ISAOA/ATIMA<br/>
+                        Citadel Servicing Corporation dba Acra Lending ISAOA/ATIMA<br/>
                         3 Ada Parkway<br/>
                         Suite 200A<br/>
                         Irvine, CA 92618<br/>
